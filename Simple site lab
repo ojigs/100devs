@@ -1,1 +1,34 @@
-
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="simplesitelab.css">
+        <title>Simple site lab</title>
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1><i>Learn With Leon and Friends</i></h1>
+                <a href="#aboutus" class="active">About Us</a>
+                <a href="#portfolio">Portfolio</a>
+            </header>
+            <section>
+                <h2>About Us</h2>
+                <img src="logo_edit.png" alt="leon logo" width="300px" height="420px">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum autem repudiandae omnis assumenda vitae. Impedit suscipit deserunt dicta natus, eius, error quis eum nesciunt nobis velit laudantium sunt, et aut?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis culpa inventore ipsam mollitia distinctio laboriosam!
+                </p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi obcaecati eius iusto. Ipsa eaque quidem iste, sed numquam vel commodi dolor et praesentium minus voluptas alias? Fuga inventore ipsa quas. 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus iure recusandae.
+                </p>
+            </section>
+            <footer>
+                <a href="#twitch">Twitch</a>
+                <a href="#twitter">Twitter</a>
+                <a href="#youtube">Youtube</a>
+            </footer>
+        </div>
+    </body>
+</html>
