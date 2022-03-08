@@ -1,0 +1,330 @@
+/*Prior to this moment, I realize I have been writing bad codes in my
+100devs projects, not using headings the right way, and using lots of
+divs which has no semantic meaning.
+
+As TO-DO on a later date, I would be cleaning up this codes and making
+them SEO compatible. This is a significant learning curve, and I'm glad 
+I'm going through it.*/
+
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Clear fix hack */
+  .clearfix:after {
+       content: ".";
+       display: block;
+       clear: both;
+       visibility: hidden;
+       line-height: 0;
+       height: 0;
+  }
+  
+  .clear {
+      clear: both;
+  }
+  
+  /******************************************
+  /* BASE STYLES
+  /*******************************************/
+  
+  body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  a {
+      text-decoration: none;
+  }
+  h1, h2, h3, h4, h5, h6 {
+      font-family: 'Times New Roman', Times, serif
+  }
+  
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  
+  /*Styling the header*/
+  header {
+      padding: 20px 100px 80px;
+      background: url('../images/bgimage.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+  }
+  .nav-bar {
+      margin: 0;
+      padding: 0;
+      float: right;
+  }
+  .nav-bar li {
+      list-style-type: none;
+      display: inline;
+      margin-left: 40px;
+  }
+  .nav-bar a {
+      color: #111;
+      font-size: 14px;
+  }
+  .intro {
+      width: 600px;
+      padding-top: 30px;
+      position: relative;
+  }
+  .intro h1 {
+      font-size: 80px;
+  }
+  .intro form {
+      font-size: 0;
+      position: relative;
+  }
+  #search-page {
+      padding: 15px 15px 15px 40px;
+      font-size: 12px;
+      border: 1px solid #777;
+      border-right: transparent;
+      border-radius: 8px 0 0 8px;
+      width: 475px;
+  }
+  .fa.fa-search {
+      position: absolute;
+      top: 429px;
+      left: 15px;
+      z-index: 1;
+      color: #aaa;
+  }
+  #location {
+      padding: 15px;
+      font-size: 12px;
+      color: #ffffff;
+      background-color: #ff8800;
+      border: 1px solid #ff8800;
+      border-radius: 0 7px 7px 0;
+  }
+  .sm-count {
+      padding: 0;
+      margin: 40px 0;
+  }
+  .sm-count li {
+      list-style-type: none;
+      display: inline;
+      margin-right: 55px;
+  }
+  .fa-facebook, .fa-twitter, .fa-instagram {
+      color: #ff8800;
+      font-size: 50px;
+      padding-right: 10px;
+  }
+
+  /*Styling the first section(Discover)*/
+  .discover {
+    padding: 80px 120px 120px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../images/discover.jpeg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, top left;
+    background-size: cover, cover;
+  }
+  .sec-content {
+      width: 620px;
+      margin-left: 430px;
+  }
+  .sec-content p:first-child {
+      color: #ffaa4d;
+      font-weight: 700;
+  }
+  .sec-content p {
+      text-align: justify;
+      line-height: 1.5em;
+  }
+  .sec-content h2 {
+      font-size: 60px;
+  }
+  .sec-content button {
+      color: #ffffff;
+      background-color: #ff8800;
+      padding: 15px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+  }
+  .sec-content span {
+      background-color: #ffaa4d;
+      padding: 17px;
+      position: relative;
+      left: 16px;
+      border-radius: 0 8px 8px 0;
+  }
+
+  /*Styling the second section(Speciality)*/
+  .speciality {
+      padding: 60px 100px;
+      background-color: #f2f6f7;
+  }
+  .sp-order {
+      text-align: center;
+  }
+  .sp-order p {
+      color: #ffaa4d;
+      font-weight: 700;
+  }
+  .sp-order h2 {
+      font-size: 70px;
+      margin-top: 0;
+  }
+  .brunched {
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+  }
+  .brunched li {
+      list-style-type: none;
+      display: inline-block;
+      font-size: 16px; /*Font size of parent element was set to 0 to remove the whitespace between child elements that have inline-block display*/
+  }
+  .brunched li a {
+      color: #555;
+      padding: 15px 25px;
+      font-weight: 700;
+      border-bottom: 1px solid #ccc;
+  }
+  .brunched a:active {
+      border-bottom: 1px solid #ffaa4d;
+      color: #ffaa4d;
+  }
+  .brunched .active a {
+      color: #ffaa4d;
+      border-bottom: 1px solid #ffaa4d;
+  }
+  .bf-image-container {
+      margin-top: 75px;
+  }
+  .cuisine-option {
+      float: left;
+      width: 265px; 
+      height: 330px;
+      margin-right: 29px;
+      margin-bottom: 29px;
+      position: relative;
+  }
+  .cuisine-option:nth-of-type(4), .cuisine-option:nth-of-type(8) {
+      margin-right: 0;
+  }
+  .pricing {
+      width: 265px;
+      height: 330px;
+      position: absolute;
+      top: 0;
+      padding: 20px 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      visibility: hidden;
+  }
+  #sale {
+      padding: 8px 15px;
+      color:#fff;
+      background-color: #ff8800;
+      border-radius: 20px/50%;
+      position: relative;
+      left:50%;
+      margin-left: -70px;
+  }
+  #span::after {
+      content: '';
+      clear: both;
+  }
+  .pricing p {
+      color: #ffffff;
+      font-size: 32px;
+  }
+  .checked {
+      color: #ffaa4d;
+  }
+  .pricing a {
+      color: #ffffff;
+      background-color: #ff8800;
+      padding: 15px;
+      border-radius: 5px;
+  }
+  .cuisine-option:hover .pricing {
+      visibility: visible;
+  }
+
+  /*Styling the third section(Opening)*/
+  .opening {
+      padding: 80px 100px;
+      text-align: center;
+      background-color: #fdfdfe;
+  }
+  .op-hours {
+      text-align: center;
+  }
+  .op-hours > p {
+      color: #ffaa4d;
+      font-weight: 700;
+  }
+  .op-hours h2 {
+      font-size: 70px;
+      margin-top: 0;
+  }
+  .op-hours h3 {
+      font-size: 32px;
+      color: #ffaa4d;
+      margin: 0 auto;
+  }
+  .op-hours ul {
+      margin: 0;
+      padding: 0;
+  }
+  .op-hours li {
+      list-style-type: none;
+      display: inline-block;
+  }
+  .op-hours li:first-of-type {
+      margin-right: 200px;
+  }
+
+  /*Styling the fourth section(Testimonials)*/
+  .testimonials {
+      padding: 60px 200px;
+      background-color: #fff;
+      text-align: center;
+      position: relative;
+  }
+  .testimonials p:first-of-type {
+      font-weight: 700;
+      color: #ffaa4d;
+      margin-bottom: 0;
+  }
+  .testimonials h2 {
+      font-size: 70px;
+      margin-top: 0;
+  }
+  .cust-image img {
+      border-radius: 50%;
+  }
+  .testimonials p:nth-of-type(2) {
+      font-size: 32px;
+      margin: 0;
+  }
+  .cust-image ~ p + p {
+      color: #777;
+      margin-top: 0;
+      font-size: 24px;
+  }
+  .testimonials p:last-of-type {
+      line-height: 1.5em;
+      font-size: 24px;
+  }
+  #quotes-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-100px) rotate(180deg);
+      font-size: 400px;
+      color: #ddd;
+      opacity: 0.3;
+  }
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
