@@ -1,0 +1,427 @@
+/* open-sans-regular - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/open-sans-v27-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/open-sans-v27-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/open-sans-v27-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/open-sans-v27-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/open-sans-v27-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/open-sans-v27-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+/* open-sans-700 - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/open-sans-v27-latin-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/open-sans-v27-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/open-sans-v27-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/open-sans-v27-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/open-sans-v27-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/open-sans-v27-latin-700.svg#OpenSans') format('svg'); /* Legacy iOS */
+  }
+
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Clear fix hack */
+  .clearfix:after {
+       content: ".";
+       display: block;
+       clear: both;
+       visibility: hidden;
+       line-height: 0;
+       height: 0;
+  }
+  
+  .clear {
+      clear: both;
+  }
+  
+  /******************************************
+  /* BASE STYLES
+  /*******************************************/
+  
+  body {
+      font-family: Arial, Helvetica, sans-serif; /*fallback font*/
+      font-family: 'Open Sans';
+      background-color: #f8f8fa;
+      margin: 0;
+  }
+  p {
+      line-height: 1.5em;
+      color: #777;
+  }
+  a {
+      text-decoration: none;
+  }
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  /*Styling the header*/
+  header {
+      background-color: #1d2534;
+      height: 570px;
+      padding: 50px 100px;
+      color: #ccc;
+  }
+  #dot {
+      width: 20px;
+      height: 20px;
+      border: 3px solid white;
+      border-radius: 50%;
+      float: left;
+  }
+  .nav-bar {
+      margin: 0;
+      padding: 0;
+      float: right;
+  }
+  .nav-bar li {
+      list-style-type: none;
+      display: inline;
+      padding-left: 45px;
+      font-size: 12px;
+  }
+  .nav-bar a {
+      text-decoration: none;
+      color: #ccc;
+  }
+  .intro-text {
+      margin-top: 100px;
+      width: 500px;
+      float: left;
+  }
+  .take-action {
+      margin: 70px 0 0 0;
+      padding: 0;
+  }
+  .take-action li {
+      list-style-type: none;
+      display: inline;
+      padding-right: 40px;
+      font-weight: 700;
+  }
+  .take-action li:first-child a {
+      background-color: #f8f8fa;
+      padding: 15px 40px;
+      color: black;
+      border-radius: 10px;
+  }
+  .take-action a {
+      font-size: 12px;
+      color: white;
+  }
+  .image-wrapper {
+      float: right;
+      margin-top: 100px;
+      width: 530px;
+      height: 350px;
+      padding: 15px 30px;
+      border-radius: 30px;
+      background-color: #ffffff;
+  }
+  .img-box {
+      background-color: #dee0e9;
+      width: 470px;
+      height: 320px;
+      position: relative;
+  }
+  .img-box img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+  }
+  /*Styling the first section(Marketing)*/
+  .marketing {
+      padding: 100px;
+  }
+  .spt-platforms {
+      margin: 0;
+      padding: 0;
+      float: right;
+  }
+  .spt-platforms li {
+      list-style-type: none;
+      display: inline;
+      padding-left: 30px;
+  }
+  .spt-platforms li:nth-of-type(3) {
+      position: relative;
+      top: 12px;
+  }
+  .marketing article {
+      width: 500px;
+      float: left;
+      margin-top: 120px;
+  }
+  .order {
+      margin-top: 120px;
+  }
+  .order a {
+    background-color: #f8f8fa;
+    padding: 15px 40px;
+    color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    color: white;
+    background-color: #181f2d;
+  }
+  .main-media {
+      float: right;
+      width: 540px;
+      margin-top: 100px;
+  }
+  .fm-image {
+      float: left;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 12px;
+      width: 240px;
+      background-color: white;
+      margin: 0 0 30px 30px;
+  }
+  .fm-text {
+      padding: 10px 20px;
+  }
+  .fm-text h4 {
+      margin: 0 0 8px 0;
+  }
+  .fm-text p {
+      margin: 0;
+      font-size: 14px;
+  }
+  /*Styling the second section*(Solution)*/
+  .solution {
+      padding: 100px;
+  }
+  .feature-media {
+      width: 510px;
+      height: 470px;
+      background-color: #dee0e9;
+      position: relative;
+      border-radius: 7px;
+      float: left;
+      margin-right: 100px;
+  }
+  .feature-media img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);   
+  }
+  .feature-text h5 {
+      margin: 0;
+  }
+  /*Styling the third section(Method)*/
+  .method {
+      padding: 100px;
+  }
+  .method .feature-text {
+      font-size: 0.9rem;
+  }
+  .method-head {
+      text-align: center;
+      width: 700px;
+      font-size: 0.975rem;
+      margin: 0 auto 70px;
+  }
+  .method .order {
+      text-align: center;
+      margin-top: 200px;
+  }
+  .mtd-list li {
+      list-style-type: none;
+  }
+  .mtd-list p {
+      margin-top: 0;
+      padding-left: 620px;
+  }
+  .mtd-list span {
+      padding-left: 10px;
+      font-weight: 700;
+  }
+  .mtd-list li::before {
+      content: '\25A2';
+      font-size: 40px;
+      vertical-align: middle;
+  }
+  /*Styling the fourth section (Perks)*/
+  .perks {
+      padding: 100px;
+      font-size: 0.975rem;
+      background-color: #1d2534;
+  }
+  .perks-head {
+    width: 350px;
+    margin-bottom: 65px;
+    color: #ccc;
+  }
+  .technologies {
+      margin: 0;
+      padding: 0;
+  }
+  .technologies li {
+      list-style-type: none;
+      display: inline-block;
+      width: 350px;
+      height: 190px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      margin: 0 30px 30px 0;
+      padding: 20px;
+      position: relative;
+  }
+  .technologies li::before {
+      content: '\25A2';
+      font-size: 40px;
+  }
+  #sp-pk::before {
+      content: '';
+      font-size: 0;
+  }
+  .technologies a {
+      color: #777;    
+  }
+  .technologies li:nth-of-type(2) {
+      position: relative;
+      top: 65px;
+  }
+  .technologies li:nth-of-type(2) a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+  }
+  .technologies a span {
+      font-weight: 700;
+      color: black;
+  }
+
+  /*For this section, we have employed tweaks in positioning the second li element
+  to be in line with the others. While this was effective, it doesn't really look
+  like best practice.
+
+  So when I find the time, go over the list again and see what's upsetting our page.
+  Check the mark-up and remove those <br> elements and introduce <p> elements to thw
+  list*/
+
+  /*Styling the fifth section (Integration)*/
+  .integration {
+      padding: 100px;
+  }
+  .integration .order {
+      margin-top: 100px;
+  }
+
+  /*Styling the sixth section(Acceptance)*/
+  .acceptance {
+      padding: 100px;
+      text-align: center;
+      background-color: #ffffff;
+  }
+  .acceptance h5 {
+      margin-top: 0;
+      color: #777;
+  }
+  .acceptance > h5 + p {
+      width: 770px;
+      margin: auto;
+      font-size: 24px;
+  }
+
+  /*Styling the sevent section*(Place-Order)*/
+  .place-order {
+      padding: 50px 100px;
+      background-color: #181f2d;
+      background: linear-gradient(90deg, #1d2534, #181f2d);
+      color: #ccc;
+      position: relative;
+  }
+  .place-order h5, .place-order h2 {
+      margin-top: 0;
+  }
+  .place-order .order {
+      margin: 0;
+      position: absolute;
+      top: 70px;
+      left: 50%;
+  }
+  .place-order .order a {
+      color: #181f2d;
+      background-color: #dee0e9;
+      margin-right: 30px;
+      font-weight: 700;
+  }
+  .place-order .order a:first-of-type {
+      color: #dee0e9;
+      background-color: #2f313e;
+  }
+
+  /*Styling the footer*/
+  .landing {
+      padding: 40px 100px;
+      font-size: 0.8rem;
+      color: #777;
+  }
+  .cir-cir {
+      float: left;
+      margin-right: 80px;
+  }
+  .cir-cir:first-of-type {
+      width: 250px;
+      margin-right: 35px;
+  }
+  .cir-cir ul {
+      margin: 0;
+      padding: 0;
+  }
+  .cir-cir li {
+      list-style-type: none;
+      padding-bottom: 20px;
+  }
+  .cir-cir a {
+      text-decoration: none;
+      color: #777;
+  }
+  .cir-cir p {
+      font-weight: 700;
+  }
+  .cir-cir span {
+      display: block;
+      margin-bottom: 35px;
+  }
+  #cont li::before {
+      content: '\25a2';
+      font-size: 25px;
+      vertical-align: middle;
+      padding-right: 10px;
+  }
+  #cont li {
+      padding-bottom: 10px;
+  }
+  .cir-cir.products ul {
+      columns: 2;
+      column-gap: 55px;
+  }
+  .cir-cir:last-of-type {
+      margin: 0;
+  }
+  .sm-icons {
+      margin-top: 20px;
+  }
+
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
