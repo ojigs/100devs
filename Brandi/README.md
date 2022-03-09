@@ -1,1 +1,1 @@
-Brandi is a branding and marketing website
+Brandi is a website for a branding and marketing agency
