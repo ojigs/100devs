@@ -131,3 +131,26 @@ switch (true) {
     }
     default: alert("Input a valid number representation");
 }
+
+//Following Second
+let time = prompt("Specify the time in this format", "00h00m00s")
+let hour = Number(time.substring(0,2));
+let minute = Number(time.substring(3,5));
+let seconds = Number(time.substring(6,8));
+seconds++;
+if (seconds > 59) {
+    minute++;
+    seconds = 0;
+    if (minute > 59) {
+        hour++;
+        minute = 0;
+        seconds = 0;
+        if (hour > 23) {
+            hour = 0;
+            minute = 0;
+            seconds = 0;
+        }
+    }
+}
+let newTime = `${hour}h${minute}m${seconds}s`;
+alert(newTime)
