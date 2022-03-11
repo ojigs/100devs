@@ -423,5 +423,125 @@
 
   /******************************************
   /* ADDITIONAL STYLES
+
+  /*Media Queries*/
+
+  /*Small screens*/
+  @media screen and (max-width: 767px) {
+    header, main, .marketing, .solution, .method, .perks, .integration, .acceptance, .place-order, footer.landing {
+        padding: 40px 20px;
+        height: auto;
+        
+        max-width: 100%;
+    }
+    * {
+        max-width: 100%;
+        float: none;
+    }
+    header {
+        height: auto;
+    }
+    .image-wrapper, .intro-text, .take-action, .marketing article, .order, .main-media {
+        float: none;
+        margin-top: 30px;
+    }
+    .take-action li { 
+        display: block;
+        margin-top: 40px;
+    }
+    .spt-platforms {
+        float: none;
+    }
+    .spt-platforms li {
+        padding-left: 0;
+        display: inline-block;
+    }
+    .spt-platforms li:nth-of-type(3) {
+        top: 0;
+    }
+    .spt-platforms li:nth-of-type(4), .spt-platforms li:nth-of-type(5) {
+        vertical-align: top;
+    }
+    .fm-image {
+        margin-left: 0;
+        width: 100%;
+    }
+    .fm-image img {
+        width: 100%;
+        height: auto;
+    }
+    .feature-media {
+        float: none;
+        margin: 0;
+    }
+    .feature-text {
+        margin-top: 20px;
+    }
+    .mtd-list {
+        padding-left: 0;
+    }
+    .mtd-list p {
+        padding-left: 50px;
+    }
+    .method .order {
+        margin-top: 30px;
+    }
+    .technologies li {
+        display: block;
+        height: auto;
+        margin: 0 0 30px 0;
+    }
+    #sp-pk {
+        top: 0;
+        height: 200px;
+    }
+    .place-order .order {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .place-order .order a {
+        margin-bottom: 20px;
+    }
+    .landing .cir-cir:not(:nth-of-type(1), :nth-of-type(2)) {   
+        margin-right: 0;
+        width: 50%;
+    }
+    /*Navigation menu*/
+    nav {
+        position: relative;
+    }
+    .nav-bar {
+        width: 85%;
+        margin-top: 35px;
+        padding: 20px;
+        background-color: #ccc;
+        border-radius: 5px;
+        display: none;
+    }
+    .nav-bar li {
+        display: block;
+        padding-left: 0;
+        font-size: 16px;
+        text-align: right;
+        padding-bottom: 30px;     
+    }
+    .nav-bar li a {
+        color: #000;
+    }
+    nav label {
+        font-size: 32px;
+        position: absolute;
+        right: 0;
+        display: block;
+    }
+    #hamburg-menu::after {
+        clear: both;
+    }
+    #hamburg-menu:checked ~ ul {
+        display: block;
+    }
+  }
+  
   /*******************************************/
   
