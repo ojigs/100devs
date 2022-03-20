@@ -154,3 +154,26 @@ if (seconds > 59) {
 }
 let newTime = `${hour}h${minute}m${seconds}s`;
 alert(newTime)
+
+//SOLUTIONS FOR ELOQUENT JAVASCRIPT EXERCISE
+//CHAPTER 2
+
+//Looping Triangles
+let triang = '';
+for (let i = 0; i < 7; i++) {
+    triang += '#'
+    console.log(triang)
+}
+
+//Chessboard
+let size = 8
+let type1 = '';
+for (let j = 0; j < size; j++) {
+    for (let i = 0; i < size; i++) {
+        if ((i + j) % 2 == 0) {
+            type1 += ' '
+        } else type1 += '#'
+    }
+    type1 += '\n';
+}
+console.log(type1)
