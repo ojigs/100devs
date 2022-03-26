@@ -118,3 +118,25 @@ let mary = { name: "Mary", age: 29 };
 let arr = [ john, pete, mary ];
 console.log(getAverageAge(arr))
 
+//Extra practice on Array methods
+let string = 'My name is Michael'
+
+function reversedWords(str) {
+    str = str.split(' ')
+    let result = str.map(item => [...item])
+    const reversed = result.map(item =>item.reverse().join(''))
+    return reversed
+}
+console.log(reversedWords(string))
+
+function boolToWord(bool) {
+    return bool ? 'Yes' : 'No';
+}
+console.log(boolToWord(true))
+
+function digitize(n) {
+    n = n.toString().split('').map(Number).reverse()
+    return n
+}
+let n = 12345
+console.log(digitize(n))
