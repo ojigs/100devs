@@ -49,3 +49,42 @@ function multiplyNumeric(obj) {
 }  
 multiplyNumeric(menu);
 console.log(menu)
+
+
+//Create a calculator
+let calculator = {
+    read() {
+        this.num1 = Number(prompt("What's the first operand?"))
+        this.num2 = Number(prompt("What's the second operand?"))
+    },
+    sum() {
+        return this.num1 + this.num2
+    },
+    mul() {
+        return this.num1 * this.num2
+    }
+};
+  
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+
+//Chaining
+// Modify the code of up, down and showStep to make the calls chainable, like this: ladder.up().up().down().showStep().down().showStep()
+let ladder = {
+    step: 0,
+    up() {
+        this.step++;
+        return this;
+    },
+    down() {
+        this.step--;
+        return this;
+    },
+    showStep: function() { // shows the current step
+        alert( this.step );
+        return this;
+    }
+};
+
+ladder.up().up().down().showStep().down().showStep();
