@@ -88,3 +88,43 @@ let ladder = {
 };
 
 ladder.up().up().down().showStep().down().showStep();
+
+
+//CONSTRUCTORS
+//Create new calculator
+function Calculator() {
+  this.read = function() {
+    this.value1 = Number(prompt("What's the first value?", 0));
+    this.value2 = Number(prompt("What's the second value?", 0));
+  }
+  this.sum = function() {
+    return this.value1 + this.value2
+  }
+  this.mul = function() {
+    return this.value1 * this.value2
+  }
+}
+
+let calculator = new Calculator()
+
+calculator.read()
+
+alert( "Sum=" + calculator.sum() );
+
+alert( "Mul=" + calculator.mul() );
+
+//Create a new Accumulator
+function Accumulator(startingValue) {
+  this.value = startingValue 
+  this.read = function() {
+    this.addNum = Number(prompt('?',0))
+    this.value += this.addNum
+  }
+}
+
+let accumulator = new Accumulator(1)
+
+accumulator.read();
+accumulator.read();
+
+alert(accumulator.value);
