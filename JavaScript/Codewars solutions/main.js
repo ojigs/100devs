@@ -43,3 +43,28 @@ while (principal < desired) {
 return years
 }
 console.log(calculateYears(1000, 0.05, 0.18, 1100))
+
+
+// Given an integer as input, can you round it to the next (meaning, "higher") multiple of 5?
+
+// input:    output:
+// 0    ->   0
+// 2    ->   5
+// 3    ->   5
+// 12   ->   15
+// 21   ->   25
+// 30   ->   30
+// -2   ->   0
+// -5   ->   -5
+// etc.
+
+function int(x) {
+  if (x % 5 !== 0) {
+    return Math.floor(x / 5) * 5 + 5
+  }
+  else {
+    return Math.floor(x / 5) * 5
+  }
+
+}
+console.log(int(-5))
