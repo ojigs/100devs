@@ -85,3 +85,18 @@ function gimme (triplet) {
   return triplet.indexOf(arr[1])
 }
 console.log(gimme([2, 3, 1]))
+
+
+// Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+// a = "abcdefghijklmnopqrstuvwxyz"
+// longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+function longest(a, b) {
+  let arr =  a.concat('', b).split('')
+  let bArr = []
+  for (const x of arr) {
+    if (!bArr.includes(x)) {
+      bArr.push(x)
+    }
+  }
+  return bArr.sort((a,b) => a > b ? 1 : -1).toString()
+}
