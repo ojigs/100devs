@@ -1,1 +1,189 @@
+/******************************************
+/* CSS
+/*******************************************/
 
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #9933ff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+  /* display: block; */
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  width: 900px;
+  height: 100vh;
+  margin: auto;
+  padding: 30px;
+}
+
+.centered {
+  height: 100%;
+  padding: 20px;
+  background-color: #2a1633;
+  color: #ccc;
+  border-radius: 20px;
+  overflow-y: auto;
+  box-shadow: 1px 2px 7px 4px rgba(42, 22, 51, 0.5);
+}
+
+.centered h1 {
+  text-align: center;
+}
+
+.inputbox {
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #9933ff;
+  position: relative;
+}
+
+.fa-search {
+  align-self: center;
+  color: #fff
+}
+
+input {
+  flex: 2;
+  padding-left: 10px;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  color: #fff
+}
+
+button {
+  outline: none;
+  background-color: #2a1633;
+  color: #ccc;
+  border: transparent;
+  border-radius: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.outputbox {
+  display: flex;
+  margin-top: 20px;
+  max-height: 400px;
+}
+
+.image-container {
+  flex: 1.5;
+}
+
+.details-container {
+  flex: 2.5;
+  padding: 15px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+}
+
+.heading li:first-child {
+  flex: 3;
+}
+
+.heading li:nth-child(2) {
+  flex: 1;
+  text-align: right;
+}
+
+.plot {
+  margin: 20px 0;
+}
+
+.plot, h4 {
+  font-size: 18px;
+  font-weight: 400;
+  padding-top: 40px;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 18px;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media screen and (max-width: 899px) {
+  section {
+    width: 100%;
+    padding: 0;
+  }
+  .outputbox {
+    flex-direction: column;
+  }
+  .centered {
+    border-radius: 0;
+  }
+  button {
+    padding: 1px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .image-container {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width:421px) and (max-width: 599px) {
+  .inputbox {
+    width: 100%;
+  } 
+}
+
+@media screen and (max-width: 420px) {
+  /* button {
+    position: relative;
+    top: 150%;
+    left: -50%;
+    transform: translate(50% 50%);
+    z-index: 1;
+  } */
+  button {
+    padding: 10px;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    margin-left: -40px;
+    box-shadow: 1px 2px 7px 4px #9933ff;
+  }
+  .inputbox {
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 65px;
+  }
+
+}
