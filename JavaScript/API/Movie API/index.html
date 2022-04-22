@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Movie API</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<section>
+			<div class="centered">
+				<h1>Get your favourite movie details</h1>
+				<div class="inputbox">
+					<i class="fa fas fa-search"></i>
+					<input type="text" name="" value="" placeholder="Enter movie title">
+					<button type="button" name="button">Find Movie</button>
+				</div>
+				<div class="outputbox">
+					<div class="image-container">
+						<img src="img/pokemon.jpeg">
+					</div>
+					<div class="details-container">
+						<ul class="heading">
+							<li id="title">Title:</li>
+							<li id="year">Year</li>
+						</ul>
+						<div class="plot">
+							Plot:
+							<h3></h3>
+						</div>
+						<h4>Actors:&nbsp;<span id="actors"></span></h4>
+						<h4>Box-office:&nbsp;<span id="box-office"></span></h4>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
