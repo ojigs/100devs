@@ -22,3 +22,16 @@ Test.assertEquals(XO("xxOo"),true);
 Test.assertEquals(XO("xxxm"),false);
 Test.assertEquals(XO("Oo"),false);
 Test.assertEquals(XO("ooom"),false);
+
+
+//REVERSE WORDS
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+// Examples
+
+// "This is an example!" ==> "sihT si na !elpmaxe"
+// "double  spaces"      ==> "elbuod  secaps"
+
+function reverseWords(str) {
+  // Go for it
+  return str.split(' ').map(item => item.split('').reverse().join('')).join(' ')
+}
