@@ -36,3 +36,36 @@ function bouncingBall(h, bounce, window) {
     } else return -1
 }
 console.log(bouncingBall(30, 1, 1.5))
+
+
+//3 BEST SOLUTIONS
+
+function bouncingBall(h,  bounce,  window) {
+  var rebounds = -1;
+  if (bounce > 0 && bounce < 1) while (h > window) rebounds+=2, h *= bounce;
+  return rebounds;
+}
+
+
+function bouncingBall(h,  bounce,  window) {
+  if( h <= 0 || bounce >= 1 || bounce <= 0 || window >= h) return -1
+  let seen = 0;
+  
+  while(h > window){
+    seen += 1
+    h *= bounce
+    if(h > window) seen += 1
+  }
+  
+  return seen;
+}
+
+
+function bouncingBall(h,  bounce,  window) {
+  if(h <= 0 || bounce <= 0 || bounce >= 1 || window >= h){
+    return -1;
+  }
+
+  var newHeight = h * bounce;
+  return bouncingBall(newHeight, bounce, window) + 2;
+}
