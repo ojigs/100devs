@@ -32,3 +32,15 @@
 // Note for C
 
 // The two arrays have the same size (> 0) given as parameter in function comp.
+
+
+function comp(a, b) {
+  if (a.length === b.length) {
+    for (let i=0; i < a.length; i++) {
+      if (b.find((index, array) => Math.pow(a[i], 2)) === -1) {
+        return false
+      }
+    }
+    return true
+  }
+}
