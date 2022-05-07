@@ -39,3 +39,21 @@ const comp = (a1, a2) => {
   return a1.map(x => x * x).sort().toString() === a2.sort().toString();
 }
 console.log(comp(a, b))
+
+
+
+//BEST SOLUTIONS
+function comp(a1, a2){
+  if (a1==null || a2==null) return false;
+  a1=a1.sort(function(a,b){return b<a});
+  a2=a2.sort(function(a,b){return b<a});
+  for (var i in a1) if (Math.pow(a1[i],2)!=a2[i]) return false;
+  return true;
+}
+
+//2nd BEST SOLUTION
+function comp(array1, array2) {
+  if(array1 == null || array2 == null) return false;
+  array1.sort((a, b) => a - b); array2.sort((a, b) => a - b);
+  return array1.map(v => v * v).every((v, i) => v == array2[i]);
+}
