@@ -1,11 +1,3 @@
-/*Prior to this moment, I realize I have been writing bad codes in my
-100devs projects, not using headings the right way, and using lots of
-divs which has no semantic meaning.
-
-As TO-DO on a later date, I would be cleaning up this codes and making
-them SEO compatible. This is a significant learning curve, and I'm glad 
-I'm going through it.*/
-
 /* Box Model Hack */
 * {
     box-sizing: border-box;
