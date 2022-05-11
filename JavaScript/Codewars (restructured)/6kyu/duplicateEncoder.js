@@ -10,6 +10,16 @@
 
 // Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
+//My solution 
+function duplicateEncode(word){
+    // ...
+    let newWord = word.split('')
+    return newWord.map((item, index, array) =>array.indexOf(item) === array.lastIndexOf(item) ? '(' : ')').join('')
+}
+
+
+
+//Best solutions
 
 function duplicateEncode(word){
   return word
@@ -20,3 +30,4 @@ function duplicateEncode(word){
     })
     .join('');
 }
+
