@@ -13,7 +13,7 @@
 //My solution 
 function duplicateEncode(word){
     // ...
-    let newWord = word.split('')
+    let newWord = word.toLowerCase().split('')
     return newWord.map((item, index, array) =>array.indexOf(item) === array.lastIndexOf(item) ? '(' : ')').join('')
 }
 
