@@ -16,7 +16,12 @@ function getFetch(){
         document.querySelector('#year').innerText = data.Year;
         document.querySelector('h3').innerText = data.Plot;
         document.querySelector('#actors').innerText = data.Actors;
-        document.querySelector('#box-office').innerText = data.BoxOffice
+        if (data.BoxOffice === undefined) {
+          document.querySelector('#box-office').innerText = 'N/A'
+        }
+        else {
+          document.querySelector('#box-office').innerText = data.BoxOffice
+        }
       })
       .catch(err => {
           console.log(`error ${err}`)
