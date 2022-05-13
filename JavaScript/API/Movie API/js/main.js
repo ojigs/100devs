@@ -5,7 +5,7 @@ function getFetch(){
   const choice = document.querySelector('input').value
   // console.log(choice)
 
-  const url = `http://www.omdbapi.com/?i=tt3896198&apikey=ac0ce241&t=${choice}`
+  const url = key + choice
 
   fetch(url)
       .then(res => res.json()) // parse response as JSON
