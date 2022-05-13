@@ -1,4 +1,4 @@
-//Example fetch using pokemonapi.co
+//Fetch using ombd API to field movie data
 document.querySelector('button').addEventListener('click', getFetch)
 
 function getFetch(){
