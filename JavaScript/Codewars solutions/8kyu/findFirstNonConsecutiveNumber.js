@@ -18,3 +18,24 @@
 // Python, Rust, Scala: None
 // Julia: nothing
 // Nim: none(int) (See options)
+
+//My solution
+function firstNonConsecutive (arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (Math.abs(arr[i] - arr[i+1]) > 1) {
+        return arr[i + 1]
+      }
+    }
+    return null
+}
+
+
+//Other solutions
+function firstNonConsecutive (arr) {
+    let result = arr.find((val, index) => val !== index + arr[0]);
+
+    return (Number.isInteger(result)) ? result : null;
+}
+
+
+firstNonConsecutive = arr => arr.length == 1 ? null : arr[0] + 1 != arr[1] ? arr[1] : firstNonConsecutive(arr.slice(1)) 
