@@ -23,3 +23,11 @@ function findShort(s){
   }
   return smallest.length;
 }
+
+
+
+const findShort = (s) => s
+  .split(' ')
+  .sort((a, b) => b.length - a.length)
+  .pop()
+  .length;
