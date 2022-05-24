@@ -26,3 +26,46 @@
 
 // Note:
 // If you are given an array with multiple answers, return the lowest correct index.
+
+
+//My solution
+function findEvenIndex(arr) {
+    //for every item of the array, draw a function to check if sum of right sides is equal to sum of left sides
+    let leftSum = 0
+        
+    let rightSum = arr.reduce((sum, curr) => sum + curr, 0)
+
+    for (let i = 0; i < arr.length; i++) {
+        if (i > 0) {
+            leftSum += arr[i-1]
+        }
+        rightSum -= arr[i]
+
+        if (leftSum === rightSum) {
+            return  i 
+        }
+        
+    }
+    return -1
+    
+  
+}
+
+
+
+//other solutions
+const sum = (a, from, to) => a.slice(from, to).reduce((a, b) => a + b, 0)
+const findEvenIndex = a => a.findIndex((el, i) => sum(a, 0, i) === sum(a, i + 1));
+
+
+
+function findEvenIndex(arr)
+{
+  function sum(arr){
+    return arr.reduce(function(a,b){return a+b;},0);
+  }
+
+  return arr.findIndex(function(el,i,arr){
+    return sum(arr.slice(0, i)) === sum(arr.slice(i+1,arr.length));
+  });
+}
