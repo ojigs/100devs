@@ -13,3 +13,23 @@
 //     Find the unique string
 //     Find The Unique
 
+//My solution
+function findUniq(arr) {
+    let uniqueIndex = arr.findIndex((item, index, array) => {
+        return array.indexOf(item) === array.lastIndexOf(item)
+        
+    })
+    return arr[uniqueIndex]
+}
+
+
+//other solutions
+function findUniq(arr) {
+  arr.sort((a,b)=>a-b);
+  return arr[0]==arr[1]?arr.pop():arr[0]
+}
+
+
+function findUniq(arr) {
+  return arr.find(n => arr.indexOf(n) === arr.lastIndexOf(n));
+}
