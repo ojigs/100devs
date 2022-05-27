@@ -11,3 +11,21 @@
 //     There will always be at least one number in the input string.
 //     Output string must be two numbers separated by a single space, and highest number is first.
 
+//My solution
+function highAndLow(numbers){
+  // ...
+  const arr = numbers.split(' ').sort((a,b) => a - b)
+  return `${arr[arr.length - 1]} ${arr[0]}`
+}
+
+//other solutions
+function highAndLow(numbers){
+  numbers = numbers.split(' ').map(Number);
+  return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
+}
+
+
+function highAndLow(numbers){
+  numbers = numbers.split(' ');
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
