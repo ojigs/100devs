@@ -19,3 +19,21 @@
 // Remarks
 
 // All arrays or lists will always have at least one element, so you don't need to check the length. Also, your function will always get an array or a list, you don't have to check for null, undefined or similar.
+
+
+//My solution
+function minMax(arr){
+  arr = arr.sort((a,b) => a - b)
+  return [arr[0], arr[arr.length - 1]]
+}
+
+
+//Other solutions
+function minMax(arr){
+  return [Math.min(...arr), Math.max(...arr)];
+}
+
+
+function minMax(arr){
+  return [Math.min.apply(Math, arr), Math.max.apply(Math, arr)];
+}
