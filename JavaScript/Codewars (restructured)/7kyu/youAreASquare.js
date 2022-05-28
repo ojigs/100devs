@@ -21,3 +21,16 @@
 
 
 //My solution
+const isSquare = function(n){
+  if (n === 0) return true
+  return n % Math.sqrt(n) === 0
+}
+
+
+//other solutions
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
+}
+
+
+const isSquare = n => Number.isInteger(Math.sqrt(n));
