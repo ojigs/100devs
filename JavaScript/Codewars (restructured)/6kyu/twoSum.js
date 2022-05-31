@@ -7,3 +7,15 @@
 // Based on: http://oj.leetcode.com/problems/two-sum/
 
 // twoSum [1, 2, 3] 4 === (0, 2)
+
+
+//My solution
+function twoSum(numbers, target) {
+    let arr = []
+    for (let i = 0; i > numbers.length; i++) {
+        arr.push(numbers.find((num, index) => target - num))
+    }
+    return arr
+}
+
+console.log(twoSum([1,2,3], 4))
