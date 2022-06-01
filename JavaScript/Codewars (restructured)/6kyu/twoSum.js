@@ -9,23 +9,23 @@
 // twoSum [1, 2, 3] 4 === (0, 2)
 
 
-//My solution
+//MAdopted solution
 function twoSum(numbers, target) {
-    let arr = []
-    for (let i = 0; i > numbers.length; i++) {
-        arr.push(numbers.find((num, index) => target - num))
+    for (var i = 0; i < numbers.length-1; i++) {
+        for (var j = i+1; j < numbers.length; j++) {
+            if (numbers[i] + numbers[j] === target) return [i, j];
+        }
     }
-    return arr
 }
 
-console.log(twoSum([1,2,3], 4))
 
+//Another solution
 function twoSum(numbers, target) {
-    let arr = []
-    for (let i = 0; i < numbers.length; i++) {
-        let cot = (numbers.find((num, index) => num === target - num))
-        arr.push(cot)
-    }
-    return arr
+  var tmp, hash = {};
+  numbers.forEach(function(a, i){ hash[a] = i; })
+  
+  for (var i = 0; i < numbers.length; i++){
+    tmp = target - numbers[i];
+    if (typeof hash[tmp] !== 'undefined') return [i, hash[tmp]]
+  }
 }
-
