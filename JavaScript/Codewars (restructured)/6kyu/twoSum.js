@@ -19,3 +19,13 @@ function twoSum(numbers, target) {
 }
 
 console.log(twoSum([1,2,3], 4))
+
+function twoSum(numbers, target) {
+    let arr = []
+    for (let i = 0; i < numbers.length; i++) {
+        let cot = (numbers.find((num, index) => num === target - num))
+        arr.push(cot)
+    }
+    return arr
+}
+
