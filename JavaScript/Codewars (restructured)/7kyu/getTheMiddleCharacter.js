@@ -25,3 +25,12 @@ function getMiddle(s)
   let num = s.length/2
   return s.length % 2 === 0 ? s.charAt(num - 1) + s.charAt(num) : s.charAt(Math.floor(num))
 }
+
+
+//Other solutions
+function getMiddle(s)
+{
+  return s.slice((s.length-1)/2, s.length/2+1);
+}
+
+
