@@ -17,3 +17,11 @@
 // #Output
 
 // The middle character(s) of the word represented as a string.
+
+
+//My solution
+function getMiddle(s)
+{
+  let num = s.length/2
+  return s.length % 2 === 0 ? s.charAt(num - 1) + s.charAt(num) : s.charAt(Math.floor(num))
+}
