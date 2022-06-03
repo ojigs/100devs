@@ -20,3 +20,24 @@
 //   " ********* ", 
 //   "***********"
 // ]
+
+
+//My solution
+function towerBuilder(n) {
+  let arr = []
+  const width = (2 * n) -1;
+  const mid = Math.floor(width / 2);
+
+  for(let i = 0; i < n; i++) {
+      let block = '';
+      for(let j = 0; j < width; j++) {
+          if(j < mid - i || j > mid + i) {
+              block += ' ';
+          } else {
+              block += '*';
+          }
+      }
+      arr.push(block);
+  }
+  return arr
+}
