@@ -12,3 +12,25 @@
 String.prototype.toJadenCase = function() {
   return this.split(' ').map(item => item.replace(item[0], item[0].toUpperCase())).join(' ')
 }
+
+String.prototype.toJadenCase = function () {
+  return this.split(' ').map(item => item[0].toUpperCase() + item.slice(1)).join(' ')
+};
+
+
+//Other solutions
+String.prototype.toJadenCase = function () { 
+  return this.split(" ").map(function(word){
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join(" ");
+}
+
+
+String.prototype.toJadenCase = function () {
+
+  function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
+  return this.split(' ').map(capitalizeFirstLetter).join(' ');
+};
