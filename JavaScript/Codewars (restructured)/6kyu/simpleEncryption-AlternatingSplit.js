@@ -67,6 +67,63 @@ function decrypt(encryptedText, n) {
 }
 
 
+
+function encrypt(text, n) {
+  if (!text || !text.length || n <= 0)
+  {
+    return text;
+  }
+
+  var res = "";
+  var oth = "";
+
+  for (var i = 0; i < text.length; ++i)
+  {
+    if (i % 2 == 0)
+    {
+      oth += text[i];
+    }
+    else
+    {
+      res += text[i];
+    }
+  }
+
+  return encrypt(res + oth, --n);
+}
+
+function decrypt(encryptedText, n) {
+  if (!encryptedText || !encryptedText.length || n <= 0)
+  {
+    return encryptedText;
+  }
+
+  var first = encryptedText.slice(0, encryptedText.length / 2);
+  var second = encryptedText.slice(encryptedText.length / 2);
+  
+  var res = "";
+  var i = 0;
+  var j = 0;
+
+  while (res.length < encryptedText.length)
+  {
+    if (res.length % 2 == 0)
+    {
+      res += second[i];
+      i++;
+    }
+    else
+    {
+      res += first[j];
+      j++;
+    }
+  }
+
+  return decrypt(res, --n);
+}
+
+
+
 function encrypt(text, n) {
   for (let i = 0; i < n; i++) {
     text = text && text.replace(/.(.|$)/g, '$1') + text.replace(/(.)./g, '$1') 
