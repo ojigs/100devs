@@ -15,3 +15,18 @@
 // If the string S is an empty value or the integer N is not positive, return the first argument without changes.
 
 // This kata is part of the Simple Encryption Series:
+
+
+//My solution
+function encrypt(text, n) {
+  text = text.split('')
+  for (let i = 0; i < n; i++) {
+    let odd = text.filter((item, index) => index % 2 === 0)
+    let even = text.filter((item, index) => index % 2 !== 0)
+  }
+
+}
+
+function decrypt(encryptedText, n) {
+
+}
