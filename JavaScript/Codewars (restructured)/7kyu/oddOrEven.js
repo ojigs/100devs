@@ -18,3 +18,21 @@
 // Output: "even"
 
 // Have fun!
+
+
+//my solution
+function oddOrEven(array) {
+   let sum  = array.reduce((sum, current) => sum + current, 0)
+   return sum % 2 === 0 ? 'even' : 'odd'
+}
+
+
+//other solution
+function oddOrEven(array) {
+  var result = 0;
+  for (var i = 0; i < array.length; i++)
+  {result+=array[i];}
+  if (result%2 == 0)
+  {return "even";}
+  else{return "odd";}
+}
