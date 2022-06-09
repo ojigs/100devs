@@ -28,3 +28,17 @@
 // Note:
 
 // Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
+
+
+//My solution
+function nbYear(p0, percent, aug, p) {
+    let count = 0;
+  while (p0 < p) {
+    p0 = p0 + parseInt(p0 * percent/100 + aug)
+    count++
+  }
+  return count
+}
+
+
+//other solutions
