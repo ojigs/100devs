@@ -12,3 +12,19 @@
 
 
 //my solution
+function betterThanAverage(classPoints, yourPoints) {
+  const average = classPoints.reduce((sum, current) => sum + current, 0)/classPoints.length
+  return yourPoints > average
+}
+
+
+//other solution
+function betterThanAverage(classPoints, yourPoints) {
+  // Your code here
+  var classAvg = 0;
+  for (var i = 0; i < classPoints.length; i++){
+    classAvg += classPoints[i]; 
+  }
+  classAvg = classAvg/classPoints.length; 
+  return yourPoints > classAvg;
+}
