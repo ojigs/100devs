@@ -6,3 +6,13 @@
 
 // Hello, Mr. Spock
 
+//My solution
+function sayHello(name) {
+  return `Hello, ${name}`
+}
+
+
+//other solution
+function sayHello (name) {
+  return 'Hello, ' +  name;
+}
