@@ -19,3 +19,16 @@
 // titleCase('a clash of KINGS', 'a an the of') // should return: 'A Clash of Kings'
 // titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
 // titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
+
+
+//My solution
+function titleCase(title, minorWords = '') {
+  if (title === '') {
+    return ''
+  }
+  minorWords = minorWords.split(' ').map(e => e.toLowerCase())
+  title = title.toLowerCase()
+  return title.split(' ').map((item,index) => (minorWords.some(e=>e===item) && index > 0) ? item : item[0].toUpperCase() + item.slice(1)).join(' ')
+}
+
+
