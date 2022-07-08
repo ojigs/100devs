@@ -19,3 +19,9 @@ function addBinary(a,b) {
   }
   return arr.join('')
 }
+
+
+//other solutions
+function addBinary(a,b){
+  return (a+b).toString(2)
+}
