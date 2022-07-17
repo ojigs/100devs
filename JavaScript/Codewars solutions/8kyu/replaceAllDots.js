@@ -9,3 +9,15 @@
 // Notes
 
 // String str will never be null.
+
+
+//My solution
+function replaceDots(str) {
+  return str.replace(/\./g, '-');
+}
+
+
+//other solution
+var replaceDots = function(str) {
+  return str.replace(/[.]/g, '-');
+}
