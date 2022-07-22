@@ -9,3 +9,11 @@
 // Numbers may be positive or negative, integers or floats.
 
 // Floats with decimal part non equal to zero are considered UNeven for this kata.
+
+
+//My solutiion
+function testEven(n) {
+    return n%2 === 0
+}
+
+
