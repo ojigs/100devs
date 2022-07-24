@@ -8,3 +8,13 @@
 // setAlarm(false, true) -> false
 // setAlarm(false, false) -> false
 // setAlarm(true, false) -> true
+
+
+//My solution
+function setAlarm(employed, vacation){
+  return employed  === true && vacation === false
+}
+
+
+// other solution
+const setAlarm = (employed, vacation) => employed && !vacation;
