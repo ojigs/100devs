@@ -7,3 +7,15 @@
 // invert([]) == []
 
 // You can assume that all values are integers. Do not mutate the input array/list.
+
+
+//My solution
+function invert(array) {
+   return array.map(n => -n);
+}
+
+
+//other solution
+function invert(array) {
+   return array.map( x => x === 0 ? x : -x);
+}
