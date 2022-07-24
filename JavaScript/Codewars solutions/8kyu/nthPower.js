@@ -9,3 +9,12 @@
 //     array = [1, 2, 3, 4] and N = 2, then the result is 3^2 == 9;
 //     array = [1, 2, 3] and N = 3, but N is outside of the array, so the result is -1.
 
+
+//My solution
+function index(array, n){
+  return array[n]**n || -1
+}
+
+
+//other solution
+const index = (array, n) => array.length > n ? Math.pow(array[n], n) : -1;
