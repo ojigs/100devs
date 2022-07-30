@@ -1,4 +1,4 @@
-// DESCRIPTION
+// Description
 
 // The first input array is the key to the correct answers to an exam, like ["a", "a", "b", "d"]. The second one contains a student's submitted answers.
 
@@ -13,3 +13,57 @@
 // checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]) → 16
 // checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]) → 0
 
+
+//My solution
+function checkExam(array1, array2) {
+  let count = 0
+ for (let i = 0; i < array1.length; i++) {
+   if (array1[i] === array2[i]) {
+     count += 4
+   } else if (array2[i] === "") {
+     count += 0
+   } else {
+     count -= 1
+   }
+ }
+  return count < 0 ? 0 : count
+}
+
+
+//other solution
+function checkExam(array1, array2) {
+var score = 0;
+  
+  for (var i = 0; i < array1.length; i++){
+  
+    if (array1[i] == array2[i]) {
+    
+    score += 4;
+    
+    }
+    
+    else if (array2[i] === ""){
+
+      score += 0
+  
+    }
+    
+     
+    else {
+    
+    score -= 1
+    
+    }
+
+  
+  }
+  
+  if (score < 0) {
+  
+    score = 0
+    
+  }  
+ 
+ return score
+ 
+}
