@@ -5,3 +5,20 @@
 // For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
 
 // If you can, try writing it in only one line of code.
+
+
+
+//My solution
+function findMultiples(integer, limit) {
+  let arr = []
+  for (let i = integer; i <= limit; i+=integer) {
+    arr.push(i)
+  }
+  return arr
+}
+
+
+//other solution
+function findMultiples(int,limit){
+  return Array(Math.floor(limit/int)).fill(1).map((x,i)=>int*(i+1));
+}
