@@ -5,3 +5,9 @@
 //     You only need to worry about english grammar rules for this kata, where anything that isn't singular (one of something), it is plural (not one of something).
 
 // All values will be positive integers or floats, or zero.
+
+
+//My solution
+function plural(n) {
+  return n != 1
+}
