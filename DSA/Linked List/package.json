@@ -1,0 +1,14 @@
+{
+  "name": "linkedlist",
+  "version": "1.0.0",
+  "description": "implementing a linked list",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "author": "Emmanuel Ojighoro",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.3"
+  }
+}
