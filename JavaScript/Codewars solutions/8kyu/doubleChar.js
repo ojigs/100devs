@@ -8,3 +8,18 @@
 // * "1234!_ "     -> "11223344!!__  "
 
 // Good Luck!
+
+
+//My solution
+function doubleChar(str) {
+  return str.split('')
+          .map(e => e.repeat(2))
+          .join('')
+}
+
+
+
+//other solution
+function doubleChar(str) {
+  return str.replace(/(.)/g, "$1$1")
+}
