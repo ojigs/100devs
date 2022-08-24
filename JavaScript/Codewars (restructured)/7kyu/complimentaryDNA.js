@@ -13,3 +13,30 @@
 // "ATTGC" --> "TAACG"
 // "GTAT" --> "CATA"
 
+
+
+//My solution
+function DNAStrand(dna){
+  let obj = {
+    C: 'G',
+    A: 'T',
+    G: 'C',
+    T: 'A'
+  }
+  return dna.split('').map(e => obj[e]).join('')
+}
+
+
+//other solution
+function DNAStrand(dna) {
+  return dna.replace(/./g, function(c) {
+    return DNAStrand.pairs[c]
+  })
+}
+
+DNAStrand.pairs = {
+  A: 'T',
+  T: 'A',
+  C: 'G',
+  G: 'C',
+}
