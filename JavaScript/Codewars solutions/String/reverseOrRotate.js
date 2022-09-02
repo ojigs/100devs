@@ -24,3 +24,70 @@
 // Example of a string rotated to the left by one position:
 // s = "123456" gives "234561".
 
+
+
+//My solution
+function revrot(str, sz) {
+    //P: Given a string of digits and a chunk size
+    //R: Return a modified string such that the original string is broken into chunks of sizes and joined together
+    //E: "123456", 5 --> "54321"
+    //   "12345678987654", 6 --> "23456187549"
+    //Pseuodocode:
+    //Break the string into chunks of sizes sz
+    //Discard any chunk less than sz size
+    //For each chunk, if sum of cube of digits is a multiple of 2, reverse the chunk
+    //Else shift the first digit and push it behind the chunk. 1234 becomes 2341
+    //Join all chunks and return it as a string
+    
+  if (sz <= 0 || !str || sz > str.length) return ''; 
+    let arr = []
+    for (let i = 0; i < str.length; i+=sz) {
+      let chunk = str.slice(i, (i+sz))
+      if (chunk.length < sz) {
+        continue
+      }
+      arr.push(chunk.split(''))
+    }
+    
+    function sum(a) {
+      return a.reduce((sum, curr) => sum + curr**3, 0)
+    }
+    
+    for (const chunk of arr) {
+      if (!(sum(chunk)%2)) {
+        chunk.reverse()
+      } else {
+        chunk.push(chunk.shift())
+      }
+    }
+    
+    return arr.map(e => e.join(''))
+               .join('')
+  }
+
+
+
+//other solution
+function revrot(str, sz) {
+    if (sz <= 0 || !str || sz > str.length) return '';    
+      
+    const sumCubes = chunk => chunk.split('').reduce((sum, digit) => sum += digit**3, 0);
+    const reverse = chunk => chunk.split('').reverse().join('');
+    const rotate = chunk => chunk.slice(1) + chunk.slice(0, 1);
+    
+    const chunks = [];
+    
+    for (let i = 0; i < str.length; i += sz) {
+      let chunk = str.slice(i, i + sz);
+      
+      if (chunk.length < sz) continue;
+      
+      chunk = sumCubes(chunk) % 2 
+        ? rotate(chunk)   
+        : reverse(chunk);
+      
+      chunks.push(chunk)
+    }
+    
+    return chunks.join('')
+}
