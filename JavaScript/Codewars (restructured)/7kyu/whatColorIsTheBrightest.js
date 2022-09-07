@@ -31,6 +31,18 @@ function brightest(colors){
   return colors.sort((a, b) => sB(b) - sB(a))[0]
 }
 
+//My solution
+function brightest(colors){
+  let maxColor = (c) => {
+    let arr = [c.slice(1,3), c.slice(3,5), c.slice(5,7)]
+    arr = arr.map(e => parseInt(e, 16))
+    console.log(Math.max(...arr))
+    return Math.max(...arr)
+  }
+  
+  return colors.sort((a, b) => maxColor(b) - maxColor(a))[0]
+}
+
 
 //other solution
 function brightest(colors){
