@@ -17,3 +17,12 @@
 
 //     [output] a string
 
+
+//My solution
+function reverseLetter(str) {
+  return str.match(/[a-z]/g).reverse().join('')
+}
+
+
+//other solution
+reverseLetter=(s)=>s.replace(/[^a-z]/gi,'').split('').reverse().join('');
