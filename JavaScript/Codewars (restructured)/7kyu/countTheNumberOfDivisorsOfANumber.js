@@ -12,3 +12,18 @@ https://www.codewars.com/kata/542c0f198e077084c0000c2e/javascript
 // 12 --> 6 (1, 2, 3, 4, 6, 12)
 // 30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
 
+
+//My solution
+function getDivisorsCnt(n){
+  return [...Array(n + 1).keys()].filter(i=> n % i === 0).length
+}
+
+
+//other solution
+function getDivisorsCnt(n) {
+  for (var d = 0, i = n; i > 0; i--) {
+    if (n % i == 0) d++;
+  }
+  
+  return d;
+}
