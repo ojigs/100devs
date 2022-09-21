@@ -10,3 +10,23 @@ https://www.codewars.com/kata/5761a717780f8950ce001473/javascript
 // "..." are to be replaced by the number, followed and proceeded by a single space. Mind that you need to account for both "year" and "years", depending on the result.
 
 // Good Luck!
+
+
+//My solution
+function  calculateAge(a, b) {
+  if (a == b) {
+    return 'You were born this very year!'
+  }
+  return a > b ? 
+    `You will be born in ${a-b} ${a-b == 1 ? 'year' : 'years'}.` : 
+    `You are ${b - a} ${b - a == 1 ? 'year' : 'years'} old.`
+}
+
+
+//other solution
+function  calculateAge(m, n) {
+  if(m == n) return 'You were born this very year!';
+  var year = Math.abs(m-n) == 1 ? 'year' : 'years';
+  if(m < n) return "You are "+(n-m)+' '+year+' old.';
+  if(m > n) return "You will be born in "+(-n+m)+' '+year+'.';
+}
