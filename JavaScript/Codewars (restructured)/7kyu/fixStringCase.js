@@ -13,3 +13,19 @@ https://www.codewars.com/kata/5b180e9fedaa564a7000009a/javascript
 // solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
 
 // More examples in test cases. Good luck!
+
+
+
+function solve(s){
+    let lowerC = 0;
+    let upperC = 0;
+    for( let i = 0;i<s.length;i++){
+      if( s[i] == s[i].toUpperCase()){
+        upperC++;
+      }
+      else{
+        lowerC++;
+      }
+    }
+    return lowerC >= upperC ? s.toLowerCase() : s.toUpperCase()
+}
