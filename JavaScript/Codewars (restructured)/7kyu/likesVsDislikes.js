@@ -18,3 +18,37 @@ https://www.codewars.com/kata/62ad72443809a4006998218a
 //     If no button is currently active, return Nothing.
 //     If the list is empty, return Nothing.
 
+
+//My solution
+function likeOrDislike(buttons) {
+  if (!buttons.length) {
+    return 'Nothing'
+  }
+  return buttons.reduce((sum, curr) => {
+    if ((sum == 'Like' && curr == 'Like' )|| (sum == 'Dislike' && curr == 'Dislike') ) {
+      return 'Nothing'
+    }
+    return curr
+  })
+}
+
+
+//other solution
+function likeOrDislike(buttons) {
+  return buttons.reduce( (state,button) => button===state ? Nothing : button , Nothing );
+}
+
+
+function likeOrDislike(buttons) {
+  let state = 'Nothing';
+
+  for (let i = 0; i < buttons.length; i++) {
+    if (buttons[i] === state) {
+      state = 'Nothing'
+    } else {
+      state = buttons[i]
+    }
+  }
+
+  return state
+}
