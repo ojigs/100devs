@@ -19,3 +19,17 @@ https://www.codewars.com/kata/563cf89eb4747c5fb100001b
 // Lists
 // Arrays
 // Fundamentals
+
+
+//My solution
+function removeSmallest(numbers) {
+  let smallest = Math.min(...numbers)
+  let smallestIndex = numbers.findIndex(e => e==smallest)
+  let newNum = [...numbers]
+  newNum.splice(smallestIndex, 1)
+  return newNum
+}
+
+
+//other solution
+const removeSmallest = numbers => numbers.filter((n,i) => i !== numbers.indexOf(Math.min(...numbers)));
