@@ -12,3 +12,12 @@ https://www.codewars.com/kata/54bf85e3d5b56c7a05000cf9/javascript
 // [] --> []
 // ["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
 
+
+//My solution
+var number=function(array){
+  return array.map((e,i,a) => (i+1 + ': ' + e))
+}
+
+
+//other solution
+const number = array => array.map((n, i) => `${i + 1}: ${n}`);
