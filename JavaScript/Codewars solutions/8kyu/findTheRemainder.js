@@ -1,3 +1,4 @@
+https://www.codewars.com/kata/524f5125ad9c12894e00003f/javascript
 // Description:
 // Task:
 
@@ -22,3 +23,18 @@
 // m = 1
 // result - division by zero (refer to the specifications on how to handle this in your language)
 
+
+//My solution
+function remainder(n, m){
+  return n > m ? n % m : m % n
+}
+
+
+//other solution
+function remainder(a, b){
+  // Divide the larger argument by the smaller argument and return the remainder
+  var min = Math.min(a,b);
+  var max = Math.max(a,b);
+
+  return min ? max % min : NaN;
+}
