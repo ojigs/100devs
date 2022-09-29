@@ -14,3 +14,16 @@ https://www.codewars.com/kata/56676e8fabd2d1ff3000000c/javascript
 // ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"] --> "found the needle at position 5" 
 
 // Note: In COBOL, it should return "found the needle at position 6"
+
+
+//My solution
+function findNeedle(haystack) {
+  const index = haystack.findIndex(e => e == 'needle')
+  return 'found the needle at position ' + index
+}
+
+
+//other solution
+function findNeedle(haystack) {
+  return "found the needle at position " + haystack.indexOf("needle");
+}
