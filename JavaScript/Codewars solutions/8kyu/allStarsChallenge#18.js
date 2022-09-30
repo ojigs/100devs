@@ -18,3 +18,27 @@ https://www.codewars.com/kata/5865918c6b569962950002a1/javascript
 //     The first argument can be an empty string
 //     The second string argument will always be of length 1
 
+
+
+//My solution
+function strCount(str, letter){ 
+  let count = 0
+  if (!letter.length || !str.length) return 0
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == letter) {
+      count++
+    }
+  }
+  return count
+}
+
+
+//other solution
+function strCount(str, letter){  
+  return str.split(letter).length-1
+}
+
+
+function strCount(str, letter){  
+  return str.split('').filter(c => c == letter).length;
+}
