@@ -8,3 +8,19 @@ https://www.codewars.com/kata/58cb43f4256836ed95000f97/javascript
 // Your function will be tested with pre-made examples as well as random ones.
 
 // If you can, try writing it in one line of code.
+
+
+//My solution
+function findDifference(a, b) {
+  return Math.abs(a.reduce((a,c) => a * c, 1) - b.reduce((a,c) => a * c, 1))
+}
+
+
+//other solution
+function volume(c) {
+  return c.reduce((x, y) => x * y);
+}
+
+function find_difference(a, b) {
+  return Math.abs(volume(a) - volume(b));
+}
