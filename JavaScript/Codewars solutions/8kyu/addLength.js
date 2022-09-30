@@ -11,3 +11,22 @@ https://www.codewars.com/kata/559d2284b5bb6799e9000047/javascript
 // Your task is to write a function that takes a String and returns an Array/list with the length of each word added to each element .
 
 // Note: String will have at least one element; words will always be separated by a space.
+
+
+//My solution
+function addLength(str) {
+  return str.split(' ').map(e => e + ' ' + e.length)
+}
+
+
+
+//other solution
+function addLength(str) {
+  var split = str.split(" ");
+  var result = [];
+   
+  for (i = 0; i < split.length; ++i) {
+    result.push(split[i] + " " + split[i].length);
+  } 
+  return result;  
+}
