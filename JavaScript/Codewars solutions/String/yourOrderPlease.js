@@ -12,3 +12,22 @@ https://www.codewars.com/kata/55c45be3b2079eccff00010f
 // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
 // ""  -->  ""
 
+
+//My solution
+function order(words){
+  words = words.split(' ')
+  let order = []
+  for (let i = 0; i < words.length; i++) {
+    order.push(words.find(e => e.includes(i + 1)))
+  }
+  return order.join(' ')
+}
+
+
+//other solution
+function order(words){
+  
+  return words.split(' ').sort(function(a, b){
+      return a.match(/\d/) - b.match(/\d/);
+   }).join(' ');
+}  
