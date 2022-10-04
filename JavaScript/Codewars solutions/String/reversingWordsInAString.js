@@ -11,3 +11,10 @@ https://www.codewars.com/kata/57a55c8b72292d057b000594/javascript
 // "Hi There." --> "There. Hi"
 
 // Happy coding!
+
+
+//My solution
+function reverse(string){
+  return string.split(' ').reverse().join(' ')
+}
+
