@@ -18,3 +18,20 @@ https://www.codewars.com/kata/55d277882e139d0b6000005d/javascript
 // 16/4 = 4
 
 // 3. The mean (or average) of this list is 4
+
+
+//My solution
+var findAverage = function (nums) {
+  return nums.reduce((sum, curr) => sum + curr, 0)/nums.length
+}
+
+
+//other solution
+var findAverage = function (nums) {
+  // Code here
+  var sum = 0;
+  for (num in nums) {
+    sum += nums[num];
+  }
+  return sum / (nums.length);
+}
