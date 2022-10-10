@@ -22,3 +22,36 @@ https://www.codewars.com/kata/58f5c63f1e26ecda7e000029/
 // wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
 
 // Good luck and enjoy!
+
+
+//My initial solution
+function wave(str){
+  return str.split('')
+    .map((e, i, a) => str.substring(0, i) + e.toUpperCase() + str.substring(i+1))
+  .filter(e => e !== str)
+}
+
+//My improved solution
+function wave(str){
+  return str.split('')
+    .flatMap((e, i, a) => {
+    if (e === ' ') {
+      return []
+    }
+    return str.substring(0, i) + e.toUpperCase() + str.substring(i+1)})
+}
+
+
+
+//other solution
+function wave(str){
+    let result = [];
+    
+    str.split("").forEach((char, index) => {
+        if (/[a-z]/.test(char)) {
+            result.push(str.slice(0, index) + char.toUpperCase() + str.slice(index + 1));
+        }
+    });
+    
+    return result;
+}
