@@ -8,3 +8,15 @@ https://www.codewars.com/kata/5302d846be2a9189af0001e4/javascript
 // sayHello(['John', 'Smith'], 'Phoenix', 'Arizona')
 
 // This example will return the string Hello, John Smith! Welcome to Phoenix, Arizona!
+
+
+//My solutiion
+function sayHello( name, city, state ) {
+  return `Hello, ${name.join(' ')}! Welcome to ${city}, ${state}!`
+}
+
+
+//other solution
+function sayHello( name, city, state ) {
+  return 'Hello, ' + name.join(' ') + '! Welcome to ' + city + ', ' + state + '!';
+}
