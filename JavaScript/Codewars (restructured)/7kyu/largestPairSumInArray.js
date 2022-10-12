@@ -9,3 +9,17 @@ https://www.codewars.com/kata/556196a6091a7e7f58000018/javascript
 // [99, 2, 2, 23, 19]  --> 122 (= 99 + 23)
 
 // Input sequence contains minimum two elements and every element is an integer.
+
+
+//My solution
+function largestPairSum (numbers) {
+  const sorted = numbers.sort((a, b) => b - a)
+  return sorted[0] + sorted[1] 
+}
+
+
+//other solution
+function largestPairSum(numbers) {
+  var [a, b] = numbers.sort((a, b) => b - a)
+  return a + b
+}
