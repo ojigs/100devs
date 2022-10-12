@@ -47,3 +47,39 @@ https://www.codewars.com/kata/5541f58a944b85ce6d00006a/train/javascript
 
 //     You can see examples for your language in "Sample Tests".
 
+
+
+
+//My solution
+function productFib(prod){
+  function fib(n, undefined){
+    if(fib.cache[n] === undefined){
+        fib.cache[n] = fib(n-1) + fib(n-2);
+    }
+
+    return fib.cache[n];
+  }
+fib.cache = [0, 1, 1];
+fib(1000)
+  let n  = Math.floor(Math.sqrt(prod))
+  console.log()
+  for (let i = 0; i < n; i++) {
+    if (fib(i) * fib(i+1) === prod) {
+      return [fib(i), fib(i + 1), true]
+    } else if (fib(i) * fib(i+1) < prod && fib(i+1) * fib(i+2) > prod ) {
+      return [fib(i+1), fib(i+2), false]
+    }
+  }
+}
+
+
+//other solution
+function productFib(prod){
+  var n = 0;
+  var nPlus = 1;  
+  while(n*nPlus < prod) {
+    nPlus = n + nPlus;
+    n = nPlus - n;
+  }
+  return [n, nPlus, n*nPlus===prod];
+}
