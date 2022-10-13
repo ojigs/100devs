@@ -22,3 +22,37 @@ https://www.codewars.com/kata/5626b561280a42ecc50000d1/solutions/javascript
 // 90, 100 --> []
 
 // Enjoy it!!
+
+
+//My solution
+function sumDigPow(a, b) {
+  //funtion to find Eureka!
+  //for a range of numbers a, b; edge cases? no floats
+  //return array of digits such that sum of each digit raise to power is equal to digit
+  //sumDigPow(1, 10) --> [1,2,3,4,5,6,7,8,9]
+  //sumDigPow(1, 10) --> [1,2,3,4,5,6,7,8,9, 89]
+  //splt digits, iterate over each,  logic compare
+  let cache = []
+  for (let i = a; i <= b; i++) {
+      let n = i.toString().split('').map(Number)
+        n = n.reduce((acc, curr, i) => acc + Math.pow(curr, i+1) )
+      if (n === i) {
+        cache.push(n)
+      }
+  }
+  return cache
+}
+
+
+//other solution
+function filterFunc(n) {
+  return `${n}`.split("").map((x, i) => x ** (i+1)).reduce((a, b) => a+b) == n;
+}
+
+function *range(a, b) {
+  for (var i = a; i <= b; ++i) yield i;
+}
+
+function sumDigPow(a, b) {
+  return Array.from(range(a, b)).filter(filterFunc);
+}
