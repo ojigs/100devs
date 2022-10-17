@@ -10,3 +10,9 @@ https://www.codewars.com/kata/571d42206414b103dc0006a1/javascript
 // arr(5) // => [0,1,2,3,4]
 
 // Note: The parameter is optional. So you have to give it a default value.
+
+
+//My solution
+const arr = N => Array.from({length: N}).map((e, i) => i);
+
+
