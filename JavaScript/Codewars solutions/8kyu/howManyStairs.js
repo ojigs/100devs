@@ -21,3 +21,15 @@ https://www.codewars.com/kata/56fc55cd1f5a93d68a001d4e/javascript
 
 
 //My solution
+function stairsIn20(s){
+  return s.flatMap(e => e)
+    .reduce((a, c) => a + c, 0) * 20
+}
+
+
+//other solution
+function stairsIn20(s){
+   var arr = [].concat(...s)
+   var newArr = [].concat(...arr)
+   return newArr.reduce((a, b) => a+b)*20
+}
