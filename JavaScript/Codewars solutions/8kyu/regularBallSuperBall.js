@@ -10,3 +10,15 @@ https://www.codewars.com/kata/53f0f358b9cb376eca001079/javascript
 
 // ball1.ballType     //=> "regular"
 // ball2.ballType     //=> "super"
+
+
+//My solution
+var Ball = function(ballType = 'regular') {
+  this.ballType = ballType
+};
+
+
+//other solution
+var Ball = function(ballType) {
+  this.ballType = ballType || 'regular';
+};
