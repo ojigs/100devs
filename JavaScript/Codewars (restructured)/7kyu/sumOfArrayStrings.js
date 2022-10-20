@@ -13,3 +13,27 @@
 // Sum of prime-indexed elements
 
 // Sum of integer combinations
+
+
+//My solution
+function repeats(arr){
+  return arr.filter((e, i, a) => a.indexOf(e) === a.lastIndexOf(e)).reduce((a,c) => a + c)
+};
+
+
+//other solution
+function repeats(arr) {
+  let seen = new Set();
+  let sum = 0;
+  
+  for (let v of arr) {
+    if (!seen.has(v)) {
+      seen.add(v);
+      sum += v;
+    } else {
+      sum -= v;
+    }
+  }
+  
+  return sum;
+};
