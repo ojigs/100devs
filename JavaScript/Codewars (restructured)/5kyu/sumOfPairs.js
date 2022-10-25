@@ -33,3 +33,17 @@ https://www.codewars.com/kata/54d81488b981293527000c8f/javascript
 // NOTE: There will also be lists tested of lengths upwards of 10,000,000 elements. Be sure your code doesn't time out.
 
 
+
+//solution
+function sumPairs(ints, s) {
+  //find two matching pairs whose sum equals s parameter
+  //if more than one set exists, the set whose second index is lowest is returned
+  let cache = {}
+  for (let i = 0; i < ints.length; i++) {
+    if (cache[s - ints[i]]) {
+      return [s-ints[i], ints[i]]
+    }
+    cache[ints[i]] = true
+  }
+
+}
