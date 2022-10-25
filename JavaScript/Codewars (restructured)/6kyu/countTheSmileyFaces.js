@@ -22,3 +22,23 @@ https://www.codewars.com/kata/583203e6eb35d7980400002a/train/javascript
 // Note
 
 // In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
+
+
+//My solution
+//return the total number of smiling faces in the array
+function countSmileys(arr) {
+  let count = 0
+  arr.forEach((smiley => {
+    /^[:;][-~]?[D)]$/.test(smiley) ? count += 1 : null 
+  }))
+  return count
+}
+
+
+//other solution
+function countSmileys(arr) {
+  return arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
+}
+
+
+const countSmileys = ss => ss.reduce((a, s) => a + /^[:;][-~]?[D)]$/.test(s), 0);
