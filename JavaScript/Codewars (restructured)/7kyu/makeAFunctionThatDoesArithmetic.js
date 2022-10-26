@@ -15,3 +15,23 @@ https://www.codewars.com/kata/583f158ea20cfcbeb400000a/javascript
 // 5, 2, "divide"   --> 2.5
 
 // Try to do it without using if statements!
+
+
+//My solution
+function arithmetic(a, b, operator){
+  return operator === 'add' ? a + b :
+          operator === 'subtract' ? a - b :
+          operator === 'multiply' ? a * b :
+          operator === 'divide' ? a / b : null
+}
+
+
+//other solution
+const arithmetic = (a, b, operator) => ({
+  'add'     : a + b,
+  'subtract': a - b,
+  'multiply': a * b,
+  'divide'  : a / b
+}[operator]);
+
+
