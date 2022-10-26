@@ -1,3 +1,4 @@
+https://www.codewars.com/kata/5a512f6a80eba857280000fc/train/javascript
 // Desxription
 
 // Introduction and warm-up (highly recommended): Playing With Lists/Arrays Series
@@ -21,3 +22,10 @@
 // Playing With Lists/Arrays Series
 // More Enjoyable Katas
 // Enjoy Learning !!
+
+
+
+//My solution
+function nthSmallest(arr, pos){
+  return arr.sort((a,b) => a - b)[pos - 1]
+}
