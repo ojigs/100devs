@@ -18,3 +18,9 @@ https://www.codewars.com/kata/55cbc3586671f6aa070000fb/javascript
 // Note: base is a non-negative number, factor is a positive number.
 // Mathematics
 // Fundamentals
+
+
+//My solution
+function checkForFactor (base, factor) {
+  return base % factor === 0;
+}
