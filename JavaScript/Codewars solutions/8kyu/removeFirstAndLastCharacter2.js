@@ -18,3 +18,17 @@ https://www.codewars.com/kata/570597e258b58f6edc00230d/javascript
 // "1"    =>  NULL
 // "1,2"  =>  NULL
 
+
+//My solution
+function array(arr){
+  arr = arr.split(',')
+  arr.shift()
+  arr.pop()
+  return arr.join(" ") || null       
+}
+
+
+//other solution
+function array(arr){
+  return arr.split(",").slice(1,-1).join(" ") || null;
+}
