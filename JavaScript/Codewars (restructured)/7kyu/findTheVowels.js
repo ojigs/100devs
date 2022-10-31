@@ -16,3 +16,33 @@ https://www.codewars.com/kata/5680781b6b7c2be860000036/javascript
 //     Vowels in this context refers to: a e i o u y (including upper case)
 //     This is indexed from [1..n] (not zero indexed!)
 
+
+
+//My solution
+function vowelIndices(word){
+  word = word.toLowerCase()
+  return word.split('').flatMap((e, i) => {
+    if (e == 'a' ||
+       e == 'e' ||
+       e == 'i' ||
+       e == 'o' ||
+       e == 'u' ||
+       e == 'y') {
+        return i+1
+        }
+    return []
+  })
+}
+
+
+
+//other solution
+function vowelIndices(word) {
+  var arr = [];
+  for(var i = 0; i < word.length; i++) {
+    if(/[aeioyu]/i.test(word[i])) {
+      arr.push(i+1);
+    }
+  }
+  return arr;
+}
