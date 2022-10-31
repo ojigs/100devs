@@ -13,3 +13,13 @@ https://www.codewars.com/kata/59fca81a5712f9fa4700159a/javascript
 // toBinary(1)  /* should return 1 */
 // toBinary(5)  /* should return 101 */
 // toBinary(11) /* should return 1011 */
+
+
+//My solution
+function toBinary(n){
+  return +n.toString(2)
+}
+
+
+//other solution
+toBinary = (n) => parseInt(n.toString(2));
