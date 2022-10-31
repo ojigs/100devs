@@ -6,3 +6,16 @@ https://www.codewars.com/kata/57cc981a58da9e302a000214/javascript
 // You can assume all values in the array are numbers.
 // Fundamentals
 // Arrays
+
+
+
+//My solution
+function smallEnough(a, limit){
+  return a.every(e => e <= limit)
+}
+
+
+//other solution
+function smallEnough(a, limit){
+  return Math.max(...a) <= limit
+}
