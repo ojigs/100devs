@@ -32,3 +32,26 @@ https://www.codewars.com/kata/564057bc348c7200bd0000ff/train/javascript
 // Fundamentals
 // Algorithms
 // Mathematics
+
+
+
+// My solution
+function thirt(n) {
+  const len = Math.log(n) * Math.LOG10E + 1 | 0
+  const nToString = n.toString()
+  let sum = 0
+  for (let i = 0; i < len; i++) {
+    let divRule = 10**i % 13 
+    sum += divRule * nToString[len - i - 1]
+  }
+  return sum === n ? sum : thirt(sum)
+}
+
+
+
+// other solution
+function thirt(n) {
+  const nums = [1,10,9,12,3,4]
+  var sum = (''+n).split('').reverse().reduce((sum,v,i) => sum + v * nums[i%nums.length], 0)
+  return sum === n ? n : thirt(sum)
+}
