@@ -16,3 +16,31 @@ https://www.codewars.com/kata/59cfc000aeb2844d16000075/javascript
 // Even-odd disparity
 // Strings
 // Fundamentals
+
+
+
+//My solution
+function capitalize(s){
+  const even = s.split('').map((e,i) => !(i%2) ? e.toUpperCase() : e).join('')
+  const odd = s.split('').map((e,i) => i%2 ? e.toUpperCase() : e).join('')
+  return [even, odd]
+};
+
+
+
+//other solution
+function capitalize(s) {
+  const S = s.toUpperCase()
+  let a = ""
+  let b = ""
+  for (let i = 0; i < s.length; ++i) {
+    if (i & 1) {
+      a += s[i]
+      b += S[i]
+    } else {
+      a += S[i]
+      b += s[i]
+    }
+  }
+  return [a, b]
+}
