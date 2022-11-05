@@ -14,3 +14,25 @@ https://www.codewars.com/kata/57ee99a16c8df7b02d00045f/javascript
 // Please, keep in mind, that JavaScript is by default sorting objects alphabetically. For more information, please consult:
 
 // http://stackoverflow.com/questions/6093874/why-doesnt-the-sort-function-of-javascript-work-well
+
+
+
+//My solution
+"use strict";
+
+function flattenAndSort(array) {
+  return array.flatMap(e => e).sort((a,b) => a - b)
+}
+
+
+//other solution
+"use strict";
+
+function flattenAndSort(array) {
+  return [].concat(...array).sort((a,b) => a - b);
+}
+
+
+"use strict";
+
+const flattenAndSort = (array) => array.flat().sort((a, b) => a-b);
