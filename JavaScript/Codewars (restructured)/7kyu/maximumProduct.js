@@ -28,3 +28,20 @@ https://www.codewars.com/kata/5a4138acf28b82aa43000117/javascript
 // Explanation:
 
 //     The maximum product obtained from multiplying -2 * 7 = -14, and they're adjacent numbers in the array.
+
+
+
+//My solution
+function adjacentElementsProduct(array) {
+  const arr = []
+  for (let i = 0; i < array.length - 1; i++) {
+    arr.push(array[i] * array[i+1])
+  }
+  return Math.max(...arr)
+}
+
+
+//other solution
+function adjacentElementsProduct(a) {
+  return Math.max(...a.map((x,i)=>x*a[i+1]).slice(0,-1))
+}
