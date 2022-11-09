@@ -13,3 +13,23 @@ https://www.codewars.com/kata/52adc142b2651f25a8000643/javascript
 // sleigh.authenticate("Santa", "Ho Ho Ho!"); // must return FALSE
 // sleigh.authenticate("Santa Claus", "Ho Ho!"); // must return FALSE
 // sleigh.authenticate("jhoffner", "CodeWars"); // Nope, even Jake is not allowed to use the sleigh ;)
+
+
+
+//My solution
+function Sleigh() {}
+
+Sleigh.prototype.authenticate = function(name, password) {
+  return name === "Santa Claus" && password === "Ho Ho Ho!"
+};
+
+
+// other solution
+function Sleigh() {
+  this.name = "Santa Claus";
+  this.password = "Ho Ho Ho!";
+}
+
+Sleigh.prototype.authenticate = function(name, password) {
+  return this.name == name && this.password == password;
+};
