@@ -29,3 +29,34 @@ https://www.codewars.com/kata/5a523566b3bfa84c2e00010b/javascript
 // Explanation:
 
 //     The minimum sum obtained from summing each two integers product ,  9*0 + 8*2 +7*4 +6*5 = 74
+
+
+
+// My solution
+function minSum(arr) {
+//   given an array, array may likely have an even length
+//   return the minimum sum that results from summing products of two integers in the array
+//   [4,4,2,3] --> 22 //(5*2) + (4*3)   = 22
+//   sort the array from biggest to smallest or otherwise
+//   multiply digits at mirror positions in the array
+//   sum them up and return the value
+  arr = arr.sort((a,b) => b - a)
+  let n = arr.length
+  let sum = 0
+  for (let i = 0; i < n/2; i++) {
+    sum += arr[i] * arr[n - 1 - i]
+  }
+  return sum
+}
+
+
+// other solution
+const minSum = arr =>
+  arr.sort((a, b) => a - b).reduce((pre, val) => pre + val * arr.pop(), 0);
+
+
+function minSum(arr) {
+  return arr.sort( (a,b) => a-b )
+            .slice(0, arr.length/2)
+            .reduce( (acc,curr,index) => acc += curr * arr[ arr.length - index - 1 ], 0 )
+}
