@@ -9,3 +9,21 @@ https://www.codewars.com/kata/5a431c0de1ce0ec33a00000c/javascript
 // ([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2) => [-8, 26]
 // ([6, -25, 3, 7, 5, 5, 7, -3, 23], 1) => [6]
 
+
+// My solution
+function evenNumbers(array, number) {
+  return array.filter(e => !(e%2)).slice(-number)
+}
+
+
+// other solutions
+function evenNumbers(array, number) {
+      let arr = [];
+      for (let i=array.length-1;number>0;i--){
+        if (array[i] % 2 == 0) {
+          arr.push(array[i]);
+          number--;
+        }
+      }
+  return arr.reverse();
+}
