@@ -28,3 +28,19 @@ https://www.codewars.com/kata/5552101f47fc5178b1000050/train/javascript
 
 // Fundamentals
 // Mathematics
+
+
+
+// My solution
+function digPow(n, p){
+  let pow = Array.from(String(n), Number).reduce((a,c,i) => a + Math.pow(c, p+i),0)
+  return Number.isInteger(pow/n) ? pow/n : -1
+}
+
+
+
+// other solution
+function digPow(n, p) {
+  var x = String(n).split("").reduce((s, d, i) => s + Math.pow(d, p + i), 0)
+  return x % n ? -1 : x / n
+}
