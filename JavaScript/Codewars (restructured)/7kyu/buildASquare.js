@@ -12,3 +12,20 @@ https://www.codewars.com/kata/59a96d71dbe3b06c0200009c/javascript
 
 // Fundamentals
 // ASCII Art
+
+
+
+// My solution
+function generateShape(integer){
+  let str = ''
+  for (let i = 0; i < integer; i++) {
+    str += '+'.repeat(integer) + '\n'
+  }
+  return str.slice(0, -1)
+}
+
+
+// other solution
+function generateShape(n){
+  return ("+".repeat(n)+"\n").repeat(n).trim()
+}
