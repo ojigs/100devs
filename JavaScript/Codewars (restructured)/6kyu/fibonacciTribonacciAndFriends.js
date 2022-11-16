@@ -12,3 +12,22 @@ https://www.codewars.com/kata/556e0fccc392c527f20000c5/train/javascript
 // xbonacci {1,0,0,0,0,0,1} 10 = {1,0,0,0,0,0,1,2,3,6}
 // xbonacci {1,1} produces the Fibonacci sequence
 
+
+// My solution
+function Xbonacci(signature,n){
+  let x = signature.length
+  if (n < x) return signature.slice(0, n)
+  for (let i = x; i < n; i++) {
+    signature[i] = signature.slice(i-x, i).reduce((a,c) => a + c, 0);
+  }
+  return signature
+}
+
+
+// other solution
+const Xbonacci = (sig, n) => {
+  let len = sig.length;
+  for (let i = len; i < n; i++) 
+    sig[i] = sig.slice(i - len).reduce((a, b) => a + b);
+  return sig.slice(0, n);
+}
