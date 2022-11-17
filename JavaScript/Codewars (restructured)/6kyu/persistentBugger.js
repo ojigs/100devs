@@ -9,3 +9,23 @@ https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec/train/javascript
 // 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
 // 4 --> 0 (because 4 is already a one-digit number)
 
+
+// My solution
+function persistence(num) {
+   let count = 0, numLen  = String(num).length
+   while (numLen > 1) {
+     num = Array.from(String(num), Number).reduce((a,c) => a * c)
+     numLen = String(num).length
+     count++
+   }
+  return count
+}
+
+
+
+// other solution
+const persistence = num => {
+  return `${num}`.length > 1 
+    ? 1 + persistence(`${num}`.split('').reduce((a, b) => a * +b)) 
+    : 0;
+}
