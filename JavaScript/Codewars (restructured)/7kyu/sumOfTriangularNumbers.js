@@ -18,3 +18,26 @@ https://www.codewars.com/kata/580878d5d27b84b64c000b51/javascript
 // Triangular Numbers cannot be negative so return 0 if a negative number is given.
 // Mathematics
 // Fundamentals
+
+
+
+// My solution
+function sumTriangularNumbers(n) {
+  return Array.from({length: n}, (e,i) => (i+1)*(i+2)/2).reduce((a,c) => a + c, 0)
+}
+
+
+// other solution
+function sumTriangularNumbers(n) {
+  return n < 0 ? 0 : n * (n + 1) * (n + 2) / 6;
+}
+
+
+function sumTriangularNumbers(n) {
+var sum = 0;  
+for(var i = 1; i <= n; i++)
+{
+sum += (i*(i+1))/2;
+}
+return sum;
+}
