@@ -12,3 +12,24 @@ https://www.codewars.com/kata/57356c55867b9b7a60000bd7/javascript
 // ('*', 5, 5) --> 25
 // ('/', 49, 7) --> 7
 
+
+// My solution
+function basicOp(operation, value1, value2) {
+  return operation === '+' ? value1 + value2 :
+          operation === '-' ? value1 - value2 :
+            operation === '*' ? value1 * value2 :
+              operation === '/' ? value1 / value2 : null
+}
+
+
+// other solution
+function basicOp(operation, value1, value2)
+{
+  var cases = {
+    '+': value1 + value2,
+    '-': value1 - value2,
+    '*': value1 * value2,
+    '/': value1 / value2
+  };
+  return cases[operation]
+}
