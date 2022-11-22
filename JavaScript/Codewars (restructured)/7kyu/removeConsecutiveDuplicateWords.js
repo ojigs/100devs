@@ -10,3 +10,12 @@ https://www.codewars.com/kata/5b39e91ee7a2c103300018b3/train/javascript
 // Strings
 // Regular Expressions
 // Algorithms
+
+
+
+// My solution
+const removeConsecutiveDuplicates = s => s.split(' ').filter((e,i,a) => e != a[i+1]).join(' ')
+
+
+// other solution
+const removeConsecutiveDuplicates = s => s.replace(/\b(\w+)(?: \1)+\b/g, '$1')
