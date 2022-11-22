@@ -6,3 +6,24 @@ https://www.codewars.com/kata/570e8ec4127ad143660001fd/javascript
 // You can not use multiplier "*" operator.
 
 // If your name would be Jeong-Ho Aristotelis, ad would cost £600. 20 leters * 30 = 600 (Space counts as a character).
+
+
+
+// My solution
+function billboard(name, price = 30){
+  let sum = 0
+  for (let i = 0; i < name.length; i++) {
+    sum += price
+  }
+  return sum
+}
+
+
+// others solution
+function billboard(name, price = 30) {
+  return name.split('').reduce((sum, letter) => sum + price, 0); 
+}
+
+
+
+const billboard = (name, price = 30) => +(name.length / (1 / price))
