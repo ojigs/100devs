@@ -13,3 +13,14 @@ https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097/javascript
 // 1601 --> 17
 // 2000 --> 20
 
+
+// My solution
+function century(year) {
+  return Math.ceil(year/100)
+}
+
+
+// other solution
+function century(year) {
+  return (year + 99) / 100 | 0;
+}
