@@ -14,3 +14,17 @@ https://www.codewars.com/kata/5547929140907378f9000039/javascript
 
 // Strings
 // Fundamentals
+
+
+// My solution
+function shortcut (string) {
+    return string.replace(/[aeiou]/gi, '')
+}
+
+
+// other solution
+function shortcut(str) {
+    return str.split('').filter(function(e) {
+      return ['a', 'e', 'i', 'o', 'u'].indexOf(e) == -1 
+    }).join('')
+}
