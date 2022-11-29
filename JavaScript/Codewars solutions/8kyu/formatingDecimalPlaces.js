@@ -13,3 +13,7 @@ https://www.codewars.com/kata/5641a03210e973055a00000d/javascript
 function twoDecimalPlaces(n) {
     return Math.round(n * 100) / 100
 }
+
+
+// other solution
+const twoDecimalPlaces = n =>  Number(n.toFixed(2))
