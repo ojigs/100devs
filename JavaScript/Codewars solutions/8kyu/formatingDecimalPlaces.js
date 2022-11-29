@@ -7,3 +7,9 @@ https://www.codewars.com/kata/5641a03210e973055a00000d/javascript
 // 5.5589 is rounded 5.56   
 // 3.3424 is rounded 3.34
 
+
+
+// My solution
+function twoDecimalPlaces(n) {
+    return Math.round(n * 100) / 100
+}
