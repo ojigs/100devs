@@ -1,4 +1,4 @@
-https://www.codewars.com/kata/570a6a46455d08ff8d001002/javascript
+// https://www.codewars.com/kata/570a6a46455d08ff8d001002/javascript
 // Description:
 
 // Numbers ending with zeros are boring.
@@ -14,3 +14,25 @@ https://www.codewars.com/kata/570a6a46455d08ff8d001002/javascript
 
 // Zero alone is fine, don't worry about it. Poor guy anyway
 // Fundamentals
+
+
+// My solution
+function noBoringZeros(n) {
+    const arrayN = Array.from(String(n))
+    while (arrayN[arrayN.length - 1] === '0') {
+      arrayN.pop()
+    }
+    return +(arrayN.join(''))
+}
+
+
+// other solution
+function noBoringZeros(n) {
+    while(n%10==0 && n!=0){n/=10;}
+    return n;
+}
+
+
+function noBoringZeros(n) {
+    return +`${n}`.replace(/0*$/, "");
+}
