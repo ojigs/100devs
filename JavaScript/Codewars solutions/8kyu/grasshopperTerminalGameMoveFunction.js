@@ -9,3 +9,10 @@ https://www.codewars.com/kata/563a631f7cbbc236cf0000c2/javascript
 
 // move(3, 6) should equal 15
 
+
+// My solution
+function move (position, roll) {
+  return position + roll * 2
+}
+
+
