@@ -17,3 +17,32 @@ https://www.codewars.com/kata/54d4c8b08776e4ad92000835/train/javascript
 //     Test.assertEquals( isPP(5), null, "5 isn't a perfect number");
 //   });
 // });
+
+
+
+// My solution
+var isPP = function(n){
+  let m, k, max
+  max = Math.ceil(Math.sqrt(n))
+  for (let i = 2; i <= max; i++) {
+    for (let j = 2; j <= max; j++) {
+      if (Math.pow(i, j) === n) {
+        return [i, j]
+      }
+      if (n < Math.pow(i, j)) {
+        break
+      }
+    }
+  }
+  return null
+}
+
+
+
+// other solution
+function isPP(n) {
+  for (var m = 2; m * m <= n; ++ m)
+    for (var k = 2; Math.pow(m, k) <= n; ++ k)
+      if (Math.pow(m, k) == n) return [m, k];
+  return null;
+}
