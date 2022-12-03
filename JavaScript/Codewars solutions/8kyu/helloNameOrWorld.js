@@ -12,3 +12,17 @@ https://www.codewars.com/kata/57e3f79c9cb119374600046b/javascript
 // * With `name` not given 
 //   or `name` = ""        => return "Hello, World!"
 
+
+
+// My solution
+function hello(name) {
+  name = name ? name[0].toUpperCase() + name.slice(1).toLowerCase() : 'World'
+  return `Hello, ${name}!`
+}
+
+
+
+// other solution
+function hello(name) {
+  return `Hello, ${name ? name[0].toUpperCase() + name.slice(1).toLowerCase() : "World"}!`
+}
