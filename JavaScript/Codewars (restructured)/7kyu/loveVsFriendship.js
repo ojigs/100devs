@@ -15,3 +15,13 @@ https://www.codewars.com/kata/59706036f6e5d1e22d000016/javascript
 // Fundamentals
 
 
+
+// My solution
+function wordsToMarks(string){
+  const alphabet = '$abcdefghijklmnopqrstuvwxyz'.split('')
+  return string.split('').reduce((a,c) => a + alphabet.indexOf(c), 0)
+}
+
+
+// other solution
+const wordsToMarks = s => [...s].reduce((res, c) => res += c.charCodeAt() - 96, 0)
