@@ -12,3 +12,21 @@ https://www.codewars.com/kata/57e1e61ba396b3727c000251/javascript
 // Regular Expressions
 // Fundamentals
 // Strings
+
+
+// My solution
+function stringClean(s){
+  return s.replace(/\d/g, '')
+}
+
+
+
+// other solution
+function stringClean(s){
+  return s.replace(/[0-9]/g, '');
+}
+
+
+function stringClean(s){
+  return s.split('').filter((n) => n != parseInt(n)).join('');
+}
