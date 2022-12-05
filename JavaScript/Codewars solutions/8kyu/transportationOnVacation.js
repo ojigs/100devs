@@ -9,3 +9,15 @@ https://www.codewars.com/kata/568d0dd208ee69389d000016/javascript
 
 // Write a code that gives out the total amount for different days(d).
 // Fundamentals
+
+
+// My solution
+function rentalCarCost(d) {
+  return d >= 7 ? d * 40 - 50 : d >= 3 ? d * 40 - 20 : d * 40
+}
+
+
+// other solution
+function rentalCarCost(d) {
+  return d * 40 - (d >= 7 ? 50 : (d >= 3 ? 20 : 0));
+}
