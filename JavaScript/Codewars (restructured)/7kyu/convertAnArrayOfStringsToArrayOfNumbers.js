@@ -17,4 +17,16 @@ https://www.codewars.com/kata/5783d8f3202c0e486c001d23/javascript
 // Fundamentals
 
 
-// 
+// My spolution
+function toNumberArray(stringarray){
+  return stringarray.map(e => +e)
+}
+
+
+// other solution
+const toNumberArray = stringarray => stringarray.map(Number);
+
+function toNumberArray(stringarray)
+{
+  return stringarray.map(parseFloat);
+}
