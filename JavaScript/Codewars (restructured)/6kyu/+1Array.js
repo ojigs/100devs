@@ -24,3 +24,43 @@ https://www.codewars.com/kata/5514e5b77e6b2f38e0000ca9/javascript
 // Fundamentals
 // Arrays
 // Algorithms
+
+
+// My solution
+function upArray(arr){
+  if (!(arr.every(e => e >= 0 && e <= 9)) || !arr.length) return null
+  
+  for (let i = arr.length - 1; i >= 0; i-- ) {
+    if (arr[i] + 1 > 9) {
+      if (arr[i] + 1 > 9 && i === 0) {
+        arr[i] = 0
+        arr.unshift(1)
+      } else {
+        arr[i] = 0
+      }
+    } else {
+      arr[i] += 1
+      break;
+    }
+  }
+  return arr
+}
+
+
+
+// other solution
+function upArray(arr) {
+  if (arr.length == 0 || arr.some(e => e < 0 || e > 9)) return null
+  
+  let i = arr.length - 1
+  
+  while (i >= 0 && arr[i] == 9)
+    arr[i--] = 0
+  
+  if (i < 0)
+    arr.unshift(1)
+  else
+    arr[i]++
+  
+  return arr
+}
