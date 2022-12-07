@@ -4,4 +4,4 @@
 
 Brandi is a website for a branding and marketing agency. This design shows a pixel-perfect replication of a PSD mockup
 
-<img src="https://github.com/ojigs/100devs/Brandi/code/brandii.png>
+<img src="https://github.com/ojigs/100devs/Brandi/code/brandii.png" alt="brandii cover image">
