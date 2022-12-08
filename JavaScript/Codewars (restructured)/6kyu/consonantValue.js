@@ -26,3 +26,24 @@ https://www.codewars.com/kata/59c633e7dcc4053512000073/javascript
 // Fundamentals
 
 // Suggest kata description edits
+
+
+// My solution
+function solve(s) {
+  const arr = s.split(/[aeiou]/g).filter(e => e.length)
+  let max = 0
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0 
+    for (let j = 0; j < arr[i].length; j++) {
+      sum += arr[i].charCodeAt(j) - 96
+    }
+    if (sum > max) max = sum
+  }
+  return max
+};
+
+
+// other solution
+function solve(s) {
+  return Math.max(...s.match(/[^aeiou]+/g).map(x => [...x].reduce((s, v) => s + v.charCodeAt() - 96, 0)))
+}
