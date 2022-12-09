@@ -21,3 +21,15 @@ https://www.codewars.com/kata/5bb904724c47249b10000131/train/javascript
 //     0 <= x <= 4
 //     0 <= y <= 4
 
+
+// My solution
+function points(games) {
+  return games.reduce((a,c) => a + (c[0] > c[2] ? 3 : c[0] === c[2] ? 1 : 0), 0 )
+}
+
+
+
+// other solution
+const points = g => g.reduce((a, [x, _, y]) => a + (x > y ? 3 : x == y), 0)
+
+// Explanation: true evaluates to 1
