@@ -18,3 +18,28 @@ https://www.codewars.com/kata/59d9ff9f7905dfeed50000b0/javascript
 // Last digit symmetry
 
 // Alternate capitalization
+
+
+
+// My solution
+function solve(arr){  
+  let countArr = []
+  for (let i = 0; i < arr.length; i++) {
+    let count = 0
+    for (let j = 0; j < arr[i].length; j++) {
+      if (j+1 === arr[i].toLowerCase().charCodeAt(j) - 96) {
+        count++
+      }
+    }
+    countArr.push(count)
+  }
+  return countArr
+};
+
+
+
+// other solution
+function solve(arr){  
+  var alphabeth = "abcdefghijklmnopqrstuvwxyz";
+  return arr.map(x => x.toLowerCase().split('').filter((y,i) => i==alphabeth.indexOf(y)).length);
+};
