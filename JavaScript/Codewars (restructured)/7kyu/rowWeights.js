@@ -38,3 +38,25 @@ https://www.codewars.com/kata/5abd66a5ccfd1130b30000a9/javascript
 // Zizou
 // Fundamentals
 // Arrays
+
+
+
+// My solution
+function rowWeights(array){
+  let team1 = 0, team2 = 0 
+  for (let i = 0; i < array.length; i+=2) {
+    team1 += array[i]
+    team2 += array[i+1] || 0
+  }
+  return [team1, team2]
+}
+
+
+/other solution
+function rowWeights(array){
+  var arr = [0, 0];
+  for (var i = 0; i < array.length; i++) {
+    i % 2 == 0 ? arr[0] += array[i] : arr[1] += array[i];
+  }
+  return arr;
+}
