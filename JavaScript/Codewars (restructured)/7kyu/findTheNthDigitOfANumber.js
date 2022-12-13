@@ -18,3 +18,23 @@ https://www.codewars.com/kata/577b9960df78c19bca00007e/javascript
 // 65, 0 --> -1
 // 24, -8 --> -1
 
+
+
+// My solution
+var findDigit = function(num, nth){
+  if (nth <= 0) return -1
+  return +num.toString().split('').slice(-nth)[0] || 0
+}
+
+
+// other solution
+var findDigit = function(num, nth){
+    if(nth <= 0)
+      return -1;
+     
+    var x = Math.abs(num);
+    for (var i=1; i < nth; i++){
+      x = Math.floor(x/10);
+    }
+    return x%10;
+}
