@@ -15,3 +15,28 @@ https://www.codewars.com/kata/5262119038c0985a5b00029f/train/javascript
 // is_prime(1)  /* false */
 // is_prime(2)  /* true  */
 // is_prime(-1) /* false */
+
+
+// My solution
+function isPrime(num) {
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (!(num  % i)) return false
+  }
+  return num > 1
+}
+
+
+
+// other solution
+function isPrime(n) {
+	if (n <= 1)
+  	return false;
+  if (n <= 3 || n == 5 || n == 7 || n == 11)
+    return true;
+  if (n % 2 === 0 || n % 3 === 0)
+  	return false;
+  for (var i = 5; i <= Math.pow(n, 0.5); i += 6)
+  	if (n % i === 0 || n % (i + 2) === 0)
+    	return false;
+  return true;
+}
