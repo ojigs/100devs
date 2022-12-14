@@ -1,5 +1,6 @@
 // To-do:
 // Extract a Card component from the markup below, and use the children prop to pass different JSX to it:
+// This implemented functionality also includes application of conditional rendering of JSX
 
 function Card({ title, image, text }) {
     return (
