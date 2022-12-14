@@ -1,4 +1,3 @@
-
 https://www.codewars.com/kata/56898ff4c115980dd8000051/train/javascript// Description
 
 // You are frantically studying for your exams. To do so you need to frequently visit the library to get your revision time in.
@@ -71,3 +70,90 @@ https://www.codewars.com/kata/56898ff4c115980dd8000051/train/javascript// Descri
 // openingTimes("wednsay 12:40"); //returns "Invalid time!"
 
 // Happy coding!
+
+
+// My solution
+function openingTimes(str) {
+  //array from string
+  const strArr = str.split(' ')
+	
+  //Regex test time meets 24 hour format
+  let re = /^(?:[01]\d|2[0-3]):(?:[0-5]\d$)/.test(strArr[1])
+  
+  //validate weekday
+  let weekday = strArr[0].substring(0,1).toUpperCase() + strArr[0].substring(1).toLowerCase()
+  
+  //weekdays array
+  let weekdaysArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  
+  const schedule = {
+    'Monday': { 'open': '08:00', 'close': '20:00' },
+    'Tuesday': { 'open': '08:00', 'close': '20:00' },
+    'Wednesday': { 'open': '08:00', 'close': '20:00' },
+    'Thursday': { 'open': '08:00', 'close': '20:00' },
+    'Friday': { 'open': '08:00', 'close': '20:00' },
+    'Saturday': { 'open': '10:00', 'close': '18:00' },
+    'Sunday': { 'open': '12:00', 'close': '16:30' },
+  }
+  
+  if (!re || weekdaysArr.indexOf(weekday) < 0) return 'Invalid time!'
+  
+  let openOrClose
+  let dayIndex = weekdaysArr.indexOf(weekday)
+
+  switch (re) {
+      case strArr[1] >= schedule[weekday].open && strArr[1] < schedule[weekday].close: 
+        openOrClose = 'closes at ' + schedule[weekday].close 
+        break;
+      case strArr[1] < schedule[weekday].open: 
+        openOrClose = 'opens: today ' + schedule[weekday].open
+        break;
+      case strArr[1] >= schedule[weekday].close:
+        openOrClose = 'opens: ' + (weekdaysArr[dayIndex + 1] || 'Monday') + ' ' + schedule[(weekdaysArr[dayIndex + 1] || 'Monday')].open
+        break;
+  }
+
+  
+  return `Library ${openOrClose}`
+  
+}
+
+
+// other solution
+function openingTimes(str) {
+	let match = str.toLowerCase().match(/^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday) ((\d\d):(\d\d))$/i)
+  if (match === null) return 'Invalid time!'
+  let [day, time, hr, min] = match.slice(1)
+  if (hr >= '24' || min >= '60') return 'Invalid time!'
+  
+  let days = 'monday tuesday wednesday thursday friday saturday sunday'.split(' ')
+  day = days.indexOf(day)
+  let outputDays = 'Monday Tuesday Wednesday Thursday Friday Saturday Sunday Monday'.split(' ')
+  let open = '08:00 08:00 08:00 08:00 08:00 10:00 12:00 08:00'.split(' ')
+  let close = '20:00 20:00 20:00 20:00 20:00 18:00 16:30'.split(' ')
+  if (time < open[day]) return 'Library opens: today ' + open[day]
+  if (time < close[day]) return 'Library closes at ' + close[day]
+  return 'Library opens: ' + outputDays[day+1] + ' ' + open[day+1]
+}
+
+
+function openingTimes(str) {
+  const times = {
+    Monday: {open: "08:00", close: "20:00"},
+    Tuesday:  {open: "08:00", close: "20:00"},
+    Wednesday:  {open: "08:00", close: "20:00"},
+    Thursday:  {open: "08:00", close: "20:00"},
+    Friday:  {open: "08:00", close: "20:00"},
+    Saturday:  {open: "10:00", close: "18:00"},
+    Sunday:  {open: "12:00", close: "16:30"},
+  }
+  const convert = (s) => s.split(":").reduce((a,c) => +a + c/60);
+  const tomorrow = (today) => Object.keys(times)[(Object.keys(times).indexOf(today) + 1)%7];
+  const [day_unfiltered,time] = str.split(/ /);
+  const day = day_unfiltered.toLowerCase().replace(/^./, (match) => match.toUpperCase());
+  const [hh,mm] = time.split(/:/);
+  if (!times[day] || hh > 23 || mm > 59) return "Invalid time!"
+  if (convert(time) < convert(times[day].open)) return `Library opens: today ${times[day].open}`
+  if (convert(time) < convert(times[day].close)) return `Library closes at ${times[day].close}`
+  if (convert(time) >= convert(times[day].close)) return `Library opens: ${tomorrow(day)} ${times[tomorrow(day)].open}`
+}
