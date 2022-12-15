@@ -9,4 +9,17 @@ https://www.codewars.com/kata/57eaeb9578748ff92a000009/javascript
 // Arrays
 
 
-// 
+// My solution
+function sumMix(x){
+  return x.reduce((a,c) => a + (+c),0)
+}
+
+
+// other solution
+function sumMix(x){
+  let result = 0;
+  for (let n of x) {
+    result += parseInt(n);
+  }
+  return result;
+}
