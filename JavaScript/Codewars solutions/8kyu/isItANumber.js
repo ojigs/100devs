@@ -16,3 +16,14 @@ https://www.codewars.com/kata/57126304cdbf63c6770012bd/train/javascript
 // isDigit("3 5")
 // isDigit("zero")
 
+
+// My solution
+function isDigit(s) {
+  if (!s.length || s === ' ') return false
+  return Number.isFinite(+s)
+}
+
+
+// other solutionfunction isDigit(s) {
+ return s==parseFloat(s);
+}
