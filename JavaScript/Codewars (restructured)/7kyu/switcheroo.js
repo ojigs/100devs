@@ -11,3 +11,17 @@ https://www.codewars.com/kata/57f759bb664021a30300007d/javascript
 // Strings
 
 
+// My solution
+function switcheroo(x){
+  return x.replace(/[ab]/g, (m) => m === 'a' ? 'b' : 'a')
+}
+
+
+// other oslution
+function switcheroo(x){
+  return x.split('').map(function(e){
+    if (e =='b')return 'a';
+    if (e == 'a') return 'b';
+    if(e=='c') return 'c'
+  }).join('');
+}
