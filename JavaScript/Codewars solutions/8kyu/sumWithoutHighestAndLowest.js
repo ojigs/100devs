@@ -1,4 +1,4 @@
-https://www.codewars.com/kata/576b93db1129fcf2200001e6/train/javascript
+//www.codewars.com/kata/576b93db1129fcf2200001e6/train/javascript
 // Description
 
 // Task
@@ -16,3 +16,19 @@ https://www.codewars.com/kata/576b93db1129fcf2200001e6/train/javascript
 // Input validation
 
 // If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
+
+https: function sumArray(array) {
+  if (!array || array.length <= 2) return 0;
+  array.sort((a, b) => b - a).shift();
+  array.pop();
+  return array.reduce((a, c) => a + c, 0);
+}
+
+// other solution
+sumArray = (a) =>
+  a
+    ? a
+        .sort((x, y) => x - y)
+        .slice(1, -1)
+        .reduce((s, e) => s + e, 0)
+    : 0;
