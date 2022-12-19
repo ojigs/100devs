@@ -22,3 +22,16 @@ https://www.codewars.com/kata/54a91a4883a7de5d7800009c/train/javascript
 
 
 
+// My solution
+function incrementString(str) {
+  if (!/\d+$/.test(str)) return str + '1';
+
+  let num = str.match(/\d+$/)[0];
+  let numLen = num.length;
+  let newNum = parseInt(num) + 1;
+  return str.replace(/\d+$/, (newNum + '').padStart(numLen, '0'));
+}
+
+
+/other solution
+const incrementString = s => s.replace(/[0-8]?9*$/, m => String(++m));
