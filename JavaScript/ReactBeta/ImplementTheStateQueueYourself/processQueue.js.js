@@ -14,3 +14,21 @@
 
 //     return finalState;
 //   }
+
+export function getFinalState(baseState, queue) {
+  let finalState = baseState;
+
+  // TODO: do something with the queue...
+  // queue.reduce((a,c) => a + c)
+  for (let i = 0; i < queue.length; i++) {
+    if (typeof queue[i] === "function") {
+      // received function as parameter
+      // replace n in the function with final state and return the result
+      finalState = queue[i](finalState);
+    } else {
+      finalState = queue[i];
+    }
+  }
+
+  return finalState;
+}
