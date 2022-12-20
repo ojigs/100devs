@@ -13,3 +13,19 @@ https://www.codewars.com/kata/541c8630095125aba6000c00/train/javascript
 
 // Mathematics
 // Algorithms
+
+
+
+// My solution
+function digitalRoot(n) {
+  if (n < 10) {
+    return n
+  }
+  return digitalRoot(n.toString().split('').reduce((a,c) => a + (+c), 0))
+}
+
+
+// other solution
+function digital_root(n) {
+  return (n - 1) % 9 + 1;
+}
