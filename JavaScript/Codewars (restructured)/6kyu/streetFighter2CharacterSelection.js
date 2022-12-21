@@ -83,3 +83,61 @@ https://www.codewars.com/kata/5853213063adbd1b9b0000be/javascript
 // Graph Theory
 
 // Suggest kata description edits
+
+
+
+// My solution
+function streetFighterSelection(fighters, position, moves){
+  let arr = []
+  let currPos = [...position]
+  for (let i = 0; i < moves.length; i++) {
+    switch (moves[i]) {
+        case 'left':
+          if (currPos[1] - 1 < 0) currPos[1] = 5
+          else currPos[1]--
+          arr.push(fighters[currPos[0]][currPos[1]])
+          break;
+        case 'right':
+          if (currPos[1] + 1 > 5) currPos[1] = 0
+          else currPos[1]++
+          arr.push(fighters[currPos[0]][currPos[1]])          
+          break;
+        case 'up':
+          if (currPos[0] - 1 < 0) currPos[0] = 0
+          else currPos[0]--
+          arr.push(fighters[currPos[0]][currPos[1]])
+          break;
+        case 'down':
+          if (currPos[0] + 1 > 1) currPos[0] = 1
+          else currPos[0]++
+          arr.push(fighters[currPos[0]][currPos[1]])
+          break;
+    }
+  }
+  return arr
+}
+
+
+// other solution
+function streetFighterSelection(fighters, position, moves){
+  var result = [];
+  
+  moves.forEach(function(move) {
+    if (move === "up") {
+      position[0] = 0;
+    }
+    else if (move === "down") {
+      position[0] = 1;
+    }
+    else if (move === "right") {
+      position[1] = (position[1] === 5) ? 0 : position[1] + 1;
+    }
+    else if (move === "left") {
+      position[1] = (position[1] === 0) ? 5 : position[1] - 1;
+    }
+    
+    result.push(fighters[position[0]][position[1]]);
+  });
+  
+  return result;
+}
