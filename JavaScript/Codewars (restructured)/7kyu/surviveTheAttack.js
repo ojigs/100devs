@@ -27,3 +27,47 @@ https://www.codewars.com/kata/634d0f7c562caa0016debac5
 // //1 survivors                3 survivors 
 // //return true
 
+
+
+// My solution
+function hasSurvived(attackers, defenders){
+  if (!attackers.length) return true
+  if (!defenders.length) return false
+  let attCount = 0, defCount = 0
+  let attackPow = attackers.reduce((a,c) => a + c)
+  let defendPow = defenders.reduce((a,c) => a + c)
+  for (let i = 0; i < attackers.length; i++) {
+    if (attackers[i] > defenders[i]) attCount++
+    else if (attackers[i] < defenders[i]) defCount++
+  }
+  if (attCount === defCount) {
+    return attackPow <= defendPow
+  }
+  return attCount < defCount
+}
+
+
+
+// other solution
+function hasSurvived(attackers, defenders) {
+  let attack = 0;
+  let defend = 0;
+  let attackSum = 0;
+  let defendSum = 0;
+  let i = 0;
+  while (attackers[i] || defenders[i]) {
+    if (!attackers[i] || attackers[i] < defenders[i]) {
+      defend++;
+    } else if (!defenders[i] || attackers[i] > defenders[i]) {
+      attack++;
+    }
+    if (attackers[i]) {
+      attackSum += attackers[i];
+    }
+    if (defenders[i]) {
+      defendSum += defenders[i];
+    }
+    i++;
+  }
+  return defend === attack ? attackSum <= defendSum : defend > attack;
+}
