@@ -8,3 +8,9 @@ https://www.codewars.com/kata/5748838ce2fab90b86001b1a/javascript
 // Note: use the π value provided in your language (Math::PI, M_PI, math.pi, etc)
 // Fundamentals
 // Mathematics
+
+
+// My solution
+function squareArea(A){
+  return ((2 * A / Math.PI)**2)
+}
