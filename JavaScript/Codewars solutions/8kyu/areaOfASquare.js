@@ -14,3 +14,8 @@ https://www.codewars.com/kata/5748838ce2fab90b86001b1a/javascript
 function squareArea(A){
   return ((2 * A / Math.PI)**2)
 }
+
+
+
+// other solution
+squareArea = A => +Math.pow((2 * A / 3.1416), 2).toFixed(2);
