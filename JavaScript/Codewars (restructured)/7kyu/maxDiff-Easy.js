@@ -11,3 +11,16 @@ https://www.codewars.com/kata/588a3c3ef0fbc9c8e1000095/javascript
 // [1, 2, 3, -4]  //  returns 7 because 3 - (-4) == 7
 
 // Have fun!
+
+
+// My solution
+function maxDiff(list) {
+  if (!list.length) return 0
+  return Math.max(...list) - Math.min(...list)
+};
+
+
+/other solution
+function maxDiff(list) {
+  return list.length ? Math.max(...list) - Math.min(...list) : 0;
+};
