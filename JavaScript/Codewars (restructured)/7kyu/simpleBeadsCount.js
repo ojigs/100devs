@@ -8,3 +8,11 @@ https://www.codewars.com/kata/58712dfa5c538b6fc7000569/javascript
 // Implement count_red_beads(n) (in PHP count_red_beads($n); in Java, Javascript, TypeScript, C, C++ countRedBeads(n)) so that it returns the number of red beads.
 // If there are less than 2 blue beads return 0.
 // Fundamentals
+
+
+// My solution
+function countRedBeads(n) {
+  return n < 2 ? 0 : n * 2 - 2
+}
+
+
