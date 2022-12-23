@@ -55,3 +55,21 @@ https://www.codewars.com/kata/5af15a37de4c7f223e00012d/javascript
 // Fundamentals
 // Algorithms
 // Sorti
+
+
+// My solution
+function menFromBoys(arr){
+  const filArr = arr.filter((e, i, a) => a.indexOf(e) === i)
+  const evenArr = filArr.filter(e => !(e%2)).sort((a,b) => a - b)
+  const oddArr = filArr.filter(e => e%2).sort((a,b) => b - a)
+  return [...evenArr, ...oddArr]
+}
+
+
+// other solution
+function menFromBoys(arr){
+  arr = Array.from(new Set(arr));
+  let odd = arr.filter(a => a % 2).sort((a, b) => b - a);
+  let even = arr.filter(a => a % 2 === 0).sort((a, b) => a - b);
+  return even.concat(odd);
+}
