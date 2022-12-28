@@ -11,3 +11,19 @@ https://www.codewars.com/kata/55b051fac50a3292a9000025/javascript
 // You will be given a string of numbers and letters mixed up, you have to return all the numbers in that string in the order they occur.
 // Strings
 // Fundamentals
+
+
+
+/My solution
+var filterString = function(value) {
+  return +value.match(/[0-9]/g).join('')
+}
+
+
+// other solution
+var filterString = function(value) {
+  return +value.match(/[0-9]/g).join('')
+}
+
+
+const FilterString = value => +value.replace(/\D/g, '');
