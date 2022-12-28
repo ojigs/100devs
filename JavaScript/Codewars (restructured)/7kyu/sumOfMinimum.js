@@ -17,3 +17,21 @@ https://www.codewars.com/kata/5d5ee4c35162d9001af7d699/javascript
 // ENJOY CODING :)
 // Fundamentals
 // Arrays
+
+
+// My solution
+function sumOfMinimums(arr) {
+  return arr.reduce((a,c) => a + Math.min(...c), 0)
+}
+
+
+/other solution
+function sumOfMinimums(arr) {
+  let total = 0;
+  
+  for (let i = 0; i < arr.length; i++){
+   total += Math.min(...arr[i])
+  }
+  
+  return total;
+}
