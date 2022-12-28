@@ -25,3 +25,19 @@ https://www.codewars.com/kata/586538146b56991861000293/train/javascript
 //     Every word and punctuation mark should be seperated by a space ' '.
 //     There should be no trailing whitespace
 
+
+
+// My solution
+function to_nato(words) {
+  NATO[","] = ','
+  NATO["."] = '.'
+  NATO["!"] = '!'
+  NATO["?"] = '?'
+  return words.split('').flatMap(e => NATO[e.toLowerCase()] || []).join(' ')
+}
+
+
+//other solution
+function to_nato(words) {
+  return words.split('').filter(c => c !== ' ').map(c => table[c.toUpperCase()] || c).join(' ');
+}
