@@ -7,3 +7,10 @@ https://www.codewars.com/kata/559f80b87fa8512e3e0000f5/javascript
 // [2, 4, 6]        -->  []
 
 // Fundamentals
+
+
+// My solution
+function odds(values){
+  // arrow it
+  return values.filter(e => e%2);
+}
