@@ -15,3 +15,25 @@ https://www.codewars.com/kata/5533c2a50c4fea6832000101
 // values = [1, 2, 3, 4]
 // createDict(keys, values) // returns {'a': 1, 'b': 2, 'c': 3}
 
+
+
+// My solution
+function createDict(keys, values){
+  let list = {}
+  for (let i = 0; i < keys.length; i++) {
+    list[keys[i]] = values[i] !== undefined ? values[i] : null
+  }
+  return list
+}
+
+
+//other solution
+function createDict(keys, values) {
+  var obj = {}
+  
+  for (var i = 0; i < keys.length; i++) {
+    obj[keys[i]] = i < values.length ? values[i] : null
+  }
+  
+  return obj
+}
