@@ -20,3 +20,23 @@ https://www.codewars.com/kata/5813d19765d81c592200001a
 // Mathematics
 // Arrays
 // Algorithms
+
+
+
+// My solution
+function dontGiveMeFive(start, end) {
+  return Array.from({length: end - start + 1}, (e, i) => i + start)
+  .filter(e => !(e + '').includes(5)).length
+}
+
+
+// other solution
+function dontGiveMeFive(start, end) {
+  let count = 0
+  for (let i = start; i <= end; i++) {
+    if (!/5/.test(i)) {
+      count++
+    }
+  }
+  return count
+}
