@@ -136,3 +136,18 @@ class teamStatistics {
   }
 
 }
+
+
+
+function stat(strg) {
+    const addZero=s=>('0'+s).slice(-2);  
+    const getStr=n=>addZero(Math.floor(n/3600))+'|'+addZero(Math.floor(n%3600/60))+'|'+addZero(n%60);
+    if(!strg)return '';
+    var arr=strg.split(', ')
+                .map(a=>a.replace(/(\d+)\|(\d+)\|(\d+)/,function(a,b,c,d){return b*3600+c*60+d*1})).sort((a,b)=>a*1-b*1);
+    var len=arr.length;
+    var range=arr[len-1]-arr[0];
+    var average=Math.floor(arr.reduce((s,v)=>s+v*1,0)/len);
+    var median=len%2===1?arr[(len-1)/2]:Math.floor((arr[len/2]*1+arr[len/2-1]*1)/2);
+    return 'Range: '+getStr(range)+' Average: '+getStr(average)+' Median: '+getStr(median);
+}
