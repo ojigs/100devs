@@ -32,3 +32,107 @@ https://www.codewars.com/kata/55b3425df71c1201a800009c/train/javascript
 // Statistics
 // Mathematics
 // Data Science
+
+
+
+// My solution
+function stat(strg) {
+//   Given a string of comma separated values represnted in hours, minutes, seconds format
+//   Return a string showing the range of values(highest - lowest) in same format,
+        //   the average or mean of all values in the given string,
+        //   the median of all values.
+//   stat("01|15|59, 1|47|16, 01|17|20, 1|32|34, 2|17|17") ---> "Range: 01|01|18 Average: 01|38|05 Median: 01|32|34"
+//   split string into array of values
+//   implement function to convert h|m|s to seconds
+//   draw up computation for range and average and convert result back to h|m|s
+//   find median from original string array
+//   return string in specified format
+  if (strg === '') return ''
+  
+  const toSecs = (str) => {
+    str = str.split('|')
+    return (str[0] * 3600) + (str[1] * 60) + (+str[2])
+  }
+  const toHours = (secs) => {
+    let hour = new Date(secs * 1000).toISOString().substr(11,8)
+    return hour.replace(/:/g, '|')
+  }
+  
+  let strArr = strg.split(', ')
+  let sortedArr = strArr.sort((a,b) => toSecs(a) - toSecs(b))
+  let max = Math.max(...strArr.map(e => toSecs(e)))
+  let min = Math.min(...strArr.map(e => toSecs(e)))
+  let range = max - min
+  let average = strArr.reduce((a,c) => a + toSecs(c), 0) / strArr.length
+  let median
+  
+  if (sortedArr.length % 2) {
+    median = toSecs(sortedArr[Math.floor(sortedArr.length/2)])
+  } else {
+    median = (toSecs(sortedArr[sortedArr.length/2]) + toSecs(sortedArr[sortedArr.length/2 - 1])) / 2
+  }
+  
+  return `Range: ${toHours(range)} Average: ${toHours(average)} Median: ${toHours(median)}`
+}
+
+
+// other solution
+function stat(strg) {
+    if (strg === '') {
+      return strg;
+    }
+    const teamStats = new teamStatistics(strg);
+    return 'Range: ' +  teamStats.getRange() + ' Average: ' + teamStats.getAverage() + ' Median: ' + teamStats.getMedian();
+}
+
+class teamStatistics {
+  constructor(teamScores) {
+    this.teamScoresInArray = teamScores.split(', ');
+    this.teamTimesInSeconds = [];
+    
+    for(let singlePerson of this.teamScoresInArray) {
+      const hoursToSeconds = Number(singlePerson.split('|')[0] * 60 * 60);
+      const minutesToSeconds = Number(singlePerson.split('|')[1] * 60);
+      const seconds = Number(singlePerson.split('|')[2]);
+      this.teamTimesInSeconds.push(hoursToSeconds + minutesToSeconds + seconds);
+    }
+  }
+  
+  getFormatedTime(timeInSeconds) {
+    const date = new Date(null);
+    date.setSeconds(timeInSeconds);
+    
+    return date.toISOString().substr(11, 8).replace(/:\s*/g, '|');
+  }
+  
+  getAverage() {
+    let arraySum = 0;
+    let average = 0;
+    const arrayLength = this.teamTimesInSeconds.length;
+    
+    for (let number of this.teamTimesInSeconds) {
+      arraySum += number;
+    }
+    
+    return this.getFormatedTime(arraySum / arrayLength);
+  }
+    
+  getMedian() {
+    this.teamTimesInSeconds.sort( function(a,b) {return a - b;} );
+
+    var half = Math.floor(this.teamTimesInSeconds.length/2);
+
+    if(this.teamTimesInSeconds.length % 2) {
+      return this.getFormatedTime(this.teamTimesInSeconds[half]);
+    } else {
+      return this.getFormatedTime((this.teamTimesInSeconds[half-1] + this.teamTimesInSeconds[half]) / 2.0);
+    }
+  }
+  
+  getRange() {
+    const biggest = Math.max.apply(Math, this.teamTimesInSeconds);
+    const smallest = Math.min.apply(Math, this.teamTimesInSeconds);
+    return this.getFormatedTime(biggest-smallest);
+  }
+
+}
