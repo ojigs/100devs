@@ -1,4 +1,4 @@
-https://www.codewars.com/kata/54fb963d3fe32351f2000102
+// https://www.codewars.com/kata/54fb963d3fe32351f2000102
 // Description:
 
 // The Collatz Conjecture states that for any positive natural number n, this process:
@@ -20,3 +20,16 @@ https://www.codewars.com/kata/54fb963d3fe32351f2000102
 // Mathematics
 // Algorithms
 
+// My solution
+function collatz(n) {
+  let arr = [n];
+  while (n > 1) {
+    if (!(n % 2)) {
+      n = n / 2;
+    } else {
+      n = n * 3 + 1;
+    }
+    arr.push(n);
+  }
+  return arr.length;
+}
