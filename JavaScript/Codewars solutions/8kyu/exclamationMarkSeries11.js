@@ -9,3 +9,12 @@ https://www.codewars.com/kata/57fb09ef2b5314a8a90001ed/javascript
 // replace("aeiou") === "!!!!!"
 // replace("ABCDE") === "!BCD!"
 
+
+// My solution
+function replace(s){
+  return s.replace(/[aeiou]/gi, '!')
+}
+
+
+// other solution
+const replace = w => (w.split('').map(e => 'aeiou'.includes(e.toLowerCase()) ? '!' : e)).join('');
