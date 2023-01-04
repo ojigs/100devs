@@ -9,3 +9,14 @@ https://www.codewars.com/kata/562926c855ca9fdc4800005b/train/javascript
 // numberToPower(10,6) // -> 1000000
 
 // Note: Math.pow and some other Math functions like eval() and ** are disabled.
+
+
+
+// My solution
+function numberToPower(number, power){
+  let pow = 1
+  for (let i = 0; i < power; i++) {
+    pow *= number
+  }
+  return pow
+}
