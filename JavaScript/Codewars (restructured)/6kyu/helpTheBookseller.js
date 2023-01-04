@@ -33,3 +33,50 @@ https://www.codewars.com/kata/54dc6f5a224c26032800005c/train/javascript
 
 
 
+
+// My solution
+function stockList(listOfArt, listOfCat){
+  let arr = listOfArt.filter((e, i) => listOfCat.includes(e[0]))
+  let obj = {}
+  for (let i = 0; i < listOfCat.length; i++)  {
+    obj[listOfCat[i]] = 0
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (obj[arr[i][0]]) {
+      obj[arr[i][0]] += +arr[i].split(' ')[1]
+    } else {
+      obj[arr[i][0]] = +arr[i].split(' ')[1]
+    }
+  }
+//   check if the values in the  object all equals zero; return empty string
+  if (Object.values(obj).every(e => e=== 0)) {
+    return ""
+  }
+  return (Object.entries(obj).map(e => `(${e.join(' : ')})`)).join(' - ')
+}
+
+
+// other solution
+function stockList(listOfArt, listOfCat) {
+  var qs = {};
+  if (!listOfArt.length) return '';
+
+  listOfArt.forEach(function(art) {
+    var cat = art[0];
+    qs[cat] = (qs[cat] | 0) + +art.split(' ')[1];
+  });
+
+  return listOfCat.map(function(c) {
+    return '(' + c + ' : ' + (qs[c] | 0) + ')';  
+  }).join(' - ');  
+}
+
+
+
+function stockList(listOfArt, listOfCat) {
+  if (!listOfArt.length || !listOfCat.length) return ''
+  return listOfCat.map(w => {
+    const s = listOfArt.reduce((a, b) => a + (b.charAt(0) === w ? +b.split(' ')[1] : 0), 0)
+    return `(${w} : ${s})`
+  }).join(' - ')
+}
