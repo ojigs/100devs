@@ -19,3 +19,14 @@ https://www.codewars.com/kata/5aff237c578a14752d0035ae/javascript
 
 // Some random tests might fail due to a bug in the JavaScript implementation. Simply resubmit if that happens to you.
 // Fundamentals
+
+
+
+// My solution
+function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
+  return Math.floor(Math.sqrt([...arguments].reduce((a,c) => a + (c**2), 0)) / 2)
+}
+
+
+//others olution
+const predictAge = (...ages) => Math.hypot(...ages) / 2 | 0;
