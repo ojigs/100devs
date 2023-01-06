@@ -32,3 +32,22 @@ https://www.codewars.com/kata/55e2adece53b4cdcb900006c/train/javascript
 // Fundamentals
 // Mathematics
 // Algorithms
+
+
+// My solution
+function race(v1, v2, g) {
+// given number values, v1,and v2 representing speed of both tortoise, g represent gap
+//   return an array in hr, min, sec, representing time taken to close the gap
+//   race(720, 850, 70) --> [0, 32, 18]
+ 
+  if (v1 >= v2) return null
+  let time = (g / (v2 - v1)) + 0.000001
+  let t = new Date(time * 1000 * 3600).toISOString().slice(11, 19)
+  return t.split(':').map(e => +e)
+}
+
+// other solution
+function race(v1, v2, g){
+  let time=g/(v2-v1);
+  return v2>v1 ? [Math.floor(time),Math.floor(time*60%60),Math.floor(time*3600%60)] : null;
+}
