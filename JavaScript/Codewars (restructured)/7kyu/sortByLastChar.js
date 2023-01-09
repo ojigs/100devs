@@ -10,3 +10,16 @@ https://www.codewars.com/kata/57eba158e8ca2c8aba0002a0/javascript
 // Strings
 // Arrays
 // Sorting
+
+
+// My solution
+function last(x){
+  if (!x.charCodeAt(0)) return x
+  return x.split(' ').sort((a,b) => a[a.length - 1].localeCompare(b[b.length - 1]))
+}
+
+
+// other solution
+function last(x){
+  return x.split(' ').sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
+}
