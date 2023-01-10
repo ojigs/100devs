@@ -35,3 +35,8 @@
 function closeCompare(a, b, margin) {
   return margin >= Math.abs(b - a) ? 0 : a < b ? -1 : a > b ? 1 : 0;
 }
+
+// other solution
+function closeCompare(a, b, m = 0) {
+  return Math.abs(a - b) <= m ? 0 : Math.sign(a - b);
+}
