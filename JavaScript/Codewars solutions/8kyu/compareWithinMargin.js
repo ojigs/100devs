@@ -30,3 +30,8 @@
 // If a = 3, b = 5, and margin = 0, then close_compare(a, b, margin) should return -1.
 
 // This is because the distance between a and b is greater than 0, and a is less than b.
+
+// My solution
+function closeCompare(a, b, margin) {
+  return margin >= Math.abs(b - a) ? 0 : a < b ? -1 : a > b ? 1 : 0;
+}
