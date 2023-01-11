@@ -21,3 +21,15 @@ https://www.codewars.com/kata/59811fd8a070625d4c000013/javascript
 // 90, 2  -->  "30x^3"
 
 // Fundamentals
+
+
+// Mysolution
+function integrate(coefficient, exponent) {
+  return `${coefficient/(exponent + 1)}x^${exponent + 1}`
+}
+
+
+// other solution
+const integrate = (coefficient, exponent) => {
+  return coefficient / (exponent + 1) + 'x^' + (exponent + 1);
+}
