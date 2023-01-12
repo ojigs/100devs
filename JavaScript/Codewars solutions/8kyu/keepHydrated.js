@@ -24,4 +24,4 @@ function litres(time) {
 
 
 // other solution
-litres = t => ~~(t / 2);
+const litres = t => ~~(t / 2);
