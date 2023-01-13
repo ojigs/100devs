@@ -19,3 +19,21 @@ https://www.codewars.com/kata/52fba2a9adcd10b34300094c/train/javascript
 // Algebra
 // Matrix
 // Algorithms
+
+
+// My solution
+function transpose(matrix) {
+  let arr = []
+  for (let i = 0; i < matrix[0].length; i++) {
+    arr.push([])
+    for (let j = 0; j < matrix.length; j++) {
+      arr[i].push(matrix[j][i])
+    }
+  }
+  return arr
+}
+
+
+//other solution
+var transpose = m => m[0].map((_, i) => m.map(r => r[i]));
+
