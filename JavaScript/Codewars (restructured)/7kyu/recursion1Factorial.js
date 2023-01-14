@@ -18,3 +18,13 @@ https://www.codewars.com/kata/5694cb0ec554589633000036
 // Fundamentals
 // Recursion
 // Mathematics
+
+
+// My solution
+const factorial = n => {
+  return n <= 1 ? 1 : n * factorial(n - 1)
+};
+
+
+// other solution
+const factorial = n => n > 1 ? n*factorial(n-1) : 1;
