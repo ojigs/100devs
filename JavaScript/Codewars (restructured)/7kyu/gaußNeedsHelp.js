@@ -19,3 +19,16 @@ https://www.codewars.com/kata/54df2067ecaa226eca000229/train/javascript
 // Fundamentals
 // Mathematics
 // Performance
+
+
+// My solution
+function f(n){
+  if (n <= 0 || !Number.isInteger(n)) return false
+  return [...Array(n+1).keys()].reduce((a,c) => a + c)
+};
+
+
+//other solution
+function f(n){
+  return (parseInt(n) === n && n > 0) ? n*(n+1)/2 : false;
+};
