@@ -65,6 +65,7 @@ https://www.codewars.com/kata/572fdeb4380bb703fc00002c
 function isolateIt(arr){
   return arr.map(e => e.slice(0, Math.floor(e.length/2)) + '|' + e.slice(-Math.floor(e.length/2))) 
 }
+// Note: When using Array.prototype.slice, the number parameters are rounded down by default. So if you do arr.slice(0, 2.5), javascript processes it as arr.slice(0, 2). So there was no need for Math.floor in the above solution. Lesson.
 
 
 // other solution
