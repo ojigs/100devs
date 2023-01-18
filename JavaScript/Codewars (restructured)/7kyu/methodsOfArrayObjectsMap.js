@@ -58,3 +58,26 @@ https://www.codewars.com/kata/572fdeb4380bb703fc00002c
 // isolateIt(["1234","56789"]) should return ["12|34","56|89"]
 
 // a little hint: Flexible use of slice() Will make the work more simple.
+
+
+
+// My solution
+function isolateIt(arr){
+  return arr.map(e => e.slice(0, Math.floor(e.length/2)) + '|' + e.slice(-Math.floor(e.length/2))) 
+}
+
+
+// other solution
+function isolateIt(arr){
+  var array = arr.map(function(item){
+    var itemLength = item.length;
+  
+    if(itemLength % 2 === 0) {
+     return item.slice(0,itemLength/2) + "|" + item.slice(itemLength/2);
+    } else {
+      return item.slice(0,itemLength/2) + "|" + item.slice(itemLength/2 +1);
+    } 
+
+  });
+  return array;
+}
