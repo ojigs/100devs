@@ -19,3 +19,36 @@ https://www.codewars.com/kata/581e014b55f2c52bb00000f8/train/javascript
 // Arrays
 // Ciphers
 // Fundamentals
+
+
+
+// My solution
+function decipherThis(str) {
+  return str
+    .split(" ")
+    .map((e) => {
+      // Get all string after number
+      let parsed = e.replace(/\d+/, "");
+      if (parseInt(e) == e) return String.fromCharCode(e);
+      if (parsed.length === 1) return String.fromCharCode(parseInt(e)) + parsed;
+      if (parsed.length >= 2) {
+        return e.replace(
+          /^(\d+)(.)(.*)(.)$/,
+          (m, p1, p2, p3, p4) => String.fromCharCode(p1) + p4 + p3 + p2
+        );
+      }
+    })
+
+    .join(" ");
+}
+
+
+// other olution
+function decipherThis(str) {
+  return str.split(" ")
+    .map(w =>
+      w.replace(/^\d+/, c => String.fromCharCode(c))
+       .replace(/^(.)(.)(.*)(.)$/, "$1$4$3$2")
+    )
+    .join(" ")
+}
