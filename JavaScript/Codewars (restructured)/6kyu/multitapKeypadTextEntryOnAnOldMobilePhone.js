@@ -1,3 +1,4 @@
+https://www.codewars.com/kata/54a2e93b22d236498400134b/solutions/javascript
 // Description
 
 // Prior to having fancy iPhones, teenagers would wear out their thumbs sending SMS messages on candybar-shaped feature phones with 3x4 numeric keypads.
