@@ -28,3 +28,37 @@
 // For this assignment, write a module that can calculate the amount of button presses required for any phrase. Punctuation can be ignored for this exercise. Likewise, you can assume the phone doesn't distinguish between upper/lowercase characters (but you should allow your module to accept input in either for convenience).
 
 // Hint: While it wouldn't take too long to hard code the amount of keypresses for all 26 letters by hand, try to avoid doing so! (Imagine you work at a phone manufacturer who might be testing out different keyboard layouts, and you want to be able to test new ones rapidly.)
+
+
+
+// My solution
+function presses(phrase) {
+  phrase = phrase.toLowerCase()
+  let arr = [['1'], ['a','b','c','2'], ['d','e','f','3'], ['g','h','i','4'], ['j','k','l','5'],
+            ['m','n','o','6'], ['p','q','r','s','7'],['t','u','v','8'],['w','x','y','z','9'], [' ','0']]
+  let sum = 0
+  for (let i = 0; i < phrase.length; i++) {
+    let index = arr.findIndex(e=>e.includes(phrase[i]))
+    let pos = arr[index].indexOf(phrase[i]) + 1
+    sum += pos
+  }
+  return sum
+}
+
+
+// other solution
+function presses(phrase) {
+  var chunks = ['1', 'ABC2', 'DEF3', 'GHI4', 'JKL5', 'MNO6', 'PQRS7', 'TUV8', 'WXYZ9', ' 0'],
+      phrase = phrase.toUpperCase().split(''),
+      total = 0;
+  
+  phrase.forEach(function(l) {
+    var key = chunks.filter(function(c) {
+      return c.indexOf(l) > -1;
+    })[0];
+    total += key.indexOf(l) + 1;
+  });
+  
+  return total;
+      
+}
