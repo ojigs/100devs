@@ -33,6 +33,9 @@ ON sailorsenshi.cat_id = cats.id
 FULL OUTER JOIN schools
 ON sailorsenshi.school_id = schools.id
 
+-- In this solution, full join or left join could be used. But the tests require we use the left join which was why I have had to incorporate left join in my solution
+
+
 
 -- other solution
 SELECT
