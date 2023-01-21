@@ -23,3 +23,35 @@ resultant table schema
 
     NOTE: Your solution should use pure SQL. Ruby is used within the test cases to do the actual testing.
 */
+
+
+-- My solution
+SELECT 'US' AS location, id, name, price, card_name, card_number, transaction_date FROM ussales
+WHERE price > 50.00
+UNION ALL
+SELECT 'EU', id, name, price, card_name, card_number, transaction_date FROM eusales
+WHERE price > 50.00
+
+
+-- other solution
+-- Create your SELECT statement here
+select *
+  from (select 'US' as location,
+               id,
+               name,
+               price,
+               card_name,
+               card_number,
+               transaction_date
+          from ussales
+        union all
+        select 'EU' as location,
+               id,
+               name,
+               price,
+               card_name,
+               card_number,
+               transaction_date
+          from eusales
+       ) s
+ where s.price > 50
