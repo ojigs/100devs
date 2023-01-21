@@ -23,7 +23,8 @@ Return a results table - sailor_senshi, real_name, cat and school - of all chara
 Keep in mind some senshi were not initiated by a cat guardian and one is not in high school. The field can be left blank if this is the case.
 Fundamentals
 SQL
-Databases */
+Databases 
+RANK = 7KYU */
 
 -- My solution
 SELECT sailorsenshi.senshi_name AS sailor_senshi, sailorsenshi.real_name_jpn AS real_name, cats.name AS cat, schools.school AS school 
