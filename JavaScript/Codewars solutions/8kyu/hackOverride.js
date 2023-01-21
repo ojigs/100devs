@@ -24,3 +24,27 @@ https://www.codewars.com/kata/578c1e2edaa01a9a02000b7f/javascript
 // Happy hacking!
 // Strings
 // Fundamentals
+
+
+// My solution
+function aliasGen(fName, lName){
+  let a = fName[0].toUpperCase()
+  let b = lName[0].toUpperCase()
+  return firstName[a] && surname[b] ? 
+          `${firstName[a]} ${surname[b]}` : 
+          'Your name must start with a letter from A - Z.'
+}
+
+
+
+// other solution
+function aliasGen(first,last){
+  let auxFirst = first[0].toUpperCase( )
+  let auxLast = last[0].toUpperCase( )
+
+  if(firstName[auxFirst] && surname[auxLast]) {
+    return firstName[auxFirst] + ' ' + surname[auxLast]
+  } else {
+    return 'Your name must start with a letter from A - Z.'
+  }
+}
