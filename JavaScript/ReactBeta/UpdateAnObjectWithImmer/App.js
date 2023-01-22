@@ -89,4 +89,4 @@ export default function Canvas() {
   );
 }
 
-// immer does the update for us. And while although it looks like the object is being mutated, it actually is not
+// immer does the update for us. And while it looks like the object is being mutated, it actually is not
