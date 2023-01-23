@@ -23,3 +23,16 @@ https://www.codewars.com/kata/5a34af40e1ce0eb1f5000036/javascript
 // Fundamentals
 // Arrays
 // Strings
+
+
+
+// My solution
+function toCsvText(array) {
+  return array.map(e => e.join(',')+'\n').join('').slice(0, -1)
+}
+
+
+// other solution
+function toCsvText(array) {
+   return array.join('\n');
+}
