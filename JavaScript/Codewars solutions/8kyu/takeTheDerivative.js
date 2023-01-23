@@ -19,3 +19,14 @@ https://www.codewars.com/kata/5963c18ecb97be020b0000a2/javascript
 //     The output of this function should be a string
 //     The exponent will never be 1, and neither number will ever be 0
 
+
+// My solution
+function derive(coefficient,exponent) {
+  return coefficient * exponent + `x^${exponent - 1}`
+}
+
+
+// other solution
+function derive(a, b) {
+  return (a * b) + "x^" + (b - 1);
+}
