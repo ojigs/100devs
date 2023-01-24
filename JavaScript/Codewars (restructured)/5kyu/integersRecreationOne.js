@@ -18,3 +18,53 @@ https://www.codewars.com/kata/55aa075506463dac6600010d/train/javascript
 // In Fortran - as in any other language - the returned string is not permitted to contain any redundant trailing whitespace: you can use dynamically allocated character strings.
 // Fundamentals
 // Algorithms
+
+
+// My solution
+function listSquared(m, n) {
+  let arr = []
+  for (let i = m; i <= n; i++) {
+    let factor = 0
+    for (let j = 1; j <= i; j++) {
+      if (i%j===0) {
+        factor += j**2
+      }
+    }
+    if (Math.sqrt(factor) % 1 === 0) {
+      arr.push([i, factor])
+    }
+  }
+  return arr
+}
+
+
+
+// other solution
+function listSquared (m, n) {
+	var matches = [];
+
+	for (var i = m; i <= n; ++i) {
+		var sum = getDivisors(i).reduce((sum, n) => sum + n * n, 0);
+		var ok = Number.isInteger(Math.sqrt(sum));
+
+		if (ok) {
+			matches.push([i, sum]);
+		}
+	}
+
+	return matches;
+}
+
+function getDivisors (n) {
+	var divisors = [];
+
+	for (var i = 1; i <= n / 2; ++i) {
+		if (n % i) {
+			continue;
+		}
+
+		divisors.push(i);
+	}
+
+	return divisors.concat([n]);
+}
