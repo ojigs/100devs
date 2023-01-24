@@ -20,3 +20,16 @@
 
 // You can assume that all inputs are valid integers.
 // Fundamentals
+
+
+// My solution
+function roundToNext5(n){
+  return Math.ceil(n/5)*5;
+}
+
+
+// other solution
+function roundToNext5(n){
+  while(n % 5 !== 0) n++;
+  return n;
+}
