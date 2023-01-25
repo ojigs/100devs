@@ -12,3 +12,20 @@ https://www.codewars.com/trainer/javascript
 // "Why isn't my code working?"  -->  "W  H  Y  I  S  N  '  T  M  Y  C  O  D  E  W  O  R  K  I  N  G  ?"
 
 // Fundamentals
+
+
+
+// My solution
+function vaporcode(string) {
+  return string.toUpperCase().split('').filter(e => e !== ' ').join('  ') 
+}
+
+
+// other solution
+const vaporcode = string =>
+  string.toUpperCase().match(/\S/g).join(`  `);
+
+
+function vaporcode(string) {
+  return Array.from(string.replace(/\s+/g, "").toUpperCase()).join("  ")
+}
