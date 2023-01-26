@@ -22,3 +22,13 @@ https://www.codewars.com/kata/5375f921003bf62192000746/train/javascript
 // === "e6t-r3s are r4y fun!"
 
 
+// My solution
+function abbreviate(string) {
+  return string.replace(/\w{4,}/g, m => m[0] + (m.length - 2) + m[m.length - 1])
+}
+
+
+// other solution
+function abbreviate(string) {
+  return string.replace(/\B\w{2,}\B/g, match=> match.length);
+}
