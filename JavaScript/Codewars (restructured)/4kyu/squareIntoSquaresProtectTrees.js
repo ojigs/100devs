@@ -36,3 +36,36 @@ https://www.codewars.com/kata/54eb33e5bc1a25440d000891/train/javascript
 // Very often xk will be n-1.
 // Mathematics
 // Algorithms
+
+
+// My solution
+function decompose(n) {
+  const decomposed = decomposeRecursive(n, n * n);
+  return decomposed ? decomposed.reverse() : null;
+}
+
+function decomposeRecursive(n, remain) {
+    if (remain === 0) {
+        return [];
+    }
+  
+    for (let i = n - 1; i > 0; i--) {
+        const result = remain - i * i;
+        if (result >= 0) {
+            const res = decomposeRecursive(i, result);
+            if (res !== null) {
+                return [i, ...res];
+            }
+        }
+    }
+  
+    return null;
+}
+
+
+
+// other solution
+function decompose(n, n2=n*n, i=n, prev) {
+  while(n2>0 && i-->1) if (prev = decompose(n, n2-i*i, i)) return prev.concat([i]);
+  return (n2 == 0) ? [] : null;
+}
