@@ -12,3 +12,13 @@ https://www.codewars.com/kata/586909e4c66d18dd1800009b
 // You must not mutate the original array.
 
 // Here's a nice Youtube video about currying, which might help you if this is new to you.
+
+
+// My solution
+function multiplyAll(arr) {
+  return (y) => arr.map(e => e * y)
+}
+
+
+// other solution
+multiplyAll = a => x => a.map(e => e * x);
