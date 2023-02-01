@@ -26,3 +26,29 @@
 //     (with card the total price is 634, with tickets 645)
 // movie(100, 10, 0.95) should return 24
 //     (with card the total price is 235, with tickets 240)
+
+// My solution
+function movie(card, ticket, perc) {
+  let count = 1;
+  let next = ticket * perc;
+  let computeA = ticket * count;
+  let computeB = card + next;
+  while (Math.ceil(computeB) >= computeA) {
+    count++;
+    computeA = ticket * count;
+    next = next * perc;
+    computeB += next;
+  }
+  return computeA < computeB ? count + 1 : count;
+}
+
+// other solution
+function movie(card, ticket, perc) {
+  var costA = (n = 0),
+    costB = card;
+  while (Math.ceil(costB) >= costA) {
+    costA += ticket;
+    costB += ticket * Math.pow(perc, ++n);
+  }
+  return n;
+}
