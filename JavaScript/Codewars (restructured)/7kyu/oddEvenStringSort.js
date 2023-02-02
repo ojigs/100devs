@@ -27,3 +27,28 @@ https://www.codewars.com/kata/580755730b5a77650500010c/javascript
 // Strings
 // Fundamentals
 // Sorting
+
+
+
+// My solution
+function sortMyString(S) {
+  let odd = [...S].filter((e,i) => !(i%2)).join('')
+  let even = [...S].filter((e,i) => i%2).join('')
+  return `${odd} ${even}`
+}
+
+
+// other solution
+function sortMyString(S) {
+  let strEven = ''
+  let strOdd = ''
+  for (let i = 0; i < S.length; i++) {
+    if (i % 2 === 0) {
+      strEven += S[i]
+    }
+    else {
+      strOdd += S[i]
+    }
+  }
+  return strEven + ' ' + strOdd
+}
