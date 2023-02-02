@@ -9,3 +9,24 @@ https://www.codewars.com/kata/58f0ba42e89aa6158400000e/javascript
 // Note: Of course you can't do half a fold. You should know what this means ;P
 
 // Also, if somebody is giving you a negative distance, it's clearly bogus and you should yell at them by returning null (or whatever equivalent in your language). In Shell please return None. In C and COBOL please return -1.
+
+
+// My solution
+function foldTo(distance) {
+  if (distance < 0) return null
+  let thickness = 0.0001;
+  let count = 0;
+  while (thickness < distance) {
+    thickness *= 2;
+    count++;
+  }
+  return count;
+}
+
+// other solution
+function foldTo(distance) {
+  if(distance <= 0) return null;
+  let folds = 0;
+  for(var i = 0.0001; i < distance; i+= i) folds++;
+  return folds;
+}
