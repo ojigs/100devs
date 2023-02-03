@@ -53,3 +53,43 @@ https://www.codewars.com/kata/582c5382f000e535100001a7/train/javascript
 // Linked Lists
 // Recursion
 // Algorithms
+
+
+
+// My solution
+function parse(string) {
+  if (string === 'null') return null;
+  const [data, ...next] = string.split(' -> ');
+  return new Node(Number(data), parse(next.join(' -> ')));
+}
+
+
+// other solution
+const parse = string => string.split(' -> ').slice(0, -1).reduceRight((a, b) => new Node(Number(b), a), null);
+
+function parse(string) {
+  return string
+    .split(' -> ')
+    .reverse()
+    .map(val => JSON.parse(val))
+    .reduce((list, val) => new Node(val, list));
+}
+
+
+function parse(string) {
+  if(!string || string === "null") return null;
+  
+  const nodes = string.split(" -> ").map(node => +node);
+  const head = new Node(nodes[0]);
+  
+  let idx = 1;
+  let prev = head;
+  
+  while(idx < nodes.length - 1) {
+    const node = new Node(nodes[idx++]);
+    prev.next = node;
+    prev = node;
+  }  
+  
+  return head;
+}
