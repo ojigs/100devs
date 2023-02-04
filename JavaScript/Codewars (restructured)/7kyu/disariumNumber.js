@@ -34,3 +34,23 @@ https://www.codewars.com/kata/5a53a17bfd56cb9c14000003/javascript
 // Zizou
 // Fundamentals
 // Mathematics
+
+
+// My solution
+function disariumNumber(n){
+  return n.toString().split('').reduce((a,c,i) => a + (+c)**(i+1), 0) === n ?
+    'Disarium !!' : 'Not !!' 
+}
+
+
+// other solution
+function disariumNumber(n){
+  let number = n.toString();
+  let sum = 0;
+  
+  for (let i=0; i<number.length; i++){
+    sum += Math.pow(number[i], i+1);
+  }
+  
+  return n === sum ? "Disarium !!" : "Not !!";
+}
