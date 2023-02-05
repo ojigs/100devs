@@ -5,3 +5,15 @@
 
 // For the ASCII table you can refer to http://www.asciitable.com/
 // Fundamentals
+
+// My solution
+function getASCII(c) {
+  return c.charCodeAt();
+}
+
+// others solution
+function getASCII(chars) {
+  return [...chars]
+    .map((char) => char.charCodeAt())
+    .reduce((curr, prev) => prev + curr);
+}
