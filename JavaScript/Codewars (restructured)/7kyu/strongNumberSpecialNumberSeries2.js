@@ -38,3 +38,33 @@ https://www.codewars.com/kata/5a3e1319b6486ac96f000049/javascript
 // Zizou
 // Fundamentals
 // Mathematics
+
+
+// My solution
+function strong(n) {
+  const det = { 0: 1, 1: 1, 2: 2, 3: 6, 4: 24, 5: 120, 6: 720, 7: 5040, 8: 40320, 9: 362880 }
+  let strength = [...n.toString()].reduce((a,c) => a + det[c], 0)
+  return strength === n ? 'STRONG!!!!' : 'Not Strong !!'
+}
+
+
+// other solution
+function strong(n) {
+  let arr = String(n).split("");
+  
+  let sum = 0;
+  
+  function factorial(fnNum){
+    if(fnNum <= 1){
+      return 1;
+    }else{
+      return fnNum * factorial(fnNum - 1);
+    }
+  }
+  
+  for(let i = 0; i < arr.length; i++){
+    sum += factorial(arr[i]);
+  }
+  
+  return n == sum ? "STRONG!!!!" : "Not Strong !!"; 
+}
