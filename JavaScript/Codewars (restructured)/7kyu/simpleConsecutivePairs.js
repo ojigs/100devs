@@ -18,3 +18,24 @@ https://www.codewars.com/kata/5a3e1319b6486ac96f000049/javascript
 // Please also try Simple time difference
 // Arrays
 // Fundamentals
+
+
+// My solution
+function pairs(ar){
+  let count = 0
+  for (let i = 0; i < ar.length; i+=2) {
+    let absDiff = Math.abs(ar[i] - ar[i+1])
+    if (absDiff === 1) count++
+  }
+  return count
+};
+
+
+// other siution
+const R = require('ramda');
+
+const pairs = R.pipe(
+  R.splitEvery(2),
+  R.filter(R.pipe(R.apply(R.subtract), Math.abs, R.equals(1))),
+  R.length
+); //funky solution :D
