@@ -30,3 +30,26 @@
 
 // Strings
 // Fundamentals
+
+
+// My solution
+function getOrder(input) {
+  let menu = ['Burger', 'Fries', 'Chicken', 'Pizza', 'Sandwich', 'Onionrings', 'Milkshake', 'Coke']
+  let arr = []
+  for (let i = 0; i < menu.length; i++) {
+    arr.push(input.match(new RegExp(menu[i], 'gi')))
+  }
+  return arr.flatMap(e => e === null ? [] : e)
+        .map(e => e[0].toUpperCase() + e.slice(1))
+        .join(' ')
+}
+
+
+// other solution
+const getOrder = input => {
+  const menu = ['Burger','Fries','Chicken','Pizza','Sandwich','Onionrings','Milkshake','Coke'];
+  let orders = input.match(new RegExp(menu.join('|'), 'gi'))
+                    .map(item => item[0].toUpperCase() + item.slice(1))
+                    .sort((a,b) => menu.indexOf(a) - menu.indexOf(b));
+  return orders.join(' ');
+};
