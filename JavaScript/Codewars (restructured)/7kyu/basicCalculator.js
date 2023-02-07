@@ -12,3 +12,44 @@ https://www.codewars.com/kata/5296455e4fe0cdf2e000059f/javascript
 
 // Keep in mind, you cannot divide by zero. If an attempt to divide by zero is made, return null (throw an ArgumentException in C#)/(None in Python).
 // Fundamentals
+
+
+// My solution
+function calculate(num1, operation, num2) {
+  if (operation === '/' && num2 === 0) return null
+  let operand = {
+    '*': num1 * num2,
+    '+': num1 + num2,
+    '-': num1 - num2,
+    '/': num1 / num2
+  }
+  return operand.hasOwnProperty(operation) ? operand[operation] : null
+}
+
+
+// other solution
+function calculate(num1, operation, num2) {
+  var ops = {
+    '+': function(x, y) { return x + y; },
+    '-': function(x, y) { return x - y; },
+    '*': function(x, y) { return x * y; },
+    '/': function(x, y) { return y === 0 ? null : x / y; }
+  };
+  return (ops[operation] || function() { return null; })(num1, num2);
+}
+
+
+function calculate(a, o, b) {
+ switch(o) {
+    case '+':
+        return a+b;
+    case '-':
+        return a-b;
+    case '*':
+        return a*b;
+    case '/':
+        return b===0?null:a/b;
+    default:
+        return null;
+}
+}
