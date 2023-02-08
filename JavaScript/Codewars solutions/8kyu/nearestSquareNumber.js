@@ -18,3 +18,18 @@ https://www.codewars.com/kata/5a805d8cafa10f8b930005ba/javascript
 // Not prime numbers
 // Fundamentals
 // Mathematics
+
+
+
+// My solution
+function nearestSq(n){
+  let sqrt = Math.sqrt(n)
+  let low = Math.floor(sqrt)
+  let high = Math.ceil(sqrt)
+  return sqrt === n ? n : sqrt - low > high - sqrt ? high**2 : low**2
+}
+
+
+// other solution
+const nearestSq = n => Math.pow(Math.round(Math.sqrt(n)), 2);
+// Now this solution got me "lolling" :D
