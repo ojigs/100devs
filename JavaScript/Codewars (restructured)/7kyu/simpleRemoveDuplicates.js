@@ -16,3 +16,13 @@ https://www.codewars.com/kata/5ba38ba180824a86850000f7/javascript
 
 // Good luck!
 // Fundamentals
+
+
+// My solution
+function solve(arr) {
+  return arr.filter((e, i) => arr.lastIndexOf(e) === i)
+}
+
+
+// other olution
+const solve = arr => [...new Set(arr.reverse())].reverse()
