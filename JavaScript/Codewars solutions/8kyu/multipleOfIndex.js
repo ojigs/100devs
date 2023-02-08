@@ -12,3 +12,15 @@ https://www.codewars.com/kata/5a34b80155519e1a00000009/javascript
 
 // Fundamentals
 // Arrays
+
+
+// My solution
+function multipleOfIndex(array) {
+  return array.filter((e, i) => Number.isInteger(e/i))
+}
+
+
+// other solution
+function multipleOfIndex(array) {
+  return array.filter((num, i) => num % i === 0);
+}
