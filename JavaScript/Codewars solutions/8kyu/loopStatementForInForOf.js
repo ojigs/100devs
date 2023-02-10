@@ -81,3 +81,36 @@ https://www.codewars.com/kata/5722b3f0bd5583cf44001000/javascript
 // At the end, return your array.
 
 // You should use for..in in your code, otherwise your solution may not pass this kata.
+
+
+
+// My solution
+function giveMeFive(obj){
+  let arr = []
+  for (key in obj) {
+    if (key.length === 5) arr.push(key)
+    if (obj[key].length === 5) arr.push(obj[key])
+  }
+  return arr
+}
+
+
+// other solution
+function giveMeFive(obj) {
+  const fives = []
+  
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) { // always use this with for..in loops for objects !
+      if (key.length === 5) fives.push(key)
+      if (obj[key].length === 5) fives.push(obj[key])
+    }
+  }
+  
+  return fives
+}
+
+
+function giveMeFive(obj){
+  // for ( in )
+  return Object.entries(obj).join(',').split(',').filter((el) => el.length == 5);
+}
