@@ -18,3 +18,21 @@ https://www.codewars.com/kata/5410c0e6a0e736cf5b000e69/train/javascript
 
 // You can assume that the two input strings are of equal length.
 // Algorithms
+
+
+// My solution
+function hamming(a,b) {
+  let count = 0
+	a.split('').forEach((e, i) => e !== b[i] ? count++ : null)
+  return count
+}
+
+
+// other solution
+function hamming(a,b) {
+  return a.split('').filter(function(v,i) {return a[i]!=b[i]}).length;
+}
+
+
+const hamming = (a, b) =>
+  [...a].reduce((pre, val, idx) => pre + (val !== b[idx]), 0);
