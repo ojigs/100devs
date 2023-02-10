@@ -33,6 +33,35 @@ https://www.codewars.com/kata/5a4e3782880385ba68000018/train/javascript
 
 //     Explanation:
 
+
+// My solution
+function balancedNum(number) {
+  let arr = number.toString().split('')
+  let left, right
+  if (!(arr.length % 2)) {
+    left = arr.slice(0, (arr.length/2 - 1))
+    right = arr.slice(arr.length/2 + 1)
+  } else {
+    left = arr.slice(0, Math.floor(arr.length/2))
+    right = arr.slice(Math.ceil(arr.length/2))
+  }
+  return left.reduce((a,c)=> a + (+c), 0) === right.reduce((a,c)=> a + (+c), 0) ?
+          'Balanced' : 'Not Balanced'
+}
+
+
+//other solution
+function balancedNum(number) {
+
+  let str = `${number}`
+  ,   len = (str.length - (str.length % 2 ? -1 : -2)) / 2
+  ,   sum = digits => [ ...digits ].reduce((a, b) => a + +b, 0);
+
+  return sum(str.slice(0, len)) === sum(str.slice(-len)) 
+  ? 'Balanced' 
+  : 'Not Balanced';
+
+}
 //     middle digit(s): 5
 //     sum of all digits to the left of the middle digit(s) -> 9
 //     sum of all digits to the right of the middle digit(s) -> 9
