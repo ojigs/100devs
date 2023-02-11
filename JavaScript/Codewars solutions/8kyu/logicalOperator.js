@@ -34,3 +34,28 @@ https://www.codewars.com/kata/57096af70dad013aa200007b/train/javascript
 // A Boolean value (True or False).
 // Arrays
 // Fundamentals
+
+
+
+// My solution
+function logicalCalc(array, op){
+  let operator = {
+    AND: (a, c) => a && c, 
+    OR: (a, c) => a || c, 
+    XOR: (a, c) => a ^ c ? true : false
+  }
+  return array.reduce((a,c) => operator[op](a, c)) 
+}
+
+
+// other solution
+var ops = {
+  'AND': (a, b) => a && b,
+  'OR': (a, b) =>  a || b,
+  'XOR': (a, b) => a !== b
+}
+
+
+function logicalCalc(array, op){
+  return array.reduce(ops[op]);
+}
