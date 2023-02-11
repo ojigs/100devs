@@ -17,3 +17,12 @@ https://www.codewars.com/kata/57036f007fd72e3b77000023/javascript
 //     If you still don't get it probably you can define main as an attribute of the Solution class that accepts a single argument, and that only prints "Hello World!" without any return.
 
 // Fundamentals
+
+
+// My solution
+class Solution{
+  static main () {
+    console.log('Hello World!')
+  }
+}
+
