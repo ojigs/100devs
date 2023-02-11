@@ -5,3 +5,20 @@ https://www.codewars.com/kata/555086d53eac039a2a000083/javascript
 
 // Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
 // Fundamentals
+
+
+// My solution
+function lovefunc(flower1, flower2){
+  return (flower1 - flower2) % 2 ? true : false
+}
+
+
+// other solution
+function lovefunc(flower1, flower2){
+  return (flower1 - flower2) % 2 ? true : false
+}
+
+
+function lovefunc(flower1, flower2){
+  return (flower1 + flower2) % 2 === 1
+}
