@@ -9,3 +9,15 @@ https://www.codewars.com/kata/51c89385ee245d7ddf000001/javascript
 
 // Strings
 // Fundamentals
+
+
+// My solution
+function solution(value){
+  return `Value is ${value.toString().padStart(5, 0)}`
+}
+
+
+// other solution
+function solution(value){
+  return "Value is " + ("00000" + value).slice(-5);
+}
