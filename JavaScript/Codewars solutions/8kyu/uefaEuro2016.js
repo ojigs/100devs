@@ -10,3 +10,22 @@
 // Strings
 // Arrays
 // Fundamentals
+
+// My solution
+function uefaEuro2016(teams, scores) {
+  return `At match ${teams.join(" - ")}, ${
+    scores[0] === scores[1]
+      ? "teams played draw."
+      : (scores[0] > scores[1] ? teams[0] : teams[1]) + " won!"
+  }`;
+}
+
+// other solution
+function uefaEuro2016(commands, scores) {
+  // your code...
+  if (scores[0] == scores[1])
+    return `At match ${commands[0]} - ${commands[1]}, commands played draw.`;
+  if (scores[0] < scores[1])
+    return `At match ${commands[0]} - ${commands[1]}, ${commands[1]} won!`;
+  return `At match ${commands[0]} - ${commands[1]}, ${commands[0]} won!`;
+}
