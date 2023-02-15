@@ -49,3 +49,19 @@ https://www.codewars.com/kata/592e830e043b99888600002d/javascript
 // Fundamentals
 // Ciphers
 // Cryptography
+
+
+// My solution
+function encode(str,  n) {
+  return str.split('').map((e, i) => e.charCodeAt() - 96 + +(`${n}`.split('')[i % `${n}`.length]))
+}
+
+
+
+// other solution
+function encode(str, n) {
+  const key = String(n)
+  return Array.from(str, (c, i) => c.charCodeAt(0) - 96 + Number(key[i % key.length]))
+}
+
+
