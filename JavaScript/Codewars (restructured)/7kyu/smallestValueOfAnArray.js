@@ -10,3 +10,17 @@ https://www.codewars.com/kata/544a54fd18b8e06d240005c0/javascript
 
 // Arrays
 // Fundamentals
+
+
+// My solution
+function min(arr, toReturn) {
+  let smallest = Math.min(...arr)
+  return toReturn === 'value' ? smallest : arr.findIndex(e => e === smallest)
+}
+
+
+// other solution
+function min(arr, toReturn) {
+  var val = Math.min.apply(null, arr)
+  return toReturn == 'value' ? val : arr.indexOf(val)
+}
