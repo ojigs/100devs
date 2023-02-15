@@ -45,3 +45,24 @@ https://www.codewars.com/kata/5a87449ab1710171300000fd/javascript
 // Explanation:
 
 // The number's digits {2 , 3, 3, 5} are in non-Decreasing Order , Note 3 <= 3 
+
+
+// My solution
+function tidyNumber(n){
+  return +(`${n}`.split('').sort((a, b) => a - b).join('')) === n
+}
+
+
+// other solution
+const tidyNumber = n => {
+  let s = n.toString();
+  for (let i = 0; i < s.length-1; i++) {
+    if (s[i] > s[i+1]) return false;
+  }
+  return true;
+}
+
+
+function tidyNumber(n){
+  return [...n+=""].sort().join``==n
+}
