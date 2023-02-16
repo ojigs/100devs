@@ -12,3 +12,20 @@ https://www.codewars.com/kata/56fcfad9c7e1fa2472000034/train/javascript
 // good luck :)
 // Mathematics
 // Fundamentals
+
+
+// My solution
+function evil(n) {
+  const binary = n.toString(2);
+  const oneCount = binary.split('1').length - 1;
+  if (oneCount % 2 === 0) {
+    return "It's Evil!";
+  } else {
+    return "It's Odious!";
+  }
+}
+
+// other solution
+function evil(n) {
+    return n.toString(2).match(/1/g).length % 2 ? 'It\'s Odious!' : 'It\'s Evil!';
+}
