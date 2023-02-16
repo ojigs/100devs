@@ -28,3 +28,20 @@ https://www.codewars.com/kata/55e6f5e58f7817808e00002e/train/javascript
 // seven(477557101) should return [28, 7]
 
 // Fundamentals
+
+
+// My solution
+function seven(m) {
+  let count = 0;
+  while (m > 99) {
+    m = Math.floor(m / 10) - 2 * (m % 10);
+    count++;
+  }
+  return [m, count];
+}
+
+
+// other solution
+function seven(m, n = 0) {
+  return m < 100 ? [m, n] : seven(Math.floor(m/10) - 2 * (m % 10), ++n);
+} //recursive solution
