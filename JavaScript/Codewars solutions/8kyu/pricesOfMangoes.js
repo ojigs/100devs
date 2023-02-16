@@ -10,3 +10,18 @@ https://www.codewars.com/kata/57a77726bb9944d000000b06/train/javascript
 // mango(9, 5) ==> 30   # 6 mangoes for $5 per unit = $30; +3 mangoes for free
 
 // Fundamentals
+
+
+// My solution
+function mango(quantity, price){
+  return quantity * price - Math.floor(quantity/3) * price
+}
+
+
+// other solution
+function mango(quantity, price){
+var divider = Math.floor(quantity / 3);
+var remainder = quantity % 3;
+var totalCost = ((divider * 2) * price) + (remainder * price);
+return totalCost;
+}
