@@ -11,3 +11,13 @@
 // DiscoverOriginalPrice(75, 25) => 100.00M where 75 is the sale price (discounted price), 25 is the sale percentage and 100 is the original price
 // Fundamentals
 // Mathematics
+
+// My solution
+function discoverOriginalPrice(discountedPrice, salePercentage) {
+  return +(discountedPrice / (1 - salePercentage / 100)).toFixed(2);
+}
+
+// otheer solution
+function discoverOriginalPrice(discountedPrice, salePercentage) {
+  return Math.round((discountedPrice / (1 - salePercentage / 100)) * 100) / 100;
+}
