@@ -11,3 +11,14 @@
 // Arrays
 // Strings
 // Fundamentals
+
+// My solution
+function removeRotten(bagOfFruits) {
+  if (!bagOfFruits) return [];
+  return bagOfFruits.map((e) => e.replace(/rotten/, "").toLowerCase());
+}
+
+// other solution
+function removeRotten(arr) {
+  return arr ? arr.map((x) => x.replace("rotten", "").toLowerCase()) : [];
+}
