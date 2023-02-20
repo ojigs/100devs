@@ -13,3 +13,13 @@ https://www.codewars.com/kata/55ad04714f0b468e8200001c/javascript
 
 // For ASCII table, you can refer to http://www.asciitable.com/
 // Fundamentals
+
+
+// My solution
+function getChar(c){
+  return String.fromCharCode(c)
+}
+
+
+// other solution
+const getChar = String.fromCharCode; //manipulations :D
