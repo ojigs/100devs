@@ -12,3 +12,12 @@ https://www.codewars.com/kata/57cc40b2f8392dbf2a0003ce/javascript
 // No Loops 1 - Small enough?
 // Fundamentals
 // Arrays
+
+
+// My solution
+function check(a,x) {
+  return a.includes(x)
+};
+
+// other solution
+const check = (a,x) => RegExp('\\b'+x+'\\b').test(a.join(','));
