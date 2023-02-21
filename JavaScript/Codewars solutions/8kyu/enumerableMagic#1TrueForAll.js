@@ -20,3 +20,22 @@ https://www.codewars.com/kata/54598d1fcbae2ae05200112c/javascript
 // http://www.rubycuts.com/enum-all
 // Arrays
 // Fundamentals
+
+
+// My solution
+function all( arr, fun ){
+  return arr.every(fun)
+}
+
+
+// ither solution
+function all(arr, fun)
+{
+  var length = arr.length;
+  
+  for (var i=0; i<length; ++i)
+    if (!fun(arr[i]))
+      return false;
+  
+  return true;
+}
