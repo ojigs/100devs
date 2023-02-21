@@ -10,3 +10,19 @@ https://www.codewars.com/kata/57a083a57cb1f31db7000028/javascript
 
 // Mathematics
 // Fundamentals
+
+
+// My solution
+function powersOfTwo(n){
+  return Array.from({ length: n+1 }, (e,i) => 2**i)
+}
+
+
+// other solution
+function powersOfTwo(n){
+  var result = [];
+  for (var i = 0; i <= n; i++) {
+    result.push(Math.pow(2, i));
+  }
+  return result;
+}
