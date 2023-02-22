@@ -15,3 +15,16 @@ https://www.codewars.com/kata/58d248c7012397a81800005c/javascript
 
 // Note: side will be an integer
 // Fundamentals
+
+
+// My solution
+var cubeChecker = function(volume, side){
+  if (volume <= 0) return false
+  return volume/side === side**2
+};
+
+
+// other solution
+var cubeChecker = function(volume, side){
+  return Math.pow(side, 3) === volume && side > 0;
+};
