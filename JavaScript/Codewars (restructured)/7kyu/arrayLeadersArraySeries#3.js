@@ -69,3 +69,22 @@ https://www.codewars.com/kata/5a651865fd56cb55760000e0/train/javascript
 // Zizou
 // Fundamentals
 // Arrays
+
+
+
+// My solution
+function arrayLeaders(numbers){
+  let arr = []
+  numbers.forEach((e, i) => {
+    let rightSum = numbers.slice(i+1).reduce((a,c) => a + c, 0)
+    if (e > rightSum) {
+      arr.push(e)
+    }
+  })
+  return arr
+}
+
+
+// other solution
+var arrayLeaders = numbers => {
+return numbers.filter((a, i) => numbers.slice(i + 1).reduce((sum, b) => sum + b, 0) < a)}
