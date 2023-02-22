@@ -1,3 +1,5 @@
+https://www.codewars.com/kata/5a651865fd56cb55760000e0/train/javascript
+// Description
 
 // Introduction and Warm-up (Highly recommended)
 // Playing With Lists/Arrays Series
