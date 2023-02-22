@@ -13,3 +13,18 @@ https://www.codewars.com/kata/593c9175933500f33400003e/javascript
 
 // Mathematics
 // Fundamentals
+
+
+// My solution
+function multiples(m, n){
+  return Array.from({length: m}, (_,i) => n*(i+1))
+}
+
+
+// other solution
+function multiples(m, n){
+  var arr=[];
+  for (var i=1; i<=m; ++i)
+    arr.push(n*i);
+  return arr;
+}
