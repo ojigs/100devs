@@ -34,3 +34,16 @@ https://www.codewars.com/kata/5ac6932b2f317b96980000ca/train/javascript
 // Enjoy Learning !!
 // Zizou
 // Fundamentals
+
+
+// My solution
+function minValue(values){
+  return +values.filter((e,i,a) => a.indexOf(e) === i).sort().join('')
+}
+
+
+// other solution
+function minValue(values){
+  let arr = Array.from(new Set(values))
+  return parseInt(arr.sort().join(''))
+}
