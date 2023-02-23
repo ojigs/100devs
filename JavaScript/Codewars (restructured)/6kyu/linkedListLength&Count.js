@@ -42,3 +42,56 @@ https://www.codewars.com/kata/55beec7dd347078289000021/train/javascript
 // Linked Lists
 // Data Structures
 // Fundamentals
+
+
+// My solution
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+
+function length(head) {
+  if (head == null) {
+    return 0;
+  } 
+  let count = 0;
+  let current = head;
+  while (current != null) {
+    count++;
+    current = current.next;
+  }
+  return count;
+}
+
+function count(head, data) {
+   if (head == null) {
+    return 0;
+  }
+  let count = 0;
+  let current = head;
+  while (current != null) {
+    if (current.data == data) {
+      count++;
+    }
+    current = current.next;
+  }
+  return count;
+}
+
+
+// other solution
+function Node(data) {
+  this.data = data
+  this.next = null
+}
+
+function length(head) {
+  return head ? 1 + length(head.next) : 0
+}
+
+function count(head, data) {
+  if (!head) return 0
+  return (head.data === data ? 1 : 0) + count(head.next, data)
+}
+
+
