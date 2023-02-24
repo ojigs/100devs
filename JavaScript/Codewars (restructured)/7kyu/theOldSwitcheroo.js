@@ -16,3 +16,16 @@
 // Strings
 // Regular Expressions
 // Fundamentals
+
+// My solution
+function vowel2index(str) {
+  return str
+    .split("")
+    .map((e, i) => ("aeiou".includes(e.toLowerCase()) ? i + 1 : e))
+    .join("");
+}
+
+//  other solution
+function vowel2index(str) {
+  return str.replace(/[aeiou]/gi, (m, i) => i + 1);
+}
