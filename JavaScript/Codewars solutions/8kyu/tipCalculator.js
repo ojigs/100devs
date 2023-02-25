@@ -19,3 +19,35 @@
 
 // Because you're a nice person, you always round up the tip, regardless of the service.
 // Fundamentals
+
+// My solution
+function calculateTip(amount, rating) {
+  const rate = {
+    terrible: 0,
+    poor: 5,
+    good: 10,
+    great: 15,
+    excellent: 20,
+  };
+  return rate.hasOwnProperty(rating.toLowerCase())
+    ? Math.ceil((amount * rate[rating.toLowerCase()]) / 100)
+    : "Rating not recognised";
+}
+
+// other solution
+function calculateTip(amount, rating) {
+  switch (rating.toLowerCase()) {
+    case "terrible":
+      return 0;
+    case "poor":
+      return Math.ceil(amount * 0.05);
+    case "good":
+      return Math.ceil(amount * 0.1);
+    case "great":
+      return Math.ceil(amount * 0.15);
+    case "excellent":
+      return Math.ceil(amount * 0.2);
+    default:
+      return "Rating not recognised";
+  }
+}
