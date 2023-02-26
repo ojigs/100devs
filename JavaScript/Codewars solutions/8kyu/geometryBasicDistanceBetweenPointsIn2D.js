@@ -10,3 +10,13 @@
 // Tests compare expected result and actual answer with tolerance of 1e-6.
 // Geometry
 // Fundamentals
+
+// My solution
+function distanceBetweenPoints(a, b) {
+  return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
+}
+
+// other solution
+function distanceBetweenPoints(a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
