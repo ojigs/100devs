@@ -26,3 +26,31 @@
 // Happy coding!
 // Fundamentals
 // Mathematics
+
+// My solution
+function gps(s, x) {
+  if (x.length <= 1) return 0;
+  const avg = x
+    .map((e, i, a) => (Math.abs(e - a[i + 1]) * 3600) / s)
+    .slice(0, -1);
+  return Math.floor(Math.max(...avg));
+}
+
+// other solution
+const gps = (s, x) =>
+  Math.floor(
+    (3600 * x.slice(1).reduce((m, d, i) => Math.max(m, d - x[i]), 0)) / s
+  );
+
+const gps = (s, x) => {
+  if (x.length <= 1) {
+    return 0;
+  }
+
+  let output = [];
+  for (let i = 0; i < x.length - 1; i++) {
+    output.push(((x[i + 1] - x[i]) * 3600) / s);
+  }
+
+  return Math.max(...output);
+};
