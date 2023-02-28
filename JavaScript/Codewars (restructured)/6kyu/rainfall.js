@@ -30,3 +30,67 @@ https://www.codewars.com/kata/56a32dd6e4f4748cc3000006/train/javascript// Descri
 
 // Fundamentals
 // Strings
+
+
+
+// My solution
+function mean(town, strng) {
+  let towns = strng.split('\n')
+  for (let i = 0; i < towns.length; i++) {
+    let townName = towns[i].split(':')[0]
+    if (townName === town) {
+      let rainData = towns[i].split(':')[1].split(',').map(e => +e.split(' ')[1])
+      let sum = rainData.reduce((a,c) => a + c) 
+      return sum/rainData.length
+    }
+  }
+  return -1
+}
+
+function variance(town, strng) {
+  let towns = strng.split('\n')
+  for (let i = 0; i < towns.length; i++) {
+    let townName = towns[i].split(':')[0]
+    if (townName === town) {
+      let rainData = towns[i].split(':')[1].split(',').map(e => +e.split(' ')[1])
+      let avg = mean(town, strng)
+      let sum = rainData.reduce((a,c) => a + (c - avg)**2, 0) 
+      return sum/rainData.length
+    }
+  }
+  return -1
+}
+
+
+// other solution
+Math.sum = function(arr) {
+  return arr.reduce((a, b) => a + b, 0);
+}
+
+Math.mean = function(arr) {
+  return Math.sum(arr) / arr.length;
+}
+
+Math.variance = function(arr) {
+  let mean = Math.mean(arr)
+  , deltas = arr.map((value) => Math.pow(value - mean, 2));
+  
+  return Math.mean(deltas);
+}
+
+function parse(town, str) {
+  let match = str.match(new RegExp(town + ':.*?(?:\n|$)', 'i'));
+  
+  if (!match) return [];
+  return match.pop().match(/\d+(\.\d+)/g).map(Number);
+}
+
+function mean(town, str) {
+  let history = parse(town, str);
+  return history.length ? Math.mean(history) : -1;
+}
+
+function variance(town, str) {
+  let history = parse(town, str);
+  return history.length ? Math.variance(history) : -1;
+}
