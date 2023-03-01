@@ -18,3 +18,17 @@ https://www.codewars.com/kata/56d6c333c9ae3fc32800070f/javascript
 // So the years 0, -64 and 2016 will return 366 days. Whilst 1974, -10 and 666 will return 365 days.
 // Date Time
 // Fundamentals
+
+
+// My solution
+function yearDays(year) {
+  if (!(year%400)) return `${year} has 366 days`
+  if (!(year%100)) return `${year} has 365 days`
+  return `${year} has ${year%4 ? '365' : '366'} days`
+}
+
+
+// other solution
+function yearDays(year) {
+  return year + ' has ' + (!(year % 100) && year % 400 || year % 4 ? '365' : '366') + ' days';
+}
