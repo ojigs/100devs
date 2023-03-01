@@ -27,3 +27,29 @@ https://www.codewars.com/kata/57faa6ff9610ce181b000028/javascript
 // Strings
 // Arrays
 // Mathematics
+
+
+
+// My solution
+function crap(x, bags, cap){
+  let trash = 0
+  for (let i = 0; i < x.length; i++) {
+    if (x[i].includes('D')) {
+      return 'Dog!!'
+      break;
+    }
+    let crap = x[i].filter(c => c==='@').length
+    trash += crap
+  }
+  return trash <= bags * cap ? 'Clean' : 'Cr@p'
+}
+
+
+// other solution
+function crap(x, bags, cap){
+  var yard = x.reduce( (a, b) => a.concat(b) );
+  return yard.includes('D') ? 'Dog!!' : bags * cap - yard.filter( val => val === '@' ).length > 0 ? 'Clean' : 'Cr@p';
+}
+
+
+crap=(a,b,c)=>(a+"").includes("D")?"Dog!!":(a+"").split("@").length-1<=b*c?"Clean":"Cr@p"
