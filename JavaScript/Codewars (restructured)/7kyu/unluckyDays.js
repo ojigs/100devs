@@ -15,3 +15,20 @@ https://www.codewars.com/kata/56eb0be52caf798c630013c0/javascript
 // unluckyDays(1986) == 1
 
 // Date Time
+
+
+// My solution
+function unluckyDays(year){
+  let count = 0
+  for (let month = 0; month < 12; month++) {
+    let date = new Date(year, month, 13)
+    if (date.getDay() === 5) count++
+  }
+  return count
+}
+
+
+// other solution
+function unluckyDays(year){
+	return Array.from({ length: 12 }).filter((_, i) => new Date(year, i, 13).getDay() === 5).length
+}
