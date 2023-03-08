@@ -10,3 +10,14 @@ https://www.codewars.com/kata/57ee24e17b45eff6d6000164/javascript
 // C...m returns 'Caught!' <-- as there are three characters between the two, the cat can jump.
 // Fundamentals
 // Strings
+
+
+
+// My solution
+function catMouse(x){
+  return x.split('....').length > 1 ? 'Escaped!' : 'Caught!'
+}
+
+
+// other solution
+const catMouse=x=>/C.{0,3}m/.test(x)?"Caught!":"Escaped!"
