@@ -15,3 +15,20 @@ https://www.codewars.com/kata/5862f663b4e9d6f12b00003b/discuss/javascript
 // guessBlue() should return the probability of drawing a blue marble, expressed as a float. For example, guessBlue(5, 5, 2, 3) should return 0.6.
 // Probability
 // Fundamentals
+
+
+
+// My solution
+function guessBlue(blueStart, redStart, bluePulled, redPulled) {
+  return (blueStart - bluePulled) / (blueStart + redStart - bluePulled - redPulled)
+}
+
+
+// other solution
+function guessBlue(blueStart, redStart, bluePulled, redPulled) {
+  var blueLeft = blueStart - bluePulled;
+  var redLeft = redStart - redPulled;
+  var allLeft = blueLeft + redLeft;
+  
+  return blueLeft/allLeft;
+}
