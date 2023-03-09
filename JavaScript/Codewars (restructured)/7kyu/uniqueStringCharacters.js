@@ -18,3 +18,17 @@ https://www.codewars.com/kata/5a262cfb8f27f217f700000b/train/javascript
 // Please also try Simple remove duplicates
 // Strings
 // Fundamentals
+
+
+// My solution
+function solve(a,b){
+  let aStr = a.split('').filter(e => !b.includes(e)).join('')
+  let bStr = b.split('').filter(e => !a.includes(e)).join('')
+  return aStr+bStr
+};
+
+
+// other solution
+function solve(a,b){
+ return (a+b).split("").filter(c => !a.includes(c) || !b.includes(c)).join("");
+};
