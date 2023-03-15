@@ -70,3 +70,24 @@ https://www.codewars.com/kata/5a54e796b3bfa8932c0000ed/javascript
 // Zizou
 // Fundamentals
 // Mathematics
+
+
+// My solution
+function jumpingNumber(n){
+  let test = n.toString().split('')
+                .every((e, i, a) => i !== 0 ? Math.abs(e - a[i-1]) === 1 : true)
+  if (test) return "Jumping!!"
+  else return "Not!!"
+}
+
+
+// other solution
+function jumpingNumber(n){
+  let arr = n.toString().split('')
+  for(i=0; i < arr.length-1; i++){
+    if(Math.abs(arr[i] - arr[i+1]) !== 1 ){
+      return 'Not!!'
+    }
+  }
+  return 'Jumping!!'
+}
