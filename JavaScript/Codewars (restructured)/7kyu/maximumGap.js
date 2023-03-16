@@ -56,3 +56,36 @@ https://www.codewars.com/kata/5a7893ef0025e9eb50000013/train/javascript
 // Zizou
 // Fundamentals
 // Arrays
+
+
+
+// My solution
+function maxGap (numbers){
+  return numbers.sort((a,b) => a - b)
+    .reduce((a,c,i) => i > 0 && a > (c - numbers[i-1]) ? a : c - numbers[i-1], 0)
+}
+
+// function maxGap (numbers){
+//   const sortedNum = numbers.sort()
+//   let maxDiff = 0
+//   for (let i = 1; i < sortedNum.length; i++) {
+//     let diff = sortedNum[i] - sortedNum[i - 1]
+//     if (maxDiff < diff) {
+//       maxDiff = diff
+//     }
+//   }
+//   return maxDiff
+// }
+
+
+// other solution
+function maxGap (numbers){
+ let num = numbers.sort((a,b) => a - b)
+ let sum = num[1] - num[0]
+ for(i=0; i < num.length; i++){
+    if(num[i+1] - num[i] > sum){
+      sum = num[i+1] - num[i]
+    }
+  }
+ return sum
+}
