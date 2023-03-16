@@ -44,3 +44,17 @@ https://www.codewars.com/kata/5aa1bcda373c2eb596000112/javascript
 // Zizou
 // Fundamentals
 // Arrays
+
+
+
+// My solution
+function maxTriSum(numbers){
+  return [...new Set(numbers)].sort((a,b) => a - b).slice(-3).reduce((a,c) => a + c, 0)
+}
+
+
+// other solution
+const maxTriSum = numbers => {
+  const [a,b,c,...rest] = [...new Set([...numbers])].sort((a,b)=>b-a)
+  return a+b+c
+}
