@@ -20,3 +20,15 @@ https://www.codewars.com/kata/57f604a21bd4fe771b00009c/solutions/javascript
 // Arrays
 
 // Suggest kata description edits
+
+
+
+// My solution
+function meeting(x){
+  let index = x.findIndex(e => e === 'O')
+  return index >= 0 ? index : "None available!"
+}
+
+
+// other solution
+meeting = x => (x = x.join('').indexOf('O')) > -1 ? x : 'None available!'
