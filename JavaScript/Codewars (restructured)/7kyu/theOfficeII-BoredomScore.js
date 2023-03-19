@@ -30,3 +30,45 @@
 // The Office V - Find a Chair
 // Arrays
 // Fundamentals
+
+// My solution
+function boredom(staff) {
+  let score = {
+    accounts: 1,
+    finance: 2,
+    canteen: 10,
+    regulation: 3,
+    trading: 6,
+    change: 6,
+    IS: 8,
+    retail: 5,
+    cleaning: 4,
+    "pissing about": 25,
+  };
+
+  let values = Object.values(staff)
+    .map((e) => score[e])
+    .reduce((a, c) => a + c, 0);
+  return values <= 80
+    ? "kill me now"
+    : values < 100
+    ? "i can handle this"
+    : "party time!!";
+}
+
+// other solution
+const data = {
+  accounts: 1,
+  finance: 2,
+  canteen: 10,
+  regulation: 3,
+  trading: 6,
+  change: 6,
+  IS: 8,
+  retail: 5,
+  cleaning: 4,
+  "pissing about": 25,
+};
+const score = (x) =>
+  x < 81 ? "kill me now" : x < 100 ? "i can handle this" : "party time!!";
+const boredom = (s) => score(Object.values(s).reduce((a, b) => a + data[b], 0));
