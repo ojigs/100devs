@@ -12,3 +12,15 @@ https://www.codewars.com/kata/582e4c3406e37fcc770001ad/javascript
 // If one of the arguments is a number your code must coerce it into being a string.
 // Strings
 // Fundamentals
+
+
+// My solution
+function joinStrings(string1, string2){
+   return `${string1} ${string2}`
+}
+
+
+// other solution
+function joinStrings(string1, string2){
+   return `${string1} ${string2}`
+}
