@@ -10,3 +10,44 @@ https://www.codewars.com/kata/56cca888a9d0f25985000036/train/javascript
 // What is the minimum amount of candies I have to buy, so that no matter how many kids come to the party in the end, I can still ensure that each kid can receive the same amount of candies, while leaving no candies left?
 
 // It's ensured that at least one kid will participate in the party.
+
+
+
+// My solution
+function candiesToBuy( kids ){
+    let ans = 1;
+    for (let i = 2; i <= kids; i++) {
+        ans = (ans * i) / gcd(ans, i);
+    }
+    return ans;
+}
+
+function gcd(a, b) {
+    if (a == 0) {
+        return b;
+    }
+    return gcd(b % a, a);
+
+}
+
+
+
+// other solution
+const candiesToBuy = (() => {
+  const gcd = (a, b) => b === 0 ? a : gcd(b, a % b);
+  const lcm = (a, b) => a * b / gcd(a, b);
+  return n => Array(n).fill(0).reduce((acc, _, i) => lcm(acc, i + 1), 1);
+})();
+
+
+function candiesToBuy( kids ){
+  let total = 1;
+  let lastTotal = 1;
+  for (let i = kids; i > 1; i--) {
+    while (total % i !== 0) {
+      total += lastTotal;
+    }
+    lastTotal = total;
+  }
+  return total;
+}
