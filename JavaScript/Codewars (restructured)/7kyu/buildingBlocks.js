@@ -36,3 +36,51 @@ https://www.codewars.com/kata/55b75fcf67e558d3750000a3/javascript
 // Any feedback would be much appreciated
 // Object-oriented Programming
 // Fundamentals
+
+
+
+// My solution
+class Block{
+
+  constructor(data){
+    this.width = data[0]
+    this.length = data[1]
+    this.height = data[2]
+  };
+  
+  getWidth () {
+    return this.width;
+  } 
+  getLength () {
+    return this.length
+  };
+  getHeight () {
+    return this.height
+  };
+  getVolume () {
+    return this.width * this.length * this.height
+  };
+  getSurfaceArea () {
+    return 2 * (this.length*this.width + this.length*this.height + this.height*this.width)
+  }
+  
+}
+
+
+// other solution
+class Block {
+  constructor(data){
+    [this.w, this.l, this.h] = data;
+  }
+  getWidth(){ return this.w }
+  getLength(){ return this.l }
+  getHeight(){ return this.h }
+  getVolume(){
+    let {l, w, h} = this;
+    return w*l*h;
+  }
+  getSurfaceArea(){
+    let {l, w, h} = this;
+    return 2 * (l*w + l*h + w*h);
+  }
+}
