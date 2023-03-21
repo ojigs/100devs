@@ -24,3 +24,17 @@ https://www.codewars.com/kata/5951d30ce99cf2467e000013/javascript
 // Algebra
 // Mathematics
 // Fundamentals
+
+
+// My solution
+function isPythagoreanTriple(integers) {
+  let [a, b, c] = integers.sort((a,b) => a - b)
+  return a**2 + b**2 === c**2
+}
+
+
+// other solution
+function isPythagoreanTriple(integers) {
+  let massiv = integers.sort((a, b) => a - b)
+  return (massiv[0] ** 2 + massiv[1] ** 2 == massiv[2] ** 2)
+}
