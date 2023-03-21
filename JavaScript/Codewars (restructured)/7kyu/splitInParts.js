@@ -18,3 +18,18 @@ https://www.codewars.com/kata/5650ab06d11d675371000003/javascript
 // String has no spaces
 // Size is always positive
 
+
+
+// My solution
+var splitInParts = function(s, partLength){
+  let parts = []
+  for (let i = 0; i < s.length; i+= partLength) {
+    parts.push(s.slice(i, i+partLength))
+  }
+  return parts.join(' ')
+}
+
+
+// other solution
+const splitInParts = (s, partLength) => 
+  s.match(new RegExp(`.{1,${ partLength }}`, 'g')).join(' ');
