@@ -54,3 +54,18 @@ https://www.codewars.com/kata/5a58d889880385c2f40000aa/javascript
 //     Explanation:
 
 //     6 squared is 36 , Ends with the same number's digits which are 6 
+
+
+// My solution
+function automorphic(n){
+  return (n * n).toString().endsWith(n.toString()) ? "Automorphic" : "Not!!";
+}
+
+
+
+// other solution
+function automorphic(n){
+  let len = n.toString().length
+  let num = (n * n).toString().slice(-len)
+  return (n == num) ? 'Automorphic' : 'Not!!'
+}
