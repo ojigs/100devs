@@ -9,3 +9,22 @@ https://www.codewars.com/kata/55a14aa4817efe41c20000bc/javascript
 
 // Reference: JS, Ruby, Python.
 // Fundamentals
+
+
+// My solution
+class Cat extends Animal {
+  constructor(props) {
+    super(props)
+  }
+  speak () {
+    return this.name + " meows."
+  }
+}
+
+
+// other solution
+class Cat extends Animal {
+  speak() {
+    return `${this.name} meows.`;
+  }
+}
