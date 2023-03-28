@@ -13,3 +13,15 @@
 
 // Fundamentals
 // Lists
+
+// My solution
+function twoHighest(arr) {
+  return [...new Set(arr)].sort((a, b) => b - a).slice(0, 2);
+}
+
+// other solution
+const twoHighest = (a) =>
+  a
+    .filter((e, i) => i === a.lastIndexOf(e))
+    .sort((x, y) => y - x)
+    .slice(0, 2);
