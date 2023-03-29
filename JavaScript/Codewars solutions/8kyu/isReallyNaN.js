@@ -7,3 +7,14 @@ https://www.codewars.com/kata/56c24c58e0c0f741d4001aef/javascript
 
 // Any solution is acceptable!
 // Fundamentals
+
+
+// My solution
+const isReallyNaN = (val) => {
+  // return isNaN(val);  // wasn't working as planned :-(
+  return Number.isNaN(val)
+};
+
+
+// other solution
+const isReallyNaN = val => val != val
