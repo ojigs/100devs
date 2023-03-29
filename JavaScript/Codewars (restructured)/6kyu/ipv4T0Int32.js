@@ -21,3 +21,22 @@ https://www.codewars.com/kata/52ea928a1ef5cfec800003ee/train/javascript
 // Bits
 // Binary
 // Fundamentals
+
+
+
+// My solution
+function ipToInt32(ip) {
+  const octets = ip.split(".");
+  const binary = octets.map(octet => parseInt(octet).toString(2).padStart(8, "0")).join("");
+  const decimal = parseInt(binary, 2);
+  return decimal;
+}
+
+
+// other solution
+function ipToInt32(ip){
+   return ip.split(".").reduce(function(int,v){ return int*256 + +v } )
+}
+
+
+let ipToInt32 = ip => ip.split(".").reduce((a, b) => a << 8 | b) >>> 0;
