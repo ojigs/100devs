@@ -11,3 +11,15 @@ https://www.codewars.com/kata/5639bdcef2f9b06ce800005b/javascript
 // Strings
 // Regular Expressions
 // Fundamentals
+
+
+
+// My solution
+function makeString(s){
+  return s.match(/\b\w/g).join('')
+}
+
+
+
+// other solution
+const makeString = s => s.split(' ').map(x => x[0]).join('')
