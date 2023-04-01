@@ -17,3 +17,25 @@
 // The Office V - Find a Chair
 // Fundamentals
 // Arrays
+
+// My solution
+function outed(meet, boss) {
+  let len = Object.keys(meet).length;
+  let avg = (Object.values(meet).reduce((a, c) => a + c, 0) + meet[boss]) / len;
+  return avg > 5 ? "Nice Work Champ!" : "Get Out Now!";
+}
+
+// other solution
+function outed(meet, boss) {
+  var sum = 0;
+  var count = 0;
+  for (var key in meet)
+    if (key != boss) {
+      sum += meet[key];
+      count++;
+    } else {
+      sum += meet[key] * 2;
+      count++;
+    }
+  return sum / count <= 5 ? "Get Out Now!" : "Nice Work Champ!";
+}
