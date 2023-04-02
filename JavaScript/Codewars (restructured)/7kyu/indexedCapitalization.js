@@ -18,3 +18,19 @@
 
 // String array revisal
 // Fundamentals
+
+// My solution
+function capitalize(s, arr) {
+  const chars = s.split("");
+  for (const index of arr) {
+    if (chars[index]) {
+      chars[index] = chars[index].toUpperCase();
+    }
+  }
+  return chars.join("");
+}
+
+// other solution
+function capitalize(s, arr) {
+  return [...s].map((x, i) => (arr.includes(i) ? x.toUpperCase() : x)).join("");
+}
