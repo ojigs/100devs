@@ -17,3 +17,25 @@
 // Arrays
 // Strings
 // Fundamentals
+
+// My solution
+function divisibleByThree(str) {
+  let sum = 0;
+  for (const char of str) {
+    sum += parseInt(char);
+  }
+  while (sum >= 10) {
+    let digitSum = 0;
+    while (sum > 0) {
+      digitSum += sum % 10;
+      sum = Math.floor(sum / 10);
+    }
+    sum = digitSum;
+  }
+  return sum === 0 || sum === 3 || sum === 6 || sum === 9;
+}
+
+// other solution
+function divisibleByThree(str) {
+  return str.split("").reduce((a, b) => parseInt(a) + parseInt(b)) % 3 === 0;
+}
