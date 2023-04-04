@@ -13,3 +13,10 @@
 // NOTE
 // : Remember, in C# you have to cast your output value to Object type!
 // Fundamentals
+
+// My solution
+function playerRankUp(points) {
+  return points >= 100
+    ? "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up."
+    : false;
+}
