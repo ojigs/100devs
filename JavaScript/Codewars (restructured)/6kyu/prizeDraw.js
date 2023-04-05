@@ -44,3 +44,62 @@ https://www.codewars.com/kata/5616868c81a0f281e500005c/train/javascript
 // Fundamentals
 // Strings
 // Sorting
+
+
+
+// My solution
+function rank(st, we, n) {
+  const names = st.split(",");
+  
+  if (names.length === 0 || st === "") {
+    return "No participants";
+  }
+  if (n > names.length) {
+    return "Not enough participants";
+  }
+  
+  // Calculate the sum of ranks for each name
+  const sums = names.map(name => {
+    const rankSum = name.split("").reduce((acc, char) => {
+      return acc + char.toLowerCase().charCodeAt(0) - 96;
+    }, 0);
+    return (rankSum + name.length) * we[names.indexOf(name)];
+  });
+  
+  const sortedNames = names.sort((a, b) => {
+    const indexA = names.indexOf(a);
+    const indexB = names.indexOf(b);
+    const diff = sums[indexB] - sums[indexA];
+    if (diff !== 0) {
+      return diff;
+    } else {
+      return a.localeCompare(b);
+    }
+  });
+  
+  return sortedNames[n - 1];
+}
+
+
+// other solution
+function rank(st, we, n) {
+	let names = st.split(',')
+  if (!st.length) return 'No participants'
+  if (names.length < n) return 'Not enough participants'
+  return names.map((_, i) => ({
+    	name: _,
+      s: [..._.toLowerCase()].reduce((a, b) => a + b.charCodeAt() - 95, 0) * we[i]
+    }))
+    .sort((a, b) => a.name > b.name)
+    .sort((a, b) => b.s - a.s)
+    [n - 1].name
+}
+
+
+function rank(names,weights, rank) {
+    if (!names.length) return 'No participants' 
+    var a = names.split(',').map (
+         (name,i) => [name,weights[i]*[...name.toUpperCase()].reduce((t,c)=>t+c.charCodeAt()-64,name.length)]
+       ).sort((p1,p2) => p2[1]-p1[1] || p1[0]>p2[0])
+     return rank>a.length ? 'Not enough participants' : a[rank-1][0] 
+}
