@@ -6,3 +6,25 @@
 // The array will never be empty.
 // Mathematics
 // Fundamentals
+
+// My solution
+function average(scores) {
+  return Math.round(scores.reduce((a, c) => a + c, 0) / scores.length);
+}
+
+// other solution
+function av_recur(arr) {
+  if (arr.length == 1) {
+    return [arr[0], 1];
+  }
+  const score = av_recur(arr.slice(1));
+  return [arr[0] + score[0], score[1] + 1];
+}
+
+function average(scores) {
+  if (scores.length == 1) {
+    return scores[0];
+  }
+  const score = av_recur(scores.slice(1));
+  return Math.round((scores[0] + score[0]) / (score[1] + 1));
+}
