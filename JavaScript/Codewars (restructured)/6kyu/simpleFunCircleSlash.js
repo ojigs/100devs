@@ -24,3 +24,24 @@ https://www.codewars.com/kata/58a6ac309b5762b7aa000030
 
 // The index of the last person standing.
 // Puzzles
+
+
+
+// My solution
+function circleSlash(n) {
+  if (n === 1) {
+    return 1;
+  }
+  let k = 1;
+  while (k <= n) {
+    k *= 2;
+  }
+  return (2 * n) - k + 1;
+}
+
+
+
+// other solution
+function circleSlash(n) {
+  return (n-Math.pow(2,~~Math.log2(n)))*2+1
+}
