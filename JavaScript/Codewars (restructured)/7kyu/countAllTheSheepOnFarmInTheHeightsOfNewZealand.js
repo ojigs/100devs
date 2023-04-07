@@ -16,3 +16,17 @@ https://www.codewars.com/kata/58e0f0bf92d04ccf0a000010/javascript
 // Mathematics
 // Algorithms
 // Algebra
+
+
+
+// My solution
+function lostSheep(friday,saturday,total){
+  const count = (arr) => arr.reduce((a,c) => a + c, 0)
+  return total - count(friday) - count(saturday)
+}
+
+
+// other solution
+function lostSheep(friday,saturday,total){
+  return friday.concat(saturday).reduce((s,l)=>s-l,total)
+}
