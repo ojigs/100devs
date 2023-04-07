@@ -11,3 +11,14 @@ https://www.codewars.com/kata/57e8fba2f11c647abc000944/javascript
 // Fundamentals
 // Arrays
 // Strings
+
+
+// My solution
+function fireFight(s){
+  return s.replace(/Fire/gi, "~~")
+}
+
+
+// other solution
+const fireFight = s =>
+  s.replace(/Fire/g, `~~`);
