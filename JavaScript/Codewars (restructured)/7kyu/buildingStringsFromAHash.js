@@ -11,3 +11,19 @@
 
 // Strings
 // Fundamentals
+
+// My solution
+function solution(pairs) {
+  return Object.entries(pairs)
+    .map((e) => e.join(" = "))
+    .join();
+}
+
+// other solution
+function solution(pairs) {
+  return Object.keys(pairs)
+    .map(function (k) {
+      return k + " = " + pairs[k];
+    })
+    .join(",");
+}
