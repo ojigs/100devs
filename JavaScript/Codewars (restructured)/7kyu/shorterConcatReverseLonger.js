@@ -9,3 +9,17 @@
 // If a and b have the same length treat a as the longer producing b+reverse(a)+b
 // Strings
 // Fundamentals
+
+// My solution
+function shorter_reverse_longer(a, b) {
+  const long = a.length >= b.length ? a : b;
+  const short = a.length >= b.length ? b : a;
+  const reverse = (s) => s.split("").reverse().join("");
+  return short + reverse(long) + short;
+}
+
+// other solution
+function shorter_reverse_longer(a, b) {
+  if (a.length >= b.length) [a, b] = [b, a];
+  return a + b.split("").reverse().join("") + a;
+} // nice use of array destructuring to swap values
