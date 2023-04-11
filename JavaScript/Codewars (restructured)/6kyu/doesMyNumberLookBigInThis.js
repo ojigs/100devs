@@ -19,3 +19,28 @@ https://www.codewars.com/kata/5287e858c6b5a9678200083c
 
 // Error checking for text strings or other invalid inputs is not required, only valid positive non-zero integers will be passed into the function.
 // Algorithms
+
+
+
+// My solution
+function narcissistic(value) {
+  let base = value.toString().length
+  return value.toString().split('').reduce((a,c) => a + c**base, 0) === value
+}
+
+
+
+// other solution
+function narcissistic( value ) {
+  var remaining = value,
+      digits = [],
+      solution = 0;
+  while (remaining > 0) {
+    digits.push(remaining % 10);
+    remaining = Math.floor(remaining / 10);
+  }
+  
+  return value == digits.reduce(function(p,n) {
+    return p + Math.pow(n,digits.length);
+  },0);
+}
