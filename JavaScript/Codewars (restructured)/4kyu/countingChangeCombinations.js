@@ -30,5 +30,22 @@ function countChange(money, coins) {
   if (money < 0 || coins.length === 0) {
     return 0;
   } 
+  
+  // recursive case: count the ways to give change with the first coin
+  // and add to the ways to give change with the remaining coins
   return countChange(money - coins[0], coins) + countChange(money, coins.slice(1));
 }
+
+
+// other solution
+function countChange(money, coins) {
+  const memo = new Array(money + 1).fill(0);
+  memo[0] = 1;
+  for (let coin of coins) {
+    for (let i = coin; i <= money; i++) {
+      memo[i] += memo[i - coin];
+    }
+  }
+  return memo[money];
+}
+
