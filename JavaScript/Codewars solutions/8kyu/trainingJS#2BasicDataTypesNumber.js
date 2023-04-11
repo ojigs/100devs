@@ -11,3 +11,54 @@ https://www.codewars.com/kata/571edd157e8954bab500032d/train/javascript
 // When you have finished the work, click "Run Tests" to see if your code is working properly.
 
 // In the end, click "Submit" to submit your code pass this kata.
+
+
+
+// My solution
+let v1 = 50,
+    v2 = 100,
+    v3 = 150,
+    v4 = 200,
+    v5 = 2,
+    v6 = 250;
+
+function equal1(){
+  let a = v1,   
+      b = v1;   
+  return a + b;
+}
+
+//Please refer to the example above to complete the following functions
+function equal2(){
+  let a = v3
+      b = v1
+  return a - b;
+}
+
+function equal3(){
+  let a =  v1
+      b =  v5
+  return a * b;
+}
+
+function equal4(){
+  let a = v4
+      b = v5
+  return a / b;
+}
+
+function equal5(){
+  let a = v2
+      b = v4
+  return a % b;
+}
+
+
+// other solution
+var v1=50;v2=100,v3=150,v4=200,v5=2,v6=250
+
+const equal1 = () => v1 + v1
+const equal2 = () => v3 - v1
+const equal3 = () => v1 * v5
+const equal4 = () => v4 / v5
+const equal5 = () => v2 % v4
