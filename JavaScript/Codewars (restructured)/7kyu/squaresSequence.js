@@ -9,3 +9,20 @@ https://www.codewars.com/kata/5546180ca783b6d2d5000062/train/javascript
 
 // Mathematics
 // Fundamentals
+
+
+// My solution
+function squares(x, n) {
+  if (n <= 0) return []
+  const arr = [x]
+  for (let i = 1; i < n; i++) {
+    arr[i] = arr[i-1]**2
+  }
+  return arr
+}
+
+
+// other solution
+function squares(x, n) {
+	return Array.from({length: n}, (v, k) => Math.pow(x, Math.pow(2, k)))
+}
