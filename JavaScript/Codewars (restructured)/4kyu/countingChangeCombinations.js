@@ -19,3 +19,16 @@ https://www.codewars.com/kata/541af676b589989aed0009e7/train/javascript
 
 // Puzzles
 // Recursion
+
+
+
+// My solution
+function countChange(money, coins) {
+  if (money === 0) {
+    return 1;
+  } 
+  if (money < 0 || coins.length === 0) {
+    return 0;
+  } 
+  return countChange(money - coins[0], coins) + countChange(money, coins.slice(1));
+}
