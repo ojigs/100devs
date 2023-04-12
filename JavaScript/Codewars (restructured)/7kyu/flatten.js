@@ -10,3 +10,14 @@ https://www.codewars.com/kata/5250a89b1625e5decd000413/javascript
 // Functional Programming
 // Arrays
 // Fundamentals
+
+
+
+// My solution
+var flatten = function (array){
+  return array.flat(1)
+}
+
+
+// other solution
+const flatten = (array) => [].concat(...array);
