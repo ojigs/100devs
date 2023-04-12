@@ -15,3 +15,22 @@ https://www.codewars.com/kata/586560a639c5ab3a260000f3
 
 // Note: The original string should be included in the output array The order matters. Each element of the output array should be the rotated version of the previous element. The output array SHOULD be the same length as the input string The function should return an emptry array with a 0 length string, '', as input
 // Fundamentals
+
+
+
+// My solution
+function rotate(str){
+  if (str.length === 0) return []
+  const arr = []
+  for (let i = 1; i < str.length; i++) {
+    const slice = str.slice(i) + str.slice(0, i);
+    arr.push(slice);
+  }
+  arr.push(str)
+  return arr
+}
+
+// other solution
+function rotate(s){
+  return s.split("").map(e=>s = s.slice(1)+s.slice(0,1));
+}
