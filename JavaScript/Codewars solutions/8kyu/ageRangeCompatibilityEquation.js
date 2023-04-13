@@ -22,3 +22,25 @@ https://www.codewars.com/kata/5803956ddb07c5c74200144e/javascript
 // age = 17   =>   15-20
 
 // Fundamentals
+
+
+// My solution
+function datingRange(age){
+  const min = Math.floor(age <= 14 ? age - 0.1 * age : age / 2 + 7)
+  const max = Math.floor(age <= 14 ? age + 0.1 * age : (age - 7) * 2)
+  return `${min}-${max}`
+}
+
+
+// other solution
+function datingRange(age){
+  return `${min(age)}-${max(age)}`;
+  
+  function min(age) {
+    return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
+  }
+  
+  function max(age) {
+    return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
+  }
+}
