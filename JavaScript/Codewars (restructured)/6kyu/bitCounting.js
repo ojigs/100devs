@@ -6,3 +6,14 @@ https://www.codewars.com/kata/526571aae218b8ee490006f4
 // Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
 // Bits
 // Algorithms
+
+
+
+// My solution
+var countBits = function(n) {
+  return n.toString(2).split('1').length - 1
+};
+
+
+// other solution
+countBits = n => n.toString(2).split('0').join('').length;
