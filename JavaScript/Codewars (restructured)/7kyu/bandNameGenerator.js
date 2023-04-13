@@ -11,3 +11,18 @@ https://www.codewars.com/kata/59727ff285281a44e3000011/javascript
 
 // Complete the function that takes a noun as a string, and returns her preferred band name written as a string.
 // Fundamentals
+
+
+
+// My solution
+function bandNameGenerator(str) {
+  if (str[0].toLowerCase() === str.slice(-1)) {
+    return `${str[0].toUpperCase()}${str.slice(1).repeat(2)}`
+  }
+  return `The ${str[0].toUpperCase()}${str.slice(1)}`
+}
+
+
+// other solution
+const bandNameGenerator = s => s[0] != s[s.length-1] ? "The " + s[0].toUpperCase() + s.slice(1) :
+       s[0].toUpperCase() + s.slice(1) + s.slice(1);
