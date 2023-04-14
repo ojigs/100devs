@@ -32,3 +32,14 @@
 // The questions array is already defined for you and is not the same as the one in the example.
 // Fundamentals
 // Arrays
+
+// My solution
+function addProperty(questions) {
+  questions.forEach((e) => (e.usersAnswer = null));
+  return questions;
+}
+
+addProperty(questions);
+
+// other solution
+questions.forEach((x) => (x.usersAnswer = null));
