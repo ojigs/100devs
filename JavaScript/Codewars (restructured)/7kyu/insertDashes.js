@@ -7,3 +7,17 @@
 // Strings
 // Arrays
 // Fundamentals
+
+// My solution
+function insertDash(num) {
+  return num.toString().replace(/([13579])(?=[13579])/g, "$1-");
+}
+
+// other solution
+const insertDash = (num) =>
+  String(num)
+    .split("")
+    .map((v, i, arr) =>
+      i !== 0 && arr[i] % 2 !== 0 && arr[i - 1] % 2 !== 0 ? `-${v}` : v
+    )
+    .join("");
