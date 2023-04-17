@@ -10,3 +10,13 @@ https://www.codewars.com/kata/5a9e86705ee396d6be000091/javascript
 
 // Arrays
 // Fundamentals
+
+
+
+// My solution
+function checkThreeAndTwo(array) {
+  const count = {}
+  array.forEach(e => count[e] = (count[e] || 0) + 1)
+  const val = Object.values(count)
+  return val.includes(3) && val.includes(2)
+}
