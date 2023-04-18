@@ -22,3 +22,17 @@ https://www.codewars.com/kata/56a4addbfd4a55694100001f/javascript
 //     function should be case insensitive to pass the tests
 
 // Fundamentals
+
+
+// My solution
+function validateHello(greetings) {
+  const res =  /hello|ciao|salut|hallo|hola|ahoj|czesc/i.test(greetings) 
+  return res
+}
+
+
+// other solution
+function validateHello(greetings) {
+  const lang = ['hello','ciao','salut','hallo','hola','ahoj','czesc']
+  return lang.includes(greetings)
+}
