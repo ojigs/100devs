@@ -34,5 +34,11 @@ function validateHello(greetings) {
 // other solution
 function validateHello(greetings) {
   const lang = ['hello','ciao','salut','hallo','hola','ahoj','czesc']
-  return lang.includes(greetings)
+  for (const hello of lang) {
+    if (greetings.toLowerCase().includes(hello)) {
+      return true
+    }
+  }
+  return false
 }
+
