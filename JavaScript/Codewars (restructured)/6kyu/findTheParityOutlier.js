@@ -11,3 +11,23 @@ https://www.codewars.com/kata/5526fc09a1bbd946250002dc/train/javascript
 // Should return: 160 (the only even number)
 
 // Algorithms
+
+
+
+// My solution
+function findOutlier(integers){
+  const odd = integers.filter(e => e%2)
+  const even = integers.filter(e => !(e%2))
+  if (odd.length > 1) {
+    return even[0]
+  }
+  return odd[0]
+}
+
+
+// other solution
+function findOutlier(int){
+  var even = int.filter(a=>a%2==0);
+  var odd = int.filter(a=>a%2!==0);
+  return even.length==1? even[0] : odd[0];
+} //using ternary operator instead of if-else statement
