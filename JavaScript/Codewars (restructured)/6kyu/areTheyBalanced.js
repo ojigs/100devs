@@ -12,3 +12,21 @@ https://www.codewars.com/kata/57fb44a12b53146fe1000136/javascript
 // "!!???!????", "??!!?!!!!!!!"  -->  "Balance"
 
 // Fundamentals
+
+
+// My solution
+function balance(left,right){
+  let weight = {"!": 2, "?": 3}
+  let leftWeight = [...left].reduce((a,c) => a + weight[c], 0)
+  let rightWeight = [...right].reduce((a,c) => a + weight[c], 0)
+  return leftWeight === rightWeight ? "Balance" :
+          leftWeight > rightWeight ? "Left" : "Right"
+}
+
+
+// other solution
+function balance(left,right) {
+  const weight = s => [...s].map(c => c === '!' ? 2 : c === '?' ? 3 : 0).reduce((s, x) => s + x, 0);
+  let diff = weight(left) - weight(right);
+  return diff === 0 ? 'Balance' : diff > 0 ? 'Left' : 'Right';
+}
