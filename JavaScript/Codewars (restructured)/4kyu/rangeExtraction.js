@@ -15,3 +15,46 @@ https://www.codewars.com/kata/51ba717bb08c1cd60f00002f/train/javascript
 
 // Courtesy of rosettacode.org
 // Algorithms
+
+
+
+// My solution
+function solution(list) {
+  let output = []
+  let start = list[0]
+  for (let i = 1; i <= list.length; i++) {
+    if (i === list.length || list[i] !== list[i - 1] + 1) {
+      if (start === list[i - 1]) {
+        output.push(start.toString())
+      } else if (i - 2 >= 0 && start === list[i - 2] + 1) {
+        output.push(start.toString(), list[i - 1].toString())
+      } else {
+        output.push(getRangeString(start, list[i - 1]))
+      }
+      if (i < list.length) {
+        start = list[i]
+      }
+    }
+  }
+  return output.join(",")
+}
+
+function getRangeString(start, end) {
+  if (end - start >= 2) {
+    return start.toString() + "-" + end.toString()
+  } else {
+    return start.toString() + "," + end.toString()
+  }
+}
+
+
+
+// other solution
+function solution(list){
+   for(var i = 0; i < list.length; i++){
+      var j = i;
+      while(list[j] - list[j+1] == -1) j++;
+      if(j != i && j-i>1) list.splice(i, j-i+1, list[i] +'-'+list[j]);
+  }
+  return list.join();
+}
