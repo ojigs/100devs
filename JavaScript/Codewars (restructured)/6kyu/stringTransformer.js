@@ -14,3 +14,23 @@
 
 // You may assume the input only contain English alphabet and spaces.
 // Fundamentals
+
+// My solution
+function stringTransformer(str) {
+  return str
+    .split("")
+    .map((e) => (e === e.toLowerCase() ? e.toUpperCase() : e.toLowerCase()))
+    .join("")
+    .split(" ")
+    .reverse()
+    .join(" ");
+}
+
+// other solution
+function stringTransformer(str) {
+  var s = "";
+  for (var i = 0; i < str.length; ++i)
+    if (str[i] == str[i].toLowerCase()) s += str[i].toUpperCase();
+    else s += str[i].toLowerCase();
+  return s.split(" ").reverse().join(" ");
+}
