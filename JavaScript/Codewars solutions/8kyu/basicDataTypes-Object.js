@@ -25,3 +25,13 @@
 // When you have finished the work, click "Run Tests" to see if your code is working properly.
 
 // In the end, click "Submit" to submit your code pass this kata.
+
+// My solution
+function animal(obj) {
+  return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`;
+}
+
+// other solution
+function animal({ name, legs, color }) {
+  return `This ${color} ${name} has ${legs} legs.`;
+}
