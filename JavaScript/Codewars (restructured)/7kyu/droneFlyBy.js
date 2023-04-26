@@ -13,3 +13,24 @@
 // Fundamentals
 // Strings
 // Arrays
+
+// My solution
+function flyBy(lamps, drone) {
+  const pos = drone.indexOf("T");
+  for (let i = 0; i <= pos; i++) {
+    if (i < lamps.length) {
+      lamps = lamps.substring(0, i) + "o" + lamps.substring(i + 1);
+    }
+  }
+  return lamps;
+}
+
+// other solution
+function flyBy(lamps, drone) {
+  return lamps
+    .split("")
+    .map((item, index, arr) => (index < drone.length ? "o" : item))
+    .join("");
+}
+
+const flyBy = (lamps, drone) => [...lamps].fill(`o`, 0, drone.length).join(``);
