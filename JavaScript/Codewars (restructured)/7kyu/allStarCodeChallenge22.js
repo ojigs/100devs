@@ -20,3 +20,16 @@
 // 323500 --> "89 hour(s) and 51 minute(s)"
 
 // Fundamentals
+
+// My solution
+function toTime(seconds) {
+  const hr = Math.floor(seconds / 3600);
+  const min = Math.floor((seconds % 3600) / 60);
+  return `${hr} hour(s) and ${min} minute(s)`;
+}
+
+// other solution
+const toTime = (seconds) =>
+  `${(seconds / 3600) ^ 0} hour(s) and ${
+    ((seconds % 3600) / 60) ^ 0
+  } minute(s)`;
