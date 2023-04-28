@@ -6,3 +6,17 @@
 // Games
 // Arrays
 // Fundamentals
+
+// My solution
+function bingo(a) {
+  const bingo = ["B", "I", "N", "G", "O"];
+  return bingo.every((e) =>
+    a.some((num) => String.fromCharCode(64 + num) === e)
+  )
+    ? "WIN"
+    : "LOSE";
+}
+
+// other solution
+const bingo = (ar) =>
+  [2, 7, 9, 14, 15].every((e) => ar.includes(e)) ? "WIN" : "LOSE";
