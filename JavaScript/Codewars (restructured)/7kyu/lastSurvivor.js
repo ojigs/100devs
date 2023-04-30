@@ -23,3 +23,20 @@
 // If you like this kata, check out the next one: Last Survivors Ep.2
 // Fundamentals
 // Arrays
+
+// My solution
+function lastSurvivor(letters, coords) {
+  for (let i = 0; i < coords.length; i++) {
+    letters = letters.slice(0, coords[i]) + letters.slice(coords[i] + 1);
+  }
+  return letters;
+}
+
+// other solution
+function lastSurvivor(letters, coords) {
+  letters = letters.split("");
+  for (let i = 0; i < coords.length; i++) {
+    letters.splice(coords[i], 1);
+  }
+  return letters.join("");
+}
