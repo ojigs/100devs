@@ -28,3 +28,18 @@
 
 // Arrays
 // Fundamentals
+
+// My solution
+function prefill(n, v) {
+  const parsed = parseInt(n);
+  if (!/^(\d+)$/.test(n) || !Number.isInteger(parsed) || parsed < 0) {
+    throw new TypeError(`${n} is invalid`);
+  }
+  return Array.from({ length: n }, (e) => v);
+}
+
+// other solution
+function prefill(n, v) {
+  if (parseInt(n) !== Math.abs(n)) throw new TypeError(`${n} is invalid`);
+  return +n ? Array(n).fill(v) : [];
+}
