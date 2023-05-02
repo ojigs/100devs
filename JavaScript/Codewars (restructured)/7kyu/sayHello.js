@@ -12,3 +12,17 @@ https://www.codewars.com/kata/55955a48a4e9c1a77500005a/javascript
 // greet(null) === null; // Return null if input is null
 
 // Fundamentals
+
+
+
+// My solution
+function greet(name) {
+  return name ? `hello ${name}!` : null
+}
+
+
+// other solution
+function greet(name) {
+  if( name == "" || name == undefined ) { return null; }
+  return "hello " + name + "!";
+}
