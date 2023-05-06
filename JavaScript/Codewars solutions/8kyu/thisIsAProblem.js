@@ -19,3 +19,17 @@
 // Fundamentals
 // Language Features
 // Object-oriented Programming
+
+// Ny solution
+function NameMe(first, last) {
+  this.firstName = first;
+  this.lastName = last;
+  this.name = this.firstName + " " + this.lastName;
+}
+
+// other solution
+function NameMe(first, last) {
+  this.firstName = first;
+  this.lastName = last;
+  this.name = first + " " + last;
+}
