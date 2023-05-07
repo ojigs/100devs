@@ -28,3 +28,35 @@
 // Fundamentals
 // Mathematics
 // Performance
+
+// My solution
+function overTheRoad(address, n) {
+  return n * 2 - address + 1;
+}
+
+// other solution
+function overTheRoad(address, n) {
+  var lastEven = n * 2;
+  var steps = 0;
+  var oppositeHouse;
+
+  var sideEven = address % 2 == 0 ? false : true;
+
+  if (sideEven) {
+    oppositeHouse = address + 1;
+    if (address == n) return address + 1;
+    steps = n - address;
+    console.log(steps);
+    oppositeHouse += steps * 2;
+    console.log(oppositeHouse);
+    return oppositeHouse;
+  } else {
+    oppositeHouse = address - 1;
+    if (address == n) return address - 1;
+    steps = n + 1 - address;
+    console.log(steps);
+    oppositeHouse += steps * 2;
+    return oppositeHouse;
+  }
+  return 9;
+}
