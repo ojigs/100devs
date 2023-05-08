@@ -12,3 +12,16 @@ https://www.codewars.com/kata/517abf86da9663f1d2000003/train/javascript
 // Regular Expressions
 // Algorithms
 // Strings
+
+
+
+// My solution
+function toCamelCase(str){
+  return str.split(/-|_/).map((e,i) => i !== 0 ? e[0].toUpperCase() + e.slice(1) : e).join('')
+}
+
+
+// other solution
+function toCamelCase(str){
+  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
+}
