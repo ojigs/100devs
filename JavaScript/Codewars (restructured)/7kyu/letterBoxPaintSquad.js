@@ -42,3 +42,26 @@ https://www.codewars.com/kata/597d75744f4190857a00008d/javascript
 //     In C, the returned value will be free'd.
 
 // Fundamentals
+
+
+// My solution
+var paintLetterboxes = function(start, end) {
+  const freq = [0,0,0,0,0,0,0,0,0,0]
+  for (let i = start; i <= end; i++) {
+     i.toString().split('').forEach(e => freq[e]++)
+  }
+  return freq
+}
+
+
+
+// other solution
+const paintLetterboxes = (start, end) => {
+  let res = Array(10).fill(0);
+  for (let i = start; i <= end; i++) {
+  	for (let n of (i + '')) {
+    	res[n]++;
+    }
+  }
+  return res;
+}
