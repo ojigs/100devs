@@ -23,5 +23,5 @@ function toCamelCase(str){
 
 // other solution
 function toCamelCase(str){
-  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
+  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase()); // this matches the first character after the underscore or hyphen and capitalizes it
 }
