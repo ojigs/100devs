@@ -27,3 +27,35 @@ https://www.codewars.com/kata/56a4872cbb65f3a610000026/train/javascript
 //     max_rot(38458215) should return 85821534
 
 // Algorithms
+
+
+
+// My solution
+function maxRot(n) {
+  let str = n.toString()
+  const max = [str]
+  const len = str.length
+  for (let i = 0; i < len; i++) {
+    str = str.slice(0,i) + str.slice(i+1) + str.slice(i,i+1)
+    max.push(str)
+  }
+  return Math.max(...max)
+}
+
+
+// other solution
+function maxRot(n) {
+  var arr = n.toString().split("");
+  var temp = "";
+  var result = 0;
+  for (var i = 0; i < arr.length; i++) {
+    temp = arr[i];
+    arr.splice(i, 1);
+    arr.push(temp);
+    if (parseInt(arr.join(""), 10) > result) result = parseInt(arr.join(""), 10);
+  }
+  return result > n ? result : n;
+  
+}
+
+
