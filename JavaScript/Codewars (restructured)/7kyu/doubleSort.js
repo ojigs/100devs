@@ -10,3 +10,16 @@ https://www.codewars.com/kata/57cc79ec484cf991c900018d/train/javascript
 // Strings
 // Arrays
 // Sorting
+
+
+
+// My solution
+function dbSort(a){
+  const num = a.filter(e => typeof e === "number").sort((a,b) => a - b)
+  const str = a.filter(e => typeof e === "string").sort((a,b) => a.localeCompare(b))
+  return num.concat(str)
+}
+
+
+// other solution
+const dbSort = array => array.sort((a, b) => (typeof(a) == 'string') - (typeof(b) == 'string') || (a > b) - (a < b));
