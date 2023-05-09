@@ -1,4 +1,4 @@
-https://www.codewars.com/kata/5297bf69649be865e6000922
+// https://www.codewars.com/kata/5297bf69649be865e6000922
 // Description:
 
 // Implement a function, so it will produce a sentence out of the given parts.
@@ -22,3 +22,17 @@ https://www.codewars.com/kata/5297bf69649be865e6000922
 // Strings
 // Regular Expressions
 // Fundamentals
+
+// My solution
+function makeSentence(parts) {
+  return (
+    parts
+      .join(" ")
+      .replace(/ ,+|,+/g, ",")
+      .replace(/\.+/g, "")
+      .trim() + "."
+  );
+}
+
+// other solution
+makeSentence = (a) => a.join` `.replace(/ +(?=,)|[ .]+$/g, "") + ".";
