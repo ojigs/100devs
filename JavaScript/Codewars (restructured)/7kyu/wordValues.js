@@ -19,3 +19,33 @@
 
 // Consonant value
 // Fundamentals
+
+// My solution
+function wordValue(a) {
+  return a.map(
+    (e, i) =>
+      e
+        .split("")
+        .reduce((a, c) => a + (c !== " " ? c.charCodeAt() - 96 : 0), 0) *
+      (i + 1)
+  );
+}
+
+// other solution
+function wordValue(a) {
+  return a.map(
+    (s, i) =>
+      s
+        .replace(/\s/g, "")
+        .split("")
+        .map((b) => b.charCodeAt() - 96)
+        .reduce((acc, cur) => (acc += cur), 0) *
+      (i + 1)
+  );
+}
+
+function wordValue(a) {
+  return a.map(
+    (s, i) => (i + 1) * [...s].reduce((a, c) => a + (c.charCodeAt(0) % 32), 0)
+  );
+}
