@@ -13,3 +13,23 @@ https://www.codewars.com/kata/596f72bbe7cd7296d1000029/javascript
 // Arrays
 // Recursion
 // Fundamentals
+
+
+
+// My solution
+function deepCount(a){
+  return a.reduce((acc,cur) => acc + (Array.isArray(cur) ? deepCount(cur) : 0), a.length)
+}
+
+
+
+// other solution
+function deepCount(a){
+  let count = a.length;
+  for (let i=0; i<a.length; i++) {
+    if (Array.isArray(a[i])) {
+      count += deepCount(a[i]);
+    }
+  }
+  return count;
+}
