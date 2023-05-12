@@ -13,3 +13,22 @@ https://www.codewars.com/kata/5299413901337c637e000004/javascript
 
 // Arrays
 // Fundamentals
+
+
+
+// My solution
+function getMissingElement(superImportantArray){
+  const seen = {}
+  for (const num of superImportantArray) {
+    seen[num] = true
+  }
+  for (let i = 0; i <= 9; i++) {
+    if (!seen[i]) return i
+  }
+}
+
+
+// other solution
+function getMissingElement(superImportantArray) {
+  return superImportantArray.reduce(function (sum, value) {return sum - value;}, 45);
+}
