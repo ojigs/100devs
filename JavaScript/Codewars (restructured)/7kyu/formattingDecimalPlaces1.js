@@ -14,3 +14,17 @@
 // 14.3286 is 14.33
 
 // Fundamentals
+
+// My solution
+function twoDecimalPlaces(number) {
+  return Math.trunc(number * 100) / 100;
+}
+
+// other solution
+function twoDecimalPlaces(number) {
+  return +number.toFixed(4).slice(0, -2);
+}
+
+function twoDecimalPlaces(number) {
+  return parseInt(number * 100) / 100;
+}
