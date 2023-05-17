@@ -16,3 +16,17 @@ https://www.codewars.com/kata/57fb142297e0860073000064/javascript
 // Product("!????!!!?") == 20
 
 // Fundamentals
+
+
+// My solution
+function product (string) {
+  return (string.match(/\?/g) || []).length * (string.match(/!/g) || []).length
+}
+
+
+// other solution
+function product(s){
+  excs = s.split('!').length - 1
+  ques = s.split('?').length - 1
+  return excs * ques
+}
