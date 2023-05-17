@@ -26,3 +26,14 @@ https://www.codewars.com/kata/59b844528bcb7735560000a0/javascript
 // Arrays
 // Mathematics
 // Fundamentals
+
+
+// My solution
+function isNice(arr){
+  if (!arr.length) return false
+  return arr.every((e,i,a) => a.includes(e-1) || a.includes(e + 1))
+}
+
+
+// other solution
+const isNice = arr => Boolean(arr.length) && arr.every(e=> arr.includes(e-1) || arr.includes(e+1));
