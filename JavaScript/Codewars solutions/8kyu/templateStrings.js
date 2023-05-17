@@ -12,3 +12,13 @@ https://www.codewars.com/kata/55a14f75ceda999ced000048/javascript
 // Reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings
 // Strings
 // Fundamentals
+
+
+// My solution
+var TempleStrings = function(obj, feature) {
+  return `${obj} are ${feature}`
+}
+
+
+// other solution
+const TempleStrings = (obj, feature) => `${obj} are ${feature}`;
