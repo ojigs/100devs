@@ -11,3 +11,19 @@ https://www.codewars.com/kata/59a1cdde9f922b83ee00003b/javascript
 // The Stanton measure of [1, 4, 1, 2, 11, 2, 3, 1] is 1, because 1 occurs 3 times in the array and 3 occurs 1 time.
 // Arrays
 // Fundamentals
+
+
+
+// My solution
+function stantonMeasure (arr) {
+  const count = arr.filter(e=>e===1).length
+  return arr.filter(e=>e===count).length
+}
+
+
+
+// other solution
+function stantonMeasure(arr) {
+  const count = n => arr.filter(x => x === n).length;
+  return count(count(1));
+}
