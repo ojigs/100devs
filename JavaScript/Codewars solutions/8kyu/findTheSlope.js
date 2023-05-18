@@ -15,3 +15,17 @@ https://www.codewars.com/kata/55a75e2d0803fea18f00009d/javascript
 // Mathematics
 // Fundamentals
 // Algebra
+
+
+// My solution
+function slope(points) {
+  if (points[2] - points[0] === 0) return "undefined"
+  return (points[3] - points[1]) / (points[2] - points[0]) + ''
+}
+
+
+// other solution
+function slope([ x1, y1, x2, y2 ]) {
+  let slope = (y2 - y1) / (x2 - x1);
+  return Number.isFinite(slope) ? `${slope}` : 'undefined';
+}
