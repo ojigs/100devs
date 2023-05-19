@@ -9,3 +9,14 @@ https://www.codewars.com/kata/559f44187fa851efad000087/javascript
 // Logic
 // Strings
 // Fundamentals
+
+
+
+// My solution
+function sevenAte9(str){
+  return str.replace(/(?<=7)9(?=7)/g, '');
+}
+
+
+// other solution
+const sevenAte9 = str => str.replace(/79(?=7)/g, '7');
