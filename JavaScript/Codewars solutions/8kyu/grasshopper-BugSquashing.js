@@ -15,3 +15,27 @@
 // - move
 
 // Fundamentals
+
+// My solution
+var health = 100;
+var position = 0;
+var coins = 0;
+
+function main() {
+  rollDice();
+  move();
+  combat();
+  getCoins();
+  buyHealth();
+  printStatus();
+}
+
+// other solution
+let health = 100,
+  position = 0,
+  coins = 0;
+
+function main() {
+  const actions = [rollDice, move, combat, getCoins, buyHealth, printStatus];
+  actions.forEach((e) => e());
+}
