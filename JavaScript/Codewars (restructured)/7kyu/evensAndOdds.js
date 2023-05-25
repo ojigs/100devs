@@ -9,3 +9,11 @@
 // Numbers will be positive. The hexadecimal string should be lowercased.
 // Fundamentals
 // Binary
+
+// My solution
+function evensAndOdds(num) {
+  return num % 2 ? num.toString(16) : num.toString(2);
+}
+
+// otheer solution
+const evensAndOdds = (n) => n.toString((n % 2) * 14 + 2);
