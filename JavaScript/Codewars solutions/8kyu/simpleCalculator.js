@@ -16,3 +16,35 @@
 
 // Good luck!
 // Fundamentals
+
+// My solution
+function calculator(a, b, sign) {
+  let op = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+    "/": (a, b) => a / b,
+    "*": (a, b) => a * b,
+  };
+  if (!op[sign] || isNaN(a) || isNaN(b)) {
+    return "unknown value";
+  } else {
+    return op[sign](a, b);
+  }
+}
+
+// other solution
+function calculator(a, b, sign) {
+  if (typeof a === "number" && typeof b === "number") {
+    switch (sign) {
+      case "+":
+        return a + b;
+      case "-":
+        return a - b;
+      case "*":
+        return a * b;
+      case "/":
+        return a / b;
+    }
+  }
+  return "unknown value";
+}
