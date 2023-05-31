@@ -9,3 +9,13 @@ https://www.codewars.com/kata/5697fb83f41965761f000052/javascript
 // * Return ['quick', 'brown', 'jumps']
 
 // Fundamentals
+
+
+// My solution
+function filterLongWords(sentence, n) {
+  return sentence.split(' ').filter(e => e.length > n)
+}
+
+
+// other solution
+const filterLongWords = (sentence, n) => sentence.split(/\s/g).filter( wd => wd.length > n )
