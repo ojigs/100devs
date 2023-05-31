@@ -14,3 +14,16 @@ https://www.codewars.com/kata/5738f5ea9545204cec000155/javascript
 // "!?..A" --> 1
 // Strings
 // Fundamentals
+
+
+
+// My solution
+function countLettersAndDigits(input) {
+  return input.split(/[A-Za-z0-9]/g).length - 1
+}
+
+
+// other solution
+function countLettersAndDigits(s) {
+  return s.replace(/[^a-z\d]/gi,"").length;
+}
