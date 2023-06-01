@@ -71,3 +71,14 @@ https://www.codewars.com/kata/582dace555a1f4d859000058/javascript
 // Fundamentals
 // Algorithms
 // Strings
+
+
+
+// My solution
+function findAdmin(list, lang) {
+  return list.filter(developer => developer.language === lang && developer.githubAdmin === "yes")
+}
+
+
+// other solution
+const findAdmin = (list, lang) => list.filter(({ language, githubAdmin }) => language === lang && githubAdmin === 'yes')
