@@ -18,3 +18,13 @@
 // Good luck!
 // Mathematics
 // Fundamentals
+
+// My solution
+function root(x, n) {
+  return Math.pow(x, 1 / n);
+}
+
+// other solution
+function root(x, n) {
+  return x ** (1 / n);
+}
