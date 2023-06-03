@@ -11,3 +11,17 @@
 
 // Arrays
 // Fundamentals
+
+// My solution
+function arithmeticSequenceElements(a, d, n) {
+  const prog = [];
+  for (let i = 0; i < n; i++) {
+    prog.push(a + i * d);
+  }
+  return prog.join(", ");
+}
+
+// other solution
+function arithmeticSequenceElements(a, r, n) {
+  return Array.from({ length: n }, (_, i) => a + r * i).join(", ");
+}
