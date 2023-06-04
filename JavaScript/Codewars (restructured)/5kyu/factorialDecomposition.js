@@ -21,3 +21,61 @@
 //     In Fortran - as in any other language - the returned string is not permitted to contain any redundant trailing whitespace: you can use dynamically allocated character strings.
 
 // Fundamentals
+
+// My solution
+function decomp(n) {
+  const primes = [];
+  const factors = {};
+
+  for (let i = 2; i <= n; i++) {
+    let num = i;
+    let j = 2;
+
+    while (j <= num) {
+      if (num % j === 0) {
+        factors[j] = (factors[j] || 0) + 1;
+        num /= j;
+      } else {
+        j++;
+      }
+    }
+  }
+
+  for (let prime in factors) {
+    if (factors.hasOwnProperty(prime)) {
+      primes.push(
+        factors[prime] === 1 ? prime.toString() : `${prime}^${factors[prime]}`
+      );
+    }
+  }
+
+  return primes.join(" * ");
+}
+
+// other solution
+function decomp(n) {
+  let coll = {};
+
+  for (let i = 2; i <= n; i++) coll[i] = 1;
+
+  for (let i = n; i > 1; i--) {
+    for (let k = 2; k <= Math.sqrt(i); k++) {
+      if (i % k === 0) {
+        coll[k] += coll[i];
+        coll[i / k] += coll[i];
+        delete coll[i];
+        break;
+      }
+    }
+  }
+
+  let answer = "";
+
+  for (let i in coll) {
+    answer += i;
+    if (coll[i] > 1) answer += "^" + coll[i];
+    answer += " * ";
+  }
+
+  return answer.slice(0, answer.length - 3);
+}
