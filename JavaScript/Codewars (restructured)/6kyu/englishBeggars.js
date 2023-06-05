@@ -17,3 +17,18 @@ https://www.codewars.com/kata/59590976838112bfea0000fa/train/javascript
 // Lists
 // Recursion
 // Fundamentals
+
+
+
+// My solution
+function beggars(values, n){
+  const queue = Array(n).fill(0)
+  for (let i = 0; i < values.length; i++) {
+    queue[i%n] += values[i]
+  }
+  return queue
+}
+
+
+// other solution
+const beggars = (vals, n) => vals.reduce((a, v, x) => { a[x%n] += v; return a; }, Array(n).fill(0));
