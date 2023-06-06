@@ -14,3 +14,11 @@
 // Arrays
 // Strings
 // Fundamentals
+
+// My solution
+var ArrowFunc = function (arr) {
+  return arr.map((e) => String.fromCharCode(e)).join("");
+};
+
+// other solution
+const ArrowFunc = (arr) => String.fromCharCode(...arr);
