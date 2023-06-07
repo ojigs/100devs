@@ -10,3 +10,15 @@ https://www.codewars.com/kata/55afed09237df73343000042/javascript
 // Function will return true for lucky numbers and false for others.
 // Fundamentals
 // Mathematics
+
+
+
+// My solution
+function isLucky(n) {
+  const luck = n.toString().split('').reduce((a,c) => a + +c, 0)
+  return luck === 0 || !(luck % 9)
+}
+
+
+// other solution
+const isLucky = n => n % 9 === 0;
