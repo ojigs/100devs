@@ -13,3 +13,23 @@ https://www.codewars.com/kata/5768a693a3205e1cc100071f/javascript
 
 // Strings
 // Fundamentals
+
+
+
+// My solution
+function initializeNames(name){
+  return name.split(' ').map((e,i,a) => i > 0 && i < a.length - 1 ? e[0]+"." : e).join(' ')
+}
+
+// other solution
+function initializeNames(name){
+ var n = name.split(" ");
+if(n.length < 3) return name;
+for(i = 1; i < n.length-1; i++){
+  n[i] = n[i][0] + ".";
+}
+return n.join(" ");
+}
+
+
+const initializeNames = name => name.replace(/ (\w)\w*(?= )/g, ' $1.')
