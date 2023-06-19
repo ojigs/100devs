@@ -18,3 +18,23 @@
 //  7  -->  [0,  1,  3,  6,  10,  15,  21,  28]
 
 // Fundamentals
+
+
+
+// My solution
+function sumOfN(n) {
+  let sum = 0;
+  return Array.from({ length: Math.abs(n) + 1 }, (_, i) => (n >= 0 ? sum += i : sum -= i));
+}
+
+
+// other solution
+function sumOfN(n) {
+  var array = [];
+  array[0] = 0;
+  for (var i = 1; i < Math.abs(n)+1; i++) {
+    if (n > 0) array[i] = array[i-1]+i;
+    else array[i] = array[i-1]-i;
+  }
+  return array;
+};
