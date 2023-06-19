@@ -9,3 +9,16 @@
 
 // Arrays
 // Fundamentals
+
+
+
+// My solution
+function largest(n, array) {
+    return n == 0 ? [] : array.sort((a, b) => a - b).slice(-n);
+}
+
+
+// other solution
+function largest(n,xs){
+  return xs.sort(function(a, b) {return a - b;}).slice(xs.length-n);
+}
