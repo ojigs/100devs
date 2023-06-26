@@ -22,3 +22,15 @@ https://www.codewars.com/kata/55805ab490c73741b7000064/javascript
 
 // Fundamentals
 // Strings
+
+
+
+// My solution
+var makeBackronym = function(string){
+  return string.toUpperCase().split('').map(e => dict[e]).join(' ')
+};
+
+
+// other solution
+const makeBackronym = string =>
+  [...string].map(val => dict[val.toUpperCase()]).join(` `);
