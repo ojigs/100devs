@@ -16,3 +16,17 @@ https://www.codewars.com/kata/54599705cbae2aa60b0011a4/javascript
 
 // If you need help, here is a resource ( in Ruby ).
 // Fundamentals
+
+
+// My solution
+function one(arr, fun){
+  return arr.filter(fun).length === 1
+}
+
+
+// other solution
+function one(arr, fun){
+  let result =[];
+  for(let x of arr) if (fun(x)) result.push(x);
+  return result.length==1;
+}
