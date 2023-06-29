@@ -12,3 +12,18 @@
 // Fundamentals
 // Algorithms
 // Data Structures
+
+// My solution
+Array.prototype.remove_ = function (integer_list, values_list) {
+  const removeThis = {};
+  for (const value of values_list) {
+    removeThis[value] = true;
+  }
+  return integer_list.filter((e) => !removeThis[e]);
+};
+
+// other solution
+Array.prototype.remove_ = function (integer_list, values_list) {
+  const s = new Set(values_list);
+  return integer_list.filter((x) => !s.has(x));
+};
