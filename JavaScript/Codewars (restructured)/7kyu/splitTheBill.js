@@ -28,3 +28,35 @@ https://www.codewars.com/kata/5641275f07335295f10000d0/javascript
 // Good Luck and Happy Eats!
 // Fundamentals
 // Data Structures
+
+
+
+// My solution
+function splitTheBill(x) {
+  const values = Object.values(x)
+  const avg = values.reduce((a,c) => a+c, 0)/values.length
+  const res = {}
+  for (const bill in x) {
+    res[bill] = Math.round((x[bill] - avg)*100)/100
+  }
+  return res
+}
+
+
+// other solution
+function splitTheBill(x) {
+  var average = 0;
+  var count = 0;
+  
+  for(item in x){
+    average += x[item];
+    count++;
+  }
+  average = average / count;  
+  
+  for(item in x){
+    x[item] = Math.round((x[item] - average) * 100) / 100;
+  }
+  
+  return x;
+}
