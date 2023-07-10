@@ -20,3 +20,15 @@
 
 // Note - there will be no punctuation or digits in the input string, only letters.
 // Fundamentals
+
+// My solution
+function validSpacing(s) {
+  return s == "" || s.split(" ").every((e) => e.length > 0);
+}
+
+// other solution
+function validSpacing(s) {
+  return s.trim() == s && !s.includes("  ");
+}
+
+const validSpacing = (s) => s.replace(/\s+/g, " ").trim() == s;
