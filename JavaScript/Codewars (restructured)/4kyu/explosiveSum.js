@@ -33,3 +33,32 @@ https://www.codewars.com/kata/52ec24228a515e620b0005ef/train/javascript
 // Algorithms
 // Mathematics
 // Fundamentals
+
+
+// My solution
+function sum(num) {
+  let partition = new Array(num + 1).fill(0)
+  partition[0] = 1
+  for (let i = 1; i <= num; i++) {
+    for (let j = i; j <= num; j++) {
+      partition[j] += partition[j - i]
+    }
+  }
+  return partition[num]
+}
+
+
+// other solution
+var memo = [];
+
+function sum(n, m = n) {
+    if (n == 0) return 1;
+    if (n < 0 || m == 0) return 0;
+    if (memo[n] && memo[n][m]) return memo[n][m];
+    let total = sum(n, m - 1) + sum(n - m, m);
+    if (!memo[n]) {
+        memo[n] = [];
+    }
+    memo[n][m] = total;
+    return total;
+}
