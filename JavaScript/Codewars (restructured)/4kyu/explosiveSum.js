@@ -35,7 +35,7 @@ https://www.codewars.com/kata/52ec24228a515e620b0005ef/train/javascript
 // Fundamentals
 
 
-// My solution
+// My solution (adapted)
 function sum(num) {
   let partition = new Array(num + 1).fill(0)
   partition[0] = 1
