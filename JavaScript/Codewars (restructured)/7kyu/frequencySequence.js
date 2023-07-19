@@ -1,4 +1,4 @@
-https://www.codewars.com/kata/585a033e3a36cdc50a00011c
+// https://www.codewars.com/kata/585a033e3a36cdc50a00011c
 // Description:
 
 // Your task is to return an output string that translates an input string s by replacing each character in s with a number representing the number of times that character occurs in s and separating each number with the sep character(s).
@@ -11,3 +11,26 @@ https://www.codewars.com/kata/585a033e3a36cdc50a00011c
 
 // Strings
 // Fundamentals
+
+// My solution
+function freqSeq(str, sep) {
+  let hash = {},
+    result = "";
+  for (const char of str) {
+    hash[char] = (hash[char] || 0) + 1;
+  }
+  const outputArray = [];
+  for (const char of str) {
+    outputArray.push(hash[char]);
+  }
+
+  return outputArray.join(sep);
+}
+
+// other solution
+function freqSeq(str, sep) {
+  return str
+    .split("")
+    .map((v, i, arr) => arr.filter((vi) => vi === v).length)
+    .join(sep);
+}
