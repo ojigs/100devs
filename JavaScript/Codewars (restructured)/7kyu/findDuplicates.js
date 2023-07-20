@@ -11,3 +11,31 @@
 
 // Arrays
 // Fundamentals
+
+// My solution
+function duplicates(arr) {
+  const duplicates = [];
+  const seen = new Set();
+  const values = new Set();
+
+  for (const element of arr) {
+    const key = typeof element === "number" ? element : JSON.stringify(element);
+    if (values.has(key) && !seen.has(key)) {
+      duplicates.push(element);
+      seen.add(key);
+    }
+    values.add(key);
+  }
+
+  return duplicates;
+}
+
+// other solution
+function duplicates(arr) {
+  return arr.reduce(function (prev, cur, i, a) {
+    if (i !== a.indexOf(cur) && prev.indexOf(cur) === -1) {
+      prev.push(cur);
+    }
+    return prev;
+  }, []);
+}
