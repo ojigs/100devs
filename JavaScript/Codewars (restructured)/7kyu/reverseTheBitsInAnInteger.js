@@ -8,3 +8,16 @@
 // You can assume that the number is not negative.
 // Bits
 // Fundamentals
+
+// My solution
+function reverseBits(n) {
+  let binary = n.toString(2);
+  let reversed = binary.split("").reverse().join("");
+  return parseInt(reversed, 2);
+}
+
+// other solution
+function reverseBits(n) {
+  const binaryReverse = n.toString(2).split("").reverse().join("");
+  return parseInt(binaryReverse, 2);
+}
