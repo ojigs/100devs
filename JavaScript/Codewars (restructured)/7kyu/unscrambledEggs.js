@@ -18,6 +18,11 @@ function unscrambleEggs(word){
   return word.replace(/^[aeiou]/, '')
 }
 
+// My workaround
+function unscrambleEggs(word){
+  return word.replace(/(?<=[^awiouAEIOU])egg/g, '')
+}
+
 
 // other solution
 function unscrambleEggs(word){
