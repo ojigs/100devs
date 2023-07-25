@@ -20,7 +20,7 @@ function unscrambleEggs(word){
 
 // My workaround
 function unscrambleEggs(word){
-  return word.replace(/(?<=[^awiouAEIOU])egg/g, '')
+  return word.replace(/(?<=[^aeiouAEIOU])egg/g, '')
 }
 
 
