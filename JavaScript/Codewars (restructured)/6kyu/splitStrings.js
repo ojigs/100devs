@@ -11,3 +11,16 @@ https://www.codewars.com/kata/515de9ae9dcfc28eb6000001
 // Regular Expressions
 // Strings
 // Algorithms
+
+
+// My solution
+function solution(str){
+  if (!str) return []
+  return str.match(/.{1,2}/g)?.map(pair => pair.padEnd(2, '_'));
+}
+
+
+// other solution
+function solution(s){
+   return (s+"_").match(/.{2}/g)||[]
+}
