@@ -10,3 +10,38 @@ https://www.codewars.com/kata/568018a64f35f0c613000054/train/javascript
 // Can you finish the game so all the rules are met?
 // Fundamentals
 // Object-oriented Programming
+
+
+
+// My solution
+class Guesser {
+  constructor(number, lives) {
+    this.number = number;
+    this.lives = lives;
+  }
+  
+  guess(n) {
+    if (this.lives <= 0) throw new Error("already dead")
+    if (n === this.number) {
+      return true
+    } else {
+      this.lives--
+      return false
+    }
+  }
+}
+
+
+// other solution
+class Guesser {
+  constructor(number, lives) {
+    this.number = number;
+    this.lives = lives;
+  }
+  
+  guess(n) {
+    if (!this.lives) throw Error
+    this.lives--
+    return n === this.number
+  }
+}
