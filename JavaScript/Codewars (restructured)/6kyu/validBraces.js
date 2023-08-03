@@ -18,3 +18,38 @@ https://www.codewars.com/kata/5277c8a221e209d3f6000b56
 // "[({})](]" =>  False
 
 // Algorithms
+
+
+// My solution
+function validBraces(braces){
+  const hash = {
+    "}": "{",
+    ")": "(",
+    "]": "[",
+  }
+  const arr = []
+  for (const char of braces) {
+    if (hash[char]) {
+      if (arr.pop() !== hash[char]) {
+        return false
+      }
+    } else {
+      arr.push(char)
+    }
+  }
+  return arr.length === 0
+}
+
+
+// other solution
+function validBraces(str){
+	var prev = "";
+	while (str.length != prev.length) {
+            prev = str;
+            str = str
+                .replace("()", "")
+                .replace("[]", "")
+                .replace("{}", "");                
+    }
+    return (str.length === 0);
+}
