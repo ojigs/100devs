@@ -19,3 +19,22 @@ https://www.codewars.com/kata/5839edaa6754d6fec10000a2
 // I have also created other katas. Take a look if you enjoyed this kata!
 // Mathematics
 // Algorithms
+
+
+// My solution
+function findMissingLetter(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].charCodeAt()+1 !== array[i+1].charCodeAt()) {
+      return String.fromCharCode(array[i].charCodeAt()+1)
+    }
+  }
+  return undefined
+}
+
+
+// other solution
+const findMissingLetter = (array) => {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const start = alphabet.indexOf(array[0]);
+  return alphabet.slice(start, start + array.length).find(el => !array.includes(el));
+};
