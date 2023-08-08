@@ -45,3 +45,20 @@ https://www.codewars.com/kata/54b724efac3d5402db00065e
 
 // After you complete this kata, you may try yourself at Decode the Morse code, advanced.
 // Algorithms
+
+
+
+// My solution
+decodeMorse = function(morseCode){
+  return morseCode.trim().split(' ').map(e => MORSE_CODE[e] || " ").join('').replace(/\s+/g, " ")
+}
+
+
+// other solution\
+decodeMorse = function(morseCode){
+  return morseCode
+    .trim()
+    .split(/  | /)
+    .map( (code) => MORSE_CODE[code] || ' ')
+    .join('');
+}
