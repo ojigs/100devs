@@ -29,3 +29,19 @@
 // Strings
 // Regular Expressions
 // Fundamentals
+
+// My solution
+function nicknameGenerator(name) {
+  if (name.length < 4) return "Error: Name too short";
+  if ("aeiou".match(name[2])) {
+    return name.slice(0, 4);
+  } else {
+    return name.slice(0, 3);
+  }
+}
+
+// other solution
+const nicknameGenerator = (name) =>
+  name.length > 3
+    ? name.slice(0, 3 + "aeiou".includes(name[2]))
+    : "Error: Name too short";
