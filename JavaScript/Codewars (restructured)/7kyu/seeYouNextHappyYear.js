@@ -41,3 +41,26 @@
 // Enjoy Learning !!
 // Zizou
 // Fundamentals
+
+// My solution
+function nextHappyYear(year) {
+  while (true) {
+    year++;
+    if (new Set(year.toString()).size === 4) {
+      return year;
+    }
+  }
+}
+
+// other solution
+function nextHappyYear(year) {
+  let newYear = year + 1;
+  let arr = newYear.toString().split("");
+  if (arr.join("") === Array.from(new Set(arr)).join("")) return newYear;
+  else return nextHappyYear(newYear);
+}
+
+function nextHappyYear(a) {
+  while (new Set([...(++a + "")]).size < 4);
+  return a;
+}
