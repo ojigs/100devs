@@ -38,3 +38,21 @@ https://www.codewars.com/kata/55b4d87a3766d9873a0000d4/train/javascript
 
 // See "Sample Tests" to know the format of the return.
 // Fundamentals
+
+
+
+// My solution
+function howMuch(m, n) {
+    const res = []
+    const min = Math.min(m, n)
+    const max = Math.max(m, n)
+    for (let i = min; i <= max; i++) {
+      const boat = Math.floor((i-2)/7)
+      const car = Math.floor((i-1)/9)
+      
+      if (i === 9 * car + 1 && i === 7 * boat + 2) {
+        res.push(["M: " + i, "B: " + boat, "C: " + car])
+      }
+    }
+  return res
+}
