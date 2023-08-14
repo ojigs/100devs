@@ -58,4 +58,15 @@ function howMuch(m, n) {
 }
 
 
-
+// other solution
+function howMuch(m, n) {
+  let res = []
+  let min = Math.min(m, n)
+  let max = Math.max(m, n)
+  for (let i = min; i <= max; i++){
+    if ((i - 1) % 9 == 0 && (i - 2) % 7 == 0){ 
+      res.push([i, (i - 2) / 7, (i - 1)/9])
+    }
+  }
+  return res.map(a => [`M: ${a[0]}`,`B: ${a[1]}`,`C: ${a[2]}`])
+}
