@@ -22,3 +22,17 @@
 // Regular Expressions
 // Arrays
 // Fundamentals
+
+
+
+// My solution
+function autocomplete(input, dictionary){
+  const cleanInput = input.replace(/[^a-zA-Z]/g, "")
+  return dictionary.filter(e => e.toLowerCase().startsWith(cleanInput)).slice(0,5)
+}
+
+
+// other solution
+const autocomplete = (input, dictionary) =>
+  dictionary.filter(val => new RegExp(`^${input.replace(/[^A-Z]/gi, ``)}`, `i`).test(val))
+    .slice(0, 5);
