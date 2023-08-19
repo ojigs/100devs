@@ -15,3 +15,19 @@
 // - move
 
 // Fundamentals
+
+// My solution
+function doTurn() {
+  rollDice();
+  move();
+  combat();
+  getCoins();
+  buyHealth();
+  printStatus();
+}
+
+// other solution
+function doTurn() {
+  var actions = [rollDice, move, combat, getCoins, buyHealth, printStatus];
+  actions.forEach((e) => e());
+}
