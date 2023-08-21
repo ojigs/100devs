@@ -11,3 +11,21 @@
 // Fundamentals
 // Strings
 // Arrays
+
+// My solution
+function gordon(a) {
+  return a
+    .toUpperCase()
+    .replace(/A/g, "@")
+    .replace(/[eiou]/gi, "*")
+    .split(" ")
+    .map((e) => e + "!!!!")
+    .join(" ");
+}
+
+// other solution]
+const gordon = (s) =>
+  s
+    .toUpperCase()
+    .replace(/\w+/g, `$&!!!!`)
+    .replace(/[AEIOU]/g, (val) => (val === `A` ? `@` : `*`));
