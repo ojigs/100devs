@@ -14,3 +14,19 @@
 // Fundamentals
 // Strings
 // Arrays
+
+// My solution
+function broken(x) {
+  return x.replace(/[01]/g, (m) => (m === "1" ? "0" : "1"));
+}
+
+// other solution
+function broken(x) {
+  return x
+    .split("")
+    .map((a) => (a == "0" ? "1" : "0"))
+    .join("");
+}
+
+// more solution
+const broken = (x) => x.replace(/\d/g, (val) => val ^ 1);
