@@ -16,3 +16,35 @@
 
 // Mathematics
 // Fundamentals
+
+// My solution
+function looseChange(cents) {
+  if (cents <= 0) {
+    return { Nickels: 0, Pennies: 0, Dimes: 0, Quarters: 0 };
+  }
+  let rem = Math.floor(cents);
+  let quarters = Math.floor(rem / 25);
+  rem %= 25;
+  let dimes = Math.floor(rem / 10);
+  rem %= 10;
+  let nickels = Math.floor(rem / 5);
+  rem %= 5;
+  let pennies = rem;
+  return {
+    Nickels: nickels,
+    Pennies: pennies,
+    Dimes: dimes,
+    Quarters: quarters,
+  };
+}
+
+// other solution
+const looseChange = (cents) => (
+  (cents = Math.max(cents, 0)),
+  {
+    Quarters: (cents / 25) | 0,
+    Dimes: ((cents % 25) / 10) | 0,
+    Nickels: (((cents % 25) % 10) / 5) | 0,
+    Pennies: cents % 5 | 0,
+  }
+);
