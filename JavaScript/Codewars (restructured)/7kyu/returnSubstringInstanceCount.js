@@ -13,3 +13,12 @@
 
 // Strings
 // Fundamentals
+
+
+// My solution
+function solution(fullText, searchText){
+  return fullText.split(searchText).length - 1
+}
+
+
+// other solution
