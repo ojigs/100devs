@@ -22,3 +22,30 @@ https://www.codewars.com/kata/5512e5662b34d88e44000060/train/javascript
 
 // Strings
 // Fundamentals
+
+
+// My solution
+function findMissingNumber(sequence){
+  const isNonNumeric = /\D/.test(sequence.replace(/\s/g, ""))
+  if (!sequence.length) return 0
+  if (isNonNumeric || sequence.slice(0,1) != 1) return 1
+  const sortedSequence = sequence.split(' ').sort((a,b) => a - b)
+  for (let i = 1; i < sortedSequence.length; i++) {
+      if (+sortedSequence[i] !== (+sortedSequence[i-1] + 1)) {
+      return +sortedSequence[i-1]+1
+    }
+  }
+  return 0
+}
+
+
+// other solution
+function findMissingNumber(sequence){
+  if (sequence === "") return 0;
+  if (!/^(\d+ )+\d+$/gi.test(sequence)) return 1;
+  var arr = sequence.split(' ').map(x => +x);
+  var max = Math.max(...arr);
+  for(var i = 1; i < max; ++i)
+    if (arr.find(x => x == i) == undefined) return i;
+  return 0;
+}
