@@ -7,3 +7,14 @@ Ruby: If you get stuck, you can read up here:
 
 http://www.rubycuts.com/enum-any
 Fundamentals
+
+// My solution
+function any(arr, fun){
+  return arr.some(fun)
+}
+
+
+// other solution
+function any(arr, fun){
+  return arr.filter(fun).length > 0;
+}
