@@ -18,3 +18,16 @@ function isDivisible(...args){
   const n = args.shift()
   return args.every(e => n % e === 0)
 }
+
+
+// other solution
+function isDivisible(firstN, ...otherN){
+  return otherN.every(n => firstN % n === 0);
+}
+
+function isDivisible(n) {
+  for (var i = 1; i < arguments.length; i++) {
+    if (n % arguments[i]) { return false };
+  }
+  return true;
+}
