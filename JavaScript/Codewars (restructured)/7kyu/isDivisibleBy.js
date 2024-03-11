@@ -11,3 +11,10 @@ https://www.codewars.com/kata/558ee8415872565824000007/train/javascript
 
 // This kata is following kata: http://www.codewars.com/kata/is-n-divisible-by-x-and-y
 // Fundamentals
+
+
+// My solution
+function isDivisible(...args){
+  const n = args.shift()
+  return args.every(e => n % e === 0)
+}
