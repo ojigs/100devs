@@ -8,3 +8,23 @@ https://www.codewars.com/kata/541629460b198da04e000bb9/train/javascript
 // last(1, 2, 3, 4)      ==>  4
 // last([1, 2], [3, 4])  ==>  [3, 4]
 // last([[1, 2], [3, 4]])  ==>  [3, 4]
+
+
+// My solution
+function last(...args) {
+  if (args.length === 1) {
+    let arg = args[0];
+    if (Array.isArray(arg) || typeof arg === 'string') {
+      return arg[arg.length - 1];
+    }
+    return arg;
+  }
+  return args[args.length - 1];
+}
+
+// other solution
+function last(first, ...rest) {
+  if (rest.length) return rest.pop();
+  if (first.length) return [...first].pop();
+  return first;
+}
